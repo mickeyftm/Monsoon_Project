@@ -65,14 +65,44 @@ header
         display: flex
         margin: gem(46) gem(0) gem(38)
         a
-            margin: gem(0) gem(38)
+          margin: gem(0) gem(38)
+          position: relative
+          &::after
+            content: ""
+            display: flex
+            position: absolute
+            width: 0
+            height: gem(1)
+            background-color: #fff
+            top: gem(15)
+            transition: width 0.3s ease
+          &:hover
+            &::after
+              width: 100%
+              
     .language
         display: flex
         margin: gem(46) gem(47) gem(38)
         a
             margin: gem(0) gem(16)
+            position: relative
+            &::after
+              content: ""
+              display: flex
+              position: absolute
+              width: 0
+              height: gem(1)
+              background-color: #fff
+              top: gem(15)
+              transition: width 0.3s ease
+            &:hover
+              &::after
+                width: 100%
     .logo
         margin-left: gem(65)
+        a 
+          img
+            width: gem(155)
     &::after
         content: ""
         height: gem(1)
@@ -82,28 +112,133 @@ header
         top: gem(97)
         background-color: #fff
         margin-left: gem(64)
-        opacity: 0.6
+        opacity: 0.3
 .stroke-text
     -webkit-text-fill-color: transparent
     -webkit-text-stroke: gem(1) white
 
 .enabling_privacy
+    display: flex
+    flex-direction: row
+    &-right
+      display: flex
+      position: relative
+      .cloud_img
+        display: flex
+        position: relative
+        left: gem(70)
+        top: gem(200)
+        img
+          width: gem(529)
+          height: gem(264)
     &-left
         display: flex
         flex-direction: column
         width: gem(700)
         margin-top: gem(133)
         margin-left: gem(168)
+        h2
+          margin-bottom: gem(2)
+          &:nth-child(2)
+            margin-left: gem(183)
+            margin-bottom: gem(37)
+        p
+          width: gem(400)
+          margin-left: gem(340)
+          margin-bottom: gem(65)
         img
             width: gem(112)
+            display: flex
+            position: absolute
+            top: gem(275)
+            left: gem(172)
+            font-size: gem(20)
+            line-height: gem(32)
+        .block_button
+          display: flex
+          position: relative
+          .binance, .polygon
+            display: flex
+            position: absolute
+            width: gem(345)
+            height: gem(87)
+            border: gem(1) solid white
+            border-radius: gem(100)
+            justify-content: center
+            align-items: center
+            transition: all 1s ease
+            &::after
+              content: ""
+              display: flex
+              position: absolute
+              width: gem(345)
+              height: gem(87)
+              border-radius: gem(100)
+              left: gem(-1)
+              top: gem(-0.1)
+              opacity: 1
+              transition: all 1s ease
+              background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #2B7AEF 0%, #2BBEEF 57.34%, #2B7AEF 100%)
+            &::before
+              content: ""
+              display: flex
+              position: absolute
+              width: gem(345)
+              height: gem(87)
+              border-radius: gem(100)
+              left: gem(-1)
+              top: gem(-0.1)
+              opacity: 0
+              transition: all 1s ease
+              background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #2B7AEF 0%, #34F1BB 57.34%, #2B7AEF 100%)
+            &:hover
+              &::after
+                opacity: 0
+              &::before
+                opacity: 1
+            span 
+              z-index: 2
+          .polygon
+            left: gem(360)
+            &::after
+              content: ""
+              display: flex
+              position: absolute
+              width: gem(345)
+              height: gem(87)
+              border-radius: gem(100)
+              left: gem(-1)
+              top: gem(-0.1)
+              opacity: 1
+              transition: all 1s ease
+              background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%)
+              backdrop-filter: blur(25px)
+            &::before
+              content: ""
+              display: flex
+              position: absolute
+              width: gem(345)
+              height: gem(87)
+              border-radius: gem(100)
+              left: gem(-1)
+              top: gem(-0.1)
+              opacity: 0
+              transition: all 1s ease
+              background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #FF587D 0%, #FFAEAE 57.34%, #FF90BA 100%)
+              &:hover
+                &::after
+                  opacity: 0
+                &::before
+                  opacity: 1
     .left_line
         width: gem(1)
         height: gem(742)
         display: flex
         position: absolute
         left: gem(64)
-        background-color: #fff
-        opacity: 0.3
+        background: linear-gradient(360deg,transparent,#FFF)
+        // background-color: #fff
+        opacity: 0.6
         top: gem(-1)
     .left_line_go
         position: absolute
@@ -132,8 +267,8 @@ header
         display: flex
         position: absolute
         right: gem(64)
-        background-color: #fff
-        opacity: 0.3
+        background: linear-gradient(360deg,transparent,#FFF)
+        opacity: 0.6
         top: gem(-1)
     .right_line_go
         position: absolute
@@ -156,12 +291,78 @@ header
         animation: line_begin 5s linear infinite 
         transition: 1s
         animation-delay: 3s
+@keyframes line_begin
+    0%
+        top: gem(97)
+    100%
+        top: gem(700)
 
-// @keyframes line_begin
-//     0%
-//         top: gem(97)
-//     100%
-//         top: gem(600)
+// body 
+// 	--button-border-radius: 40px
+// 	--button-bg: transparent
+// 	--button-stroke: #000
+// 	--button-stroke-width: 1px
+// 	--button-text: #000
+// 	--button-bg-hover: #d8d4cf
+// 	--button-stroke-hover: #000
+// 	--button-stroke-width-hover: 1px
+// 	--button-text-hover: #fff
+// 	--cursor-stroke: #fff
+//     --cursor-fill: #fff
+//     --cursor-stroke-width: 1px
+// 	--button-filler: #000
+// 	--color-bg: #ccc
+
+
+// .button 
+// 	cursor: pointer
+// 	-moz-appearance: none
+// 	-webkit-appearance: none
+// 	border-width: 1px
+// 	border-color: #000
+// 	border-style: solid
+// 	color: #000
+// 	background: var(--button-bg)
+// 	border-radius: var(--button-border-radius)
+// 	min-width: 14rem
+// 	height: 6rem
+// 	padding: 0
+// 	margin: 1rem
+// 	font-family: inherit
+// 	font-size: 1.5rem
+// 	overflow: hidden
+// 	display: flex
+// 	align-items: center
+// 	justify-content: center
+
+
+// .button:focus,
+// .button--hover 
+// 	outline: none
+// 	border-width: var(--button-stroke-width-hover)
+// 	border-color: var(--button-stroke-hover)
+// 	color: var(--button-text-hover)
+
+
+// .button__filler 
+// 	background: var(--button-filler)
+// 	position: absolute
+// 	width: 150%
+// 	height: 200%
+// 	border-radius: 50%
+// 	top: -50%
+// 	left: -25%
+// 	transform: translate3d(0,75%,0)
+
+
+// .button__text, 
+// .button__text-inner 
+// 	display: flex
+// 	align-items: center
+// 	justify-content: center
+// 	width: 100%
+// 	height: 100%
+
 
 
 // CURSOR /////////////////////////////
