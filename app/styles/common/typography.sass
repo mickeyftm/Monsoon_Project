@@ -22,7 +22,7 @@
 
 // title h3
 @mixin title-h3
-	@include mixed-lbl(var(--color-white), var(--main-font), var(--font-size-h3), var(--font-weight-4), var(--letter-spacing), var(--line-height-h3))
+	@include mixed-lbl(var(--color-white), var(--sub-font), var(--font-size-h3), var(--font-weight-4), var(--letter-spacing), var(--line-height-h3))
 
 // title h4
 @mixin title-h4
@@ -67,6 +67,9 @@ article, footer, header, nav, section, input, textarea, button
 
     &.title-h2
         @include title-h2
+        
+    &.title-h3
+        @include title-h3
 
     &.label-1
         @include label-1
