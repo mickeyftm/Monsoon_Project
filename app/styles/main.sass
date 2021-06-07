@@ -215,7 +215,7 @@ header
               top: gem(-0.1)
               opacity: 1
               transition: all 1s ease
-              background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%)
+              background: linear-gradient(180deg, #ffffff00 0%, #ffffff1a 100%)
               backdrop-filter: blur(25px)
             &::before
               content: ""
@@ -242,28 +242,25 @@ header
         left: gem(64)
         background: linear-gradient(360deg,transparent,#FFF)
         opacity: 0.6
-        // top: gem(-1)
-    .left_line_go
-        position: absolute
-        display: block
-        top: gem(97)
-        left: gem(64)
-        width: gem(1)
-        height: gem(32)
-        background: linear-gradient(180deg,transparent,#FFF) 
-        animation: line_begin 5s linear infinite 
-        transition: 1s
-    .left_line_go2
-        position: absolute
-        display: block
-        top: gem(97)
-        left: gem(64)
-        width: gem(1)
-        height: gem(32)
-        background: linear-gradient(180deg,transparent,#FFF) 
-        animation: line_begin 5s linear infinite 
-        transition: 1s
-        animation-delay: 2s
+        .left_line_go
+          position: absolute
+          display: block
+          top: gem(97)
+          width: gem(1)
+          height: gem(32)
+          background: linear-gradient(180deg,transparent,#FFF) 
+          animation: line_begin 5s linear infinite 
+          transition: 1s
+        .left_line_go2
+          position: absolute
+          display: block
+          top: gem(97)
+          width: gem(1)
+          height: gem(32)
+          background: linear-gradient(180deg,transparent,#FFF) 
+          animation: line_begin 5s linear infinite 
+          transition: 1s
+          animation-delay: 2s
     .right_line
         width: gem(1)
         height: gem(742)
@@ -272,41 +269,30 @@ header
         right: gem(64)
         background: linear-gradient(360deg,transparent,#FFF)
         opacity: 0.6
-        // top: gem(-1)
-    .right_line_go
-        position: absolute
-        display: block
-        top: gem(97)
-        right: gem(64)
-        width: gem(1)
-        height: gem(32)
-        background: linear-gradient(180deg,transparent,#FFF) 
-        animation: line_begin 5s linear infinite 
-        transition: 1s
-    .right_line_go2
-        position: absolute
-        display: block
-        top: gem(97)
-        right: gem(64)
-        width: gem(1)
-        height: gem(32)
-        background: linear-gradient(180deg,transparent,#FFF) 
-        animation: line_begin 5s linear infinite 
-        transition: 1s
-        animation-delay: 3s
+        .right_line_go
+          position: absolute
+          display: block
+          top: gem(97)
+          width: gem(1)
+          height: gem(32)
+          background: linear-gradient(180deg,transparent,#FFF) 
+          animation: line_begin 5s linear infinite 
+          transition: 1s
+        .right_line_go2
+          position: absolute
+          display: block
+          top: gem(97)
+          width: gem(1)
+          height: gem(32)
+          background: linear-gradient(180deg,transparent,#FFF) 
+          animation: line_begin 5s linear infinite 
+          transition: 1s
+          animation-delay: 3s
 @keyframes line_begin
     0%
         top: gem(97)
     100%
-        top: gem(700)
-
- 
-@keyframes scroll 
-    0% 
-        transform: translate(0, 0)
-    100% 
-        transform: translate(-100%, 0)
-    
+        top: gem(700)    
 .how_works
     .marquee 
         display: block
@@ -332,7 +318,9 @@ header
         left: gem(100)
         background: #131533
         overflow: hidden
-        border-left-image: linear-gradient(180deg,transparent,#FFF)
+        border: gem(1) solid #fff
+        // opacity: 0.3
+        // border-left-image: linear-gradient(180deg,transparent,#FFF)
         margin-right: gem(32)
         .square_content
           margin: gem(63) gem(0) gem(0) gem(32)
@@ -349,52 +337,56 @@ header
             top: gem(30)
             left: gem(225)
             width: gem(134)
-
         span
             position: absolute
             display: block
-            &:nth-child(1)
-                top: 0
-                left: -100%
-                width: 100%
-                height: gem(1)
-                background: linear-gradient(90deg,transparent,#fff) 
-                animation: line_top 3s linear infinite 
-            &:nth-child(3)
-                bottom: 0
-                right: -100%
-                width: 100%
-                height: gem(1)
-                background: linear-gradient(270deg,transparent,#fff) 
-                animation: line_bottom 3s linear infinite 
-                transition: 1s
-                animation-delay: 3s
-            &:nth-child(2)
-                top: -100%
-                right: 0
-                width: gem(1)
-                height: 100%
-                background: linear-gradient(180deg,transparent,#fff) 
-                animation: line_right 3s linear infinite 
-                transition: 1s
-                animation-delay: 1.5s
-            &:nth-child(4)
-                bottom: -100%
-                left: 0
-                width: gem(1)
-                height: 100%
-                background: linear-gradient(360deg,transparent,#fff) 
-                animation: line_left 3s linear infinite 
-                transition: 1s
-                animation-delay: 4.5s
-.stars
-  display: flex
-  position: absolute
-  top: gem(505)
-  right: gem(75)
-  img
-    width: gem(117)
-          
+            // &:nth-child(1)
+            //     top: 0
+            //     left: -100%
+            //     width: 100%
+            //     height: gem(1)
+            //     background: linear-gradient(90deg,transparent,#fff) 
+            //     animation: line_top 3s linear infinite 
+            // &:nth-child(3)
+            //     bottom: 0
+            //     right: -100%
+            //     width: 100%
+            //     height: gem(1)
+            //     background: linear-gradient(270deg,transparent,#fff) 
+            //     animation: line_bottom 3s linear infinite 
+            //     transition: 1s
+            //     animation-delay: 3s
+            // &:nth-child(2)
+            //     top: -100%
+            //     right: 0
+            //     width: gem(1)
+            //     height: 100%
+            //     background: linear-gradient(180deg,transparent,#fff) 
+            //     animation: line_right 3s linear infinite 
+            //     transition: 1s
+            //     animation-delay: 1.5s
+            // &:nth-child(4)
+            //     bottom: -100%
+            //     left: 0
+            //     width: gem(1)
+            //     height: 100%
+            //     background: linear-gradient(360deg,transparent,#fff) 
+            //     animation: line_left 3s linear infinite 
+            //     transition: 1s
+            //     animation-delay: 4.5s
+    .stars
+      display: flex
+      position: absolute
+      top: gem(505)
+      right: gem(75)
+    img
+      width: gem(117)
+
+@keyframes scroll 
+    0% 
+        transform: translate(0, 0)
+    100% 
+        transform: translate(-100%, 0)  
 @keyframes line_top
     0%
         left: -100%
@@ -419,12 +411,17 @@ header
         bottom: 100%
 
 .ensuring
-  .ensuring_content
+  display: flex
+  position: relative
+  flex-direction: row
+  &-left
     h2
       margin: gem(136) gem(0) gem(49) gem(160)
     p
       margin: gem(0) gem(0) gem(63) gem(256)
-      width: gem(557)
+      width: gem(530)
+      .glitch
+        font-weight: 800
       &:nth-child(3)
         margin-left: gem(480)
     .ensuring_star1
@@ -437,88 +434,154 @@ header
       position: absolute
       top: gem(450)
       left: gem(370)
+  &-right
+    img
+      display: flex
+      width: gem(620)
+
+.our_products
+  display: flex
+  position: relative
+  flex-direction: row
+  &-left
+    display: flex
+    position: relative
+    margin-left: gem(114)
+    flex-direction: column
+    width: 50%
+    border-right: 1px solid #fff
+    &-content
+      img
+        width: gem(316)
+      h3
+        opacity: 0.3
+        margin-left: gem(46)
+      h4
+        margin: gem(0) gem(0) gem(8) gem(46)
+      p
+        width: gem(540)
+        margin: gem(0) gem(0) gem(86) gem(46)
+  &-right
+    display: flex
+    position: relative
+    width: 50%
+    h4
+      font-size: gem(120)
+      line-height: gem(132)
+      margin-left: gem(107)
+    .smile
+      display: flex
+      position: absolute
+      width: gem(61)
+      top: gem(454)
+      right: gem(150)
+    .smile_rotate
+      display: flex
+      position: absolute
+      width: gem(200)
+      top: gem(384)
+      right: gem(80)
+
+.cross_chain
+  &-run_title
+    .marquee 
+      display: block
+      width: 100%
+      white-space: nowrap
+      overflow: hidden
+      margin-bottom: gem(95)
+      p
+        display: inline-block
+        padding-left: 100%
+        -webkit-animation: scroll 15s infinite linear
+        -moz-animation: scroll 15s infinite linear
+        animation: scroll 15s infinite linear
+  &-content
+    display: flex
+    flex-direction: row
+    .left_cloud
+      display: flex
+      position: relative
+      margin-left: gem(86)
+      img 
+        width: gem(714)
+        height: gem(227)
+    .info_user
+      display: flex
+      p
+        margin: gem(20) gem(0) gem(151) gem(200)
+        max-width: gem(513)
+        .glitch
+          font-weight: 800
+  &::after
+    content: ""
+    display: flex
+    width: gem(1472)
+    height: gem(1)
+    background: linear-gradient(360deg,transparent,#fff)
+    opacity: 0.3
+    margin-left: gem(64)
+  .planet
+    display: flex
+    position: absolute
+    top: gem(611)
+    left: gem(802)
+
+.faq
+  h2
+    margin: gem(162) gem(0) gem(98) gem(96)
+  .faq_stars
+    display: flex
+    position: absolute
+    top: gem(143)
+    right: gem(55)
+
+.footer_menu
+  background: #03001B
+  // padding-top: gem(96)
+  display: flex
+  position: relative
+  flex-direction: row
+  justify-content: space-between
+  height: gem(154)
+  &-left
+    display: flex
+    flex-direction: row
+    align-items: center
+    margin: gem(0) gem(0) gem(0) gem(64)
+    p
+      margin-right: gem(54)
+    &-icon
+      display: flex
+      a
+        display: flex
+        margin-right: gem(14)
+  &-center
+    display: flex
+    position: relative
+    left: gem(-50)
+    top: gem(55)
+  &-right
+    margin-right: gem(64)
 
 
+// GLITCH ////////////////////////
+.glitch
+  animation: glitch 1.5s infinite
 
-        
-
- 
-// .marquee p 
-//     display: inline-block
-//     padding-left: 100%
-//     -webkit-animation: scroll 10s infinite linear
-//     -moz-animation: scroll 10s infinite linear
-//     animation: scroll 10s infinite linear
-
-
-
-// body 
-// 	--button-border-radius: 40px
-// 	--button-bg: transparent
-// 	--button-stroke: #000
-// 	--button-stroke-width: 1px
-// 	--button-text: #000
-// 	--button-bg-hover: #d8d4cf
-// 	--button-stroke-hover: #000
-// 	--button-stroke-width-hover: 1px
-// 	--button-text-hover: #fff
-// 	--cursor-stroke: #fff
-//     --cursor-fill: #fff
-//     --cursor-stroke-width: 1px
-// 	--button-filler: #000
-// 	--color-bg: #ccc
-
-
-// .button 
-// 	cursor: pointer
-// 	-moz-appearance: none
-// 	-webkit-appearance: none
-// 	border-width: 1px
-// 	border-color: #000
-// 	border-style: solid
-// 	color: #000
-// 	background: var(--button-bg)
-// 	border-radius: var(--button-border-radius)
-// 	min-width: 14rem
-// 	height: 6rem
-// 	padding: 0
-// 	margin: 1rem
-// 	font-family: inherit
-// 	font-size: 1.5rem
-// 	overflow: hidden
-// 	display: flex
-// 	align-items: center
-// 	justify-content: center
-
-
-// .button:focus,
-// .button--hover 
-// 	outline: none
-// 	border-width: var(--button-stroke-width-hover)
-// 	border-color: var(--button-stroke-hover)
-// 	color: var(--button-text-hover)
-
-
-// .button__filler 
-// 	background: var(--button-filler)
-// 	position: absolute
-// 	width: 150%
-// 	height: 200%
-// 	border-radius: 50%
-// 	top: -50%
-// 	left: -25%
-// 	transform: translate3d(0,75%,0)
-
-
-// .button__text, 
-// .button__text-inner 
-// 	display: flex
-// 	align-items: center
-// 	justify-content: center
-// 	width: 100%
-// 	height: 100%
-
-
+@keyframes glitch
+  from
+    text-shadow: 0 0px 0px white
+  20%
+    text-shadow: 2px -2px 0px red
+  40%
+    text-shadow: -2px 2px 0px green
+  60%
+    text-shadow: 2px 2px 0px blue
+  80%
+    text-shadow: -2px -2px 0px green
+  to
+    text-shadow: 0px 0px 0px white
 
 // CURSOR /////////////////////////////
 
@@ -604,3 +667,20 @@ header
   width: 1.3px
   height: 1.3px
 ///////////////////////////////
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat')
+
+
+.accordion 
+  &-item
+    &-header
+      display: flex
+      align-items: center
+      position: relative
+      cursor: pointer
+    &-body
+      max-height: 0
+      overflow: hidden
+      transition: max-height 0.2s ease-out
+
+  
