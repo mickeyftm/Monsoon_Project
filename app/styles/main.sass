@@ -57,85 +57,10 @@ button[type='submit']
     cursor: pointer
 
 //start here
-header
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    position: fixed
-    width: 100vw
-    z-index: 5
-    .top_menu
-        display: flex
-        margin: gem(46) gem(0) gem(38)
-        a
-          margin: gem(0) gem(38)
-          position: relative
-          transform: translate(0px, 0px)
-          opacity: 1
-          visibility: inherit
-          &::after
-            content: ""
-            display: flex
-            background: #fff
-            bottom: -2px
-            height: 1px
-            left: 0
-            mix-blend-mode: difference
-            opacity: 1
-            position: absolute
-            transform-origin: right
-            transform: scaleX(0)
-            transition: transform 0.3s ease-out
-            width: 100%
-          &:hover
-            &::after
-              transform: scaleX(1)
-              transform-origin: left
-    .language
-        display: flex
-        margin: gem(46) gem(47) gem(38)
-        a
-            margin: gem(0) gem(16)
-            position: relative
-            transform: translate(0px, 0px)
-            opacity: 1
-            visibility: inherit
-            &::after
-              content: ""
-              display: flex
-              background: #fff
-              bottom: -2px
-              height: 1px
-              left: 0
-              mix-blend-mode: difference
-              opacity: 1
-              position: absolute
-              transform-origin: right
-              transform: scaleX(0)
-              transition: transform 0.3s ease-out
-              width: 100%
-            &:hover
-              &::after
-                transform: scaleX(1)
-                transform-origin: left
-    .logo
-        margin-left: gem(65)
-        a 
-          img
-            width: gem(155)
-    &::after
-        content: ""
-        height: gem(1)
-        width: gem(1472)
-        display: flex
-        position: absolute
-        top: gem(97)
-        background-color: #fff
-        margin-left: gem(64)
-        opacity: 0.3
+
 .stroke-text
     -webkit-text-fill-color: transparent
-    -webkit-text-stroke: gem(1) white
+    -webkit-text-stroke: 1px white
 
 .enabling_privacy
     display: flex
@@ -185,7 +110,7 @@ header
             position: absolute
             width: gem(345)
             height: gem(87)
-            border: gem(1) solid white
+            border: 1px solid white
             border-radius: gem(100)
             justify-content: center
             align-items: center
@@ -254,7 +179,7 @@ header
                 &::before
                   opacity: 1
     .left_line
-        width: gem(1)
+        width: 1px
         height: gem(742)
         display: flex
         position: absolute
@@ -265,7 +190,7 @@ header
           position: absolute
           display: block
           top: gem(97)
-          width: gem(1)
+          width: 1px
           height: gem(32)
           background: linear-gradient(180deg,transparent,#FFF) 
           animation: line_begin 5s linear infinite 
@@ -274,14 +199,14 @@ header
           position: absolute
           display: block
           top: gem(97)
-          width: gem(1)
+          width: 1px
           height: gem(32)
           background: linear-gradient(180deg,transparent,#FFF) 
           animation: line_begin 5s linear infinite 
           transition: 1s
           animation-delay: 2s
     .right_line
-        width: gem(1)
+        width: 1px
         height: gem(742)
         display: flex
         position: absolute
@@ -292,7 +217,7 @@ header
           position: absolute
           display: block
           top: gem(97)
-          width: gem(1)
+          width: 1px
           height: gem(32)
           background: linear-gradient(180deg,transparent,#FFF) 
           animation: line_begin 5s linear infinite 
@@ -301,7 +226,7 @@ header
           position: absolute
           display: block
           top: gem(97)
-          width: gem(1)
+          width: 1px
           height: gem(32)
           background: linear-gradient(180deg,transparent,#FFF) 
           animation: line_begin 5s linear infinite 
@@ -311,7 +236,7 @@ header
     0%
         top: gem(97)
     100%
-        top: gem(700)    
+        top: gem(740)    
 .how_works
     .marquee 
         display: block
@@ -337,7 +262,7 @@ header
         left: gem(100)
         background: #131533
         overflow: hidden
-        border: gem(1) solid #fff
+        // border: 1px solid #fff
         // opacity: 0.3
         // border-left-image: linear-gradient(180deg,transparent,#FFF)
         margin-right: gem(32)
@@ -360,40 +285,37 @@ header
         span
             position: absolute
             display: block
-            // &:nth-child(1)
-            //     top: 0
-            //     left: -100%
-            //     width: 100%
-            //     height: gem(1)
-            //     background: linear-gradient(90deg,transparent,#fff) 
-            //     animation: line_top 3s linear infinite 
-            // &:nth-child(3)
-            //     bottom: 0
-            //     right: -100%
-            //     width: 100%
-            //     height: gem(1)
-            //     background: linear-gradient(270deg,transparent,#fff) 
-            //     animation: line_bottom 3s linear infinite 
-            //     transition: 1s
-            //     animation-delay: 3s
-            // &:nth-child(2)
-            //     top: -100%
-            //     right: 0
-            //     width: gem(1)
-            //     height: 100%
-            //     background: linear-gradient(180deg,transparent,#fff) 
-            //     animation: line_right 3s linear infinite 
-            //     transition: 1s
-            //     animation-delay: 1.5s
-            // &:nth-child(4)
-            //     bottom: -100%
-            //     left: 0
-            //     width: gem(1)
-            //     height: 100%
-            //     background: linear-gradient(360deg,transparent,#fff) 
-            //     animation: line_left 3s linear infinite 
-            //     transition: 1s
-            //     animation-delay: 4.5s
+            &:nth-child(1)
+                top: 0
+                left: -100%
+                width: 100%
+                height: 1px
+                background: linear-gradient(90deg,transparent,#fff) 
+                animation: line_top 3s linear infinite 
+            &:nth-child(3)
+                bottom: 0
+                right: -100%
+                width: 100%
+                height: 1px
+                background: linear-gradient(270deg,transparent,#fff) 
+                animation: line_bottom 3s linear infinite 
+                animation-delay: 3s
+            &:nth-child(2)
+                top: -100%
+                right: 0
+                width: 1px
+                height: 100%
+                background: linear-gradient(180deg,transparent,#fff) 
+                animation: line_right 3s linear infinite 
+                animation-delay: 1.5s
+            &:nth-child(4)
+                bottom: -100%
+                left: 0
+                width: 1px
+                height: 100%
+                background: linear-gradient(360deg,transparent,#fff) 
+                animation: line_left 3s linear infinite 
+                animation-delay: 4.5s
     .stars
       display: flex
       position: absolute
@@ -462,7 +384,7 @@ header
         background: linear-gradient(180deg,transparent,#FFF)
         display: inline-block
         height: gem(160)
-        width: gem(1)
+        width: 1px
         opacity: 0.5
 
     .ensuring_star2
@@ -482,7 +404,7 @@ header
         background: rgb(246,249,250)
         background: linear-gradient(270deg,transparent,#FFF)
         display: inline-block
-        height: gem(1)
+        height: 1px
         width: gem(188)
         opacity: 0.5
   &-right
@@ -534,17 +456,17 @@ header
       right: gem(80)
       animation: circle_rotate 10s linear infinite
   &::after
+    content: ''
+    display: block
     position: absolute
     right: 0
     left: gem(800)
-    content: ''
     top: gem(-100)
     bottom: 0
     background: rgb(246,249,250)
     background: linear-gradient(360deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
-    display: inline-block
     height: gem(803)
-    width: gem(1)
+    width: 1px
     opacity: 0.5
 
 @keyframes circle_rotate
@@ -594,7 +516,7 @@ header
     background: rgb(246,249,250)
     background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
     display: inline-block
-    height: gem(1)
+    height: 1px
     opacity: 0.5
   .planet
     display: flex
@@ -629,7 +551,7 @@ header
           background: rgb(246,249,250)
           background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
           display: inline-block
-          height: gem(1)
+          height: 1px
           opacity: 0.5
         h4
           width: gem(1037)
@@ -658,7 +580,7 @@ header
       background: rgb(246,249,250)
       background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
       display: inline-block
-      height: gem(1)
+      height: 1px
       opacity: 0.5
       
 .footer_menu
@@ -670,7 +592,7 @@ header
   justify-content: space-between
   &::after
     content: ""
-    height: gem(1)
+    height: 1px
     width: gem(1472)
     display: flex
     position: absolute

@@ -1,0 +1,76 @@
+header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    position: fixed
+    width: 100vw
+    z-index: 5
+    .top_menu
+        display: flex
+        margin: gem(46) gem(0) gem(38)
+        a
+          margin: gem(0) gem(38)
+          position: relative
+          transform: translate(0px, 0px)
+          opacity: 1
+          visibility: inherit
+          &::after
+            content: ""
+            display: flex
+            background: #fff
+            bottom: -2px
+            height: 1px
+            left: 0
+            mix-blend-mode: difference
+            opacity: 1
+            position: absolute
+            transform-origin: right
+            transform: scaleX(0)
+            transition: transform 0.3s ease-out
+            width: 100%
+          &:hover
+            &::after
+              transform: scaleX(1)
+              transform-origin: left
+    .language
+        display: flex
+        margin: gem(46) gem(47) gem(38)
+        a
+            margin: gem(0) gem(16)
+            position: relative
+            transform: translate(0px, 0px)
+            opacity: 1
+            visibility: inherit
+            &::after
+              content: ""
+              display: flex
+              background: #fff
+              bottom: -2px
+              height: 1px
+              left: 0
+              mix-blend-mode: difference
+              opacity: 1
+              position: absolute
+              transform-origin: right
+              transform: scaleX(0)
+              transition: transform 0.3s ease-out
+              width: 100%
+            &:hover
+              &::after
+                transform: scaleX(1)
+                transform-origin: left
+    .logo
+        margin-left: gem(65)
+        a 
+          img
+            width: gem(155)
+    &::after
+        content: ""
+        height: gem(1)
+        width: gem(1472)
+        display: flex
+        position: absolute
+        top: gem(97)
+        background-color: #fff
+        margin-left: gem(64)
+        opacity: 0.3
