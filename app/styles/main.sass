@@ -481,6 +481,13 @@ header
       width: gem(200)
       top: gem(384)
       right: gem(80)
+      animation: circle_rotate 10s linear infinite
+@keyframes circle_rotate
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
 
 .cross_chain
   &-run_title
@@ -523,8 +530,8 @@ header
     margin-left: gem(64)
   .planet
     display: flex
-    position: absolute
-    top: gem(611)
+    position: relative
+    top: gem(41)
     left: gem(802)
 
 .faq
@@ -535,7 +542,24 @@ header
     position: absolute
     top: gem(143)
     right: gem(55)
-
+  .accordion 
+    &-item
+      &-header
+        display: flex
+        align-items: center
+        position: relative
+        cursor: pointer
+        // -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(#00abeb), to(#fff), color-stop(0.5, #fff), color-stop(0.5, #66cc00)) 21 30 30 21 repeat repeat
+        h4
+          width: gem(1037)
+          margin-left: gem(93)
+          padding: gem(32) gem(0) gem(36) gem(0)
+      &-body
+        max-height: 0
+        overflow: hidden
+        transition: max-height 0.2s ease-out
+        p 
+          margin-left: gem(93)
 .footer_menu
   background: #03001B
   // padding-top: gem(96)
@@ -603,8 +627,10 @@ header
 .ball 
   border-radius: 50%
   position: absolute
-  transform: translate(-50%, -50%)
+  transform: translate(100px, 50%)
   background: #ffffff
+  top: gem(-15)
+  left: gem(-15)
 
 #ball1 
   width: 26px
@@ -668,19 +694,7 @@ header
   height: 1.3px
 ///////////////////////////////
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat')
 
 
-.accordion 
-  &-item
-    &-header
-      display: flex
-      align-items: center
-      position: relative
-      cursor: pointer
-    &-body
-      max-height: 0
-      overflow: hidden
-      transition: max-height 0.2s ease-out
 
   
