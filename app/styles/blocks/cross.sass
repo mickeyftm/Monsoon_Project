@@ -1,0 +1,50 @@
+.cross
+    .marquee 
+        display: block
+        width: 100%
+        white-space: nowrap
+        overflow: hidden
+        margin-bottom: gem(95)
+        p
+            display: inline-block
+            padding-left: 100%
+            -webkit-animation: scroll 15s infinite linear
+            -moz-animation: scroll 15s infinite linear
+            animation: scroll 15s infinite linear
+    &-content
+        display: flex
+        flex-direction: row
+        &-left
+            display: flex
+            position: relative
+            margin-left: gem(86)
+            img 
+                width: gem(714)
+                height: gem(227)
+        &-right
+            display: flex
+            p
+                margin: gem(20) gem(0) gem(151) gem(200)
+                max-width: gem(513)
+                .glitch
+                    font-weight: 800
+    .planet
+        display: flex
+        position: relative
+        top: gem(41)
+        justify-content: center
+        img
+            width: gem(106)
+        &::after
+            position: absolute
+            right: 0
+            left: 0
+            content: ''
+            bottom: gem(40)
+            width: gem(1472)
+            margin-left: gem(64)
+            background: rgb(246,249,250)
+            background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
+            display: block
+            height: 1px
+            opacity: 0.5

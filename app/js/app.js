@@ -168,11 +168,44 @@ accordionItemHeaders.forEach(accordionItemHeader => {
 	});
 });
 
-let fillTest = document.getElementById('fill_stars')
-let bb = document.querySelectorAll("accordion-item-header")
-bb.onclick = function() {
-    fillTest.setAttribute("fill: red;");
-  };
+// let fillTest = document.getElementById('fill_stars')
+// let bb = document.querySelectorAll("accordion-item-header")
+// console.log(fillTest,bb)
+
+// bb.onclick = function() {
+//     fillTest.setAttribute("fill: red;");
+// 	console.log('_______________')
+//   };
+
+let switchButton = document.querySelectorAll('.buttons_left_right') 
+let slideContent = document.querySelectorAll('.slide_parent_teacher')
+
+let accordions = document.querySelectorAll(".fill_stars")
+
+ for(let i = 0; i < 8; i++) {
+    accordionItemHeaders[i].addEventListener('click', () => {
+        for(let i = 0; i < 8; i++) {
+            accordions[i].setAttribute('fill', '#fff')
+        }
+    })
+ }
+
+// let accordions = document.querySelectorAll(".fill_stars")
 
 
+// accordionItemHeaders.forEach(accordionItemHeader => {
+// 	accordionItemHeader.addEventListener("click", event => {
+// 		accordionItemHeader
+// 	});
+// });
+
+
+//   let fillTest = document.getElementById('fill_stars')
+//   let testaccord = document.getElementById('test_accord')
+//   let accordion = document.querySelectorAll(".accordion-item-header")
+  
+//   test_accord.onclick = function() {
+// 	  console.log('======')
+// 	  fillTest.setAttribute('fill', '#fff');
+// 	};
 

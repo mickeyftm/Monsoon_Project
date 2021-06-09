@@ -1,0 +1,114 @@
+.enabling
+    display: flex
+    flex-direction: row
+    margin-top: gem(97)
+    position: relative
+    &-right
+        display: flex
+        position: relative
+        width: gem(800)
+        .cloud
+            display: flex
+            position: absolute
+            left: gem(70)
+            top: gem(200)
+            width: gem(529)
+            height: gem(264)
+    &-left
+        display: flex
+        flex-direction: column
+        margin-top: gem(133)
+        margin-left: gem(168)
+        h2
+            margin-bottom: gem(2)
+            &:nth-child(2)
+                margin-left: gem(183)
+                margin-bottom: gem(37)
+        p
+            width: gem(400)
+            margin-left: gem(340)
+            margin-bottom: gem(65)
+        img
+            width: gem(112)
+            display: flex
+            position: absolute
+            top: gem(275)
+            left: gem(172)
+            font-size: gem(20)
+            line-height: gem(32)
+            animation: circle_rotate 10s linear infinite
+    .line
+        width: 1px
+        height: gem(742)
+        display: flex
+        position: absolute
+        left: gem(64)
+        background: linear-gradient(360deg,transparent,#FFF)
+        opacity: 0.6
+        &:nth-last-child(3)
+            right: gem(64)
+            left: inherit
+        &-go
+            position: absolute
+            display: block
+            top: gem(97)
+            width: 1px
+            height: gem(32)
+            background: linear-gradient(180deg,transparent,#FFF) 
+            animation: line_begin 5s linear infinite 
+            transition: 1s
+            &:nth-last-child(1)
+                animation-delay: 2s
+
+.triangle
+    display: flex
+    position: absolute
+    flex-direction: column
+    align-items: center
+    left: gem(53)
+    top: gem(748)
+    img
+        width: gem(24)
+        opacity: 0.3
+        animation: triange_down 1.3s linear infinite 
+        &:nth-child(2)
+            width: gem(20)
+            opacity: .3
+            animation-delay: 1.6s
+        &:nth-child(3)   
+            width: gem(14)
+            opacity: .3
+            animation-delay: 1.9s
+    &:nth-last-child(1)
+        right: gem(53)
+        left: inherit
+
+@media only screen and (max-width : 1024px)
+    .enabling
+        flex-direction: column-reverse
+        &-right
+            margin-top: gem(105)
+            display: none
+            .cloud
+                left: 0
+                top: 0
+        &-left
+            margin-left: gem(97)
+            h2
+                width: gem(580)
+                &:nth-child(2)
+                    margin-left: gem(150)
+                    margin-bottom: gem(32)
+            p
+                width: gem(358)
+                margin-left: gem(208)
+            img
+                top: gem(223)
+                left: gem(100)
+        .line
+            left: gem(32)
+            &:nth-last-child(3)
+                right: gem(32)
+
+
+

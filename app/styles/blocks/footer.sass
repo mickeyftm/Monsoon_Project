@@ -1,0 +1,69 @@
+.footer-menu
+    background: #03001B
+    padding: gem(96) 0 gem(45) 0
+    display: flex
+    position: relative
+    flex-direction: row
+    justify-content: space-between
+    &::after
+        content: ""
+        height: 1px
+        width: gem(1472)
+        display: flex
+        position: absolute
+        background-color: #fff
+        margin-left: gem(64)
+        opacity: 0.3
+        top: gem(48)
+    &-left
+        display: flex
+        flex-direction: row
+        align-items: center
+        margin: gem(0) gem(0) gem(0) gem(64)
+        p
+            margin-right: gem(54)
+        &-icon
+            display: flex
+            a
+                display: flex
+                margin-right: gem(14)
+                transition: all .3s ease
+                &:hover
+                    opacity: 0.5
+    &-center
+        display: flex
+        position: relative
+        align-items: center
+        // .arrow_top
+        //   display: flex
+        //   position: absolute
+        //   left: gem(36)
+    &-right
+        display: flex
+        position: relative
+        align-items: center
+        margin-right: gem(40)
+        a
+            position: relative
+            margin: auto gem(24)
+            transform: translate(0px, 0px)
+            opacity: 1
+            visibility: inherit
+            &::after
+                content: ""
+                display: flex
+                background: #fff
+                bottom: -2px
+                height: 1px
+                left: 0
+                mix-blend-mode: difference
+                opacity: 1
+                position: absolute
+                transform-origin: right
+                transform: scaleX(0)
+                transition: transform 0.3s ease-out
+                width: 100%
+            &:hover
+                &::after
+                    transform: scaleX(1)
+                    transform-origin: left  

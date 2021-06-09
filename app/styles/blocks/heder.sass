@@ -61,9 +61,10 @@ header
                 transform-origin: left
     .logo
         margin-left: gem(65)
+        display: flex
+        align-items: center
         a 
-          img
-            width: gem(155)
+          display: flex
     &::after
         content: ""
         height: gem(1)
@@ -74,3 +75,15 @@ header
         background-color: #fff
         margin-left: gem(64)
         opacity: 0.3
+@media only screen and (max-width : 1024px)
+    header
+        .top_menu
+            display: none
+        .language
+            display: none
+        .logo
+            margin-left: gem(32)
+            margin-top: gem(35)
+        &::after
+            margin-left: gem(32)
+            width: gem(704)

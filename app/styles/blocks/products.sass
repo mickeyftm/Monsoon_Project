@@ -1,0 +1,56 @@
+.products
+    display: flex
+    position: relative
+    flex-direction: row
+    margin-top: gem(90)
+    &-left
+        display: flex
+        position: relative
+        margin-left: gem(114)
+        flex-direction: column
+        width: 50%
+        &-content
+            img
+                width: gem(316)
+            h3
+                opacity: 0.3
+                margin-left: gem(46)
+            h4
+                margin: gem(0) gem(0) gem(8) gem(46)
+            p
+                width: gem(540)
+                margin: gem(0) gem(0) gem(86) gem(46)
+    &-right
+        display: flex
+        position: relative
+        width: 50%
+        h2
+            font-size: gem(120)
+            line-height: gem(132)
+            margin-left: gem(107)
+        .smile
+            display: flex
+            position: absolute
+            width: gem(61)
+            top: gem(454)
+            right: gem(150)
+        .smile_rotate
+            display: flex
+            position: absolute
+            width: gem(200)
+            top: gem(384)
+            right: gem(80)
+            animation: circle_rotate 10s linear infinite
+    &::after
+        content: ''
+        display: block
+        position: absolute
+        right: 0
+        left: gem(800)
+        top: gem(-100)
+        bottom: 0
+        background: rgb(246,249,250)
+        background: linear-gradient(360deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
+        height: gem(803)
+        width: 1px
+        opacity: 0.5

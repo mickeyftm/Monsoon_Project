@@ -1,0 +1,58 @@
+.faq
+    h2
+        margin: gem(162) gem(0) gem(98) gem(96)
+    &-stars
+        display: flex
+        position: absolute
+        top: gem(143)
+        right: gem(55)
+    .accordion 
+        margin-bottom: gem(200)
+        margin-left: gem(64)
+        width: gem(1472)
+        &-item
+            &-header
+                display: flex
+                align-items: center
+                position: relative
+                cursor: pointer
+                &::after
+                    position: absolute
+                    right: 0
+                    left: 0
+                    content: ''
+                    top: 0
+                    background: rgb(246,249,250)
+                    background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
+                    display: inline-block
+                    height: 1px
+                    opacity: 0.5
+                h4
+                    width: gem(1037)
+                    margin-left: gem(29)
+                    padding: gem(32) gem(0) gem(36) gem(0)
+                .stars_open
+                    display: flex
+                    position: relative
+                    right: gem(-260)
+            &-body
+                max-height: 0
+                overflow: hidden
+                transition: max-height 0.3s ease-out
+                p 
+                    margin: gem(0) gem(0) gem(30) gem(29)
+                    width: gem(1037)
+                    a 
+                        color: #34F1BB
+                        text-decoration: underline
+        &::after
+            position: absolute
+            right: 0
+            left: 0
+            content: ''
+            bottom: gem(200)
+            background: rgb(246,249,250)
+            background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
+            display: inline-block
+            height: 1px
+            opacity: 0.5

@@ -1,0 +1,66 @@
+@keyframes line_begin
+    0%
+        top: gem(97)
+    100%
+        top: gem(740) 
+@keyframes scroll 
+    0% 
+        transform: translate(0, 0)
+    100% 
+        transform: translate(-100%, 0)  
+@keyframes line_top
+    0%
+        left: -100%
+    100%
+        left: 100%
+
+@keyframes line_bottom
+    0%
+        right: -100%
+    100%
+        right: 100%
+
+@keyframes line_right
+    0%
+        top: -100%
+    100%
+        top: 100%
+@keyframes line_left
+    0%
+        bottom: -100%
+    100%
+        bottom: 100%
+@keyframes circle_rotate
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+// GLITCH ////////////////////////
+.glitch
+  animation: glitch 1.5s infinite
+
+@keyframes glitch
+  from
+    text-shadow: 0 0px 0px white
+  20%
+    text-shadow: 2px -2px 0px red
+  40%
+    text-shadow: -2px 2px 0px green
+  60%
+    text-shadow: 2px 2px 0px blue
+  80%
+    text-shadow: -2px -2px 0px green
+  to
+    text-shadow: 0px 0px 0px white
+
+@keyframes rotation 
+    from 
+      transform: rotate(0deg)
+    to 
+      transform: rotate(359deg)
+
+@keyframes triange_down
+    0%
+        opacity: 0.3
+    100%
+        opacity: 1

@@ -1,0 +1,49 @@
+.ensuring
+    display: flex
+    position: relative
+    flex-direction: row
+    &-left
+        h2
+            margin: gem(136) gem(0) gem(49) gem(160)
+        p
+            margin: gem(0) gem(0) gem(63) gem(256)
+            width: gem(530)
+            .glitch
+                font-weight: 800
+            &:nth-child(3)
+                margin-left: gem(480)
+        &-star
+            display: flex
+            position: absolute
+            top: gem(263)
+            left: gem(160)
+            img
+                width: gem(64)
+            &::after
+                content: ''
+                display: block
+                position: absolute
+                right: 0
+                left: gem(31)
+                top: gem(59)
+                bottom: 0
+                background: rgb(246,249,250)
+                background: linear-gradient(180deg,transparent,#FFF)
+                height: gem(160)
+                width: 1px
+                opacity: 0.5
+            &:nth-last-child(1)
+                top: gem(450)
+                left: gem(370)
+                img
+                    width: gem(74)
+                &::after
+                    left: gem(-178)
+                    top: gem(31)
+                    background: linear-gradient(270deg,transparent,#FFF)
+                    height: 1px
+                    width: gem(188)
+    &-right
+        img
+            display: flex
+            width: gem(620)
