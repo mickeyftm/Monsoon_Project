@@ -19,6 +19,7 @@
 		"browser-sync": "^2.26.14",
 		"browsersync-ssi": "^0.2.4",
 		"del": "^6.0.0",
+		"gsap": "^3.6.1",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^7.0.1",
 		"gulp-clean-css": "^4.3.0",
@@ -35,7 +36,5 @@
 		"jquery": "^3.6.0",
 		"webpack-stream": "^6.1.2"
 	},
-	"dependencies": {
-		"gsap": "^3.6.1"
-	}
+	"dependencies": {}
 }

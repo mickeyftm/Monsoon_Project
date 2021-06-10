@@ -23,6 +23,7 @@ body
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
     text-rendering: optimizeLegibility
+    cursor: none !important
 
 a
     text-decoration: none
@@ -61,6 +62,23 @@ button[type='submit']
 .stroke-text
     -webkit-text-fill-color: transparent
     -webkit-text-stroke: 1px white
+
+@media (any-pointer: fine)
+	.cursor
+		position: fixed
+		top: 0
+		left: 0
+		display: block
+		pointer-events: none
+	
+	.cursor__inner
+		fill: var(--cursor-fill)
+		stroke: var(--cursor-stroke)
+		stroke-width: var(--cursor-stroke-width)
+	
+	.credits
+		padding-left: 25vw
+	
 
 
 // .beta_circle

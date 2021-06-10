@@ -46,9 +46,16 @@
         left: gem(64)
         background: linear-gradient(360deg,transparent,#FFF)
         opacity: 0.6
+        overflow: hidden
         &:nth-last-child(3)
             right: gem(64)
             left: inherit
+        // &::after
+            // content: ''
+            // display: block
+            // width: 100%
+            // height: gem(100)
+            // background: linear-gradient(360deg,transparent,#FFF)
         &-go
             position: absolute
             display: block
@@ -71,15 +78,15 @@
     img
         width: gem(24)
         opacity: 0.3
-        animation: triange_down 1.3s linear infinite 
+        animation: triange_down 1.5s linear infinite 
         &:nth-child(2)
             width: gem(20)
             opacity: .3
-            animation-delay: 1.6s
+            animation-delay: 0.495s
         &:nth-child(3)   
             width: gem(14)
             opacity: .3
-            animation-delay: 1.9s
+            animation-delay: 0.990s
     &:nth-last-child(1)
         right: gem(53)
         left: inherit

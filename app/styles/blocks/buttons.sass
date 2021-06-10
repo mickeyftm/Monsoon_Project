@@ -11,7 +11,7 @@
         border-radius: gem(100)
         justify-content: center
         align-items: center
-        transition: all 1s ease
+        // transition: all 1s ease
         &::after, &::before
             content: ""
             display: flex
@@ -22,10 +22,11 @@
             left: gem(-1)
             top: gem(-0.1)
             opacity: 1
-            transition: all 1s ease
+            transition: all .3s ease
             background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #2B7AEF 0%, #2BBEEF 57.34%, #2B7AEF 100%)
         &::before
             opacity: 0
+            transition: all 0.3s ease
             background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #2B7AEF 0%, #34F1BB 57.34%, #2B7AEF 100%)
         &:hover
             &::after

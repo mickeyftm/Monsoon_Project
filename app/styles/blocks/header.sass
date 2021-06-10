@@ -3,8 +3,10 @@ header
     flex-direction: row
     justify-content: space-between
     position: fixed
-    width: 100vw
+    flex-wrap: wrap
+    width: 100%
     z-index: 5
+    padding: 0 gem(64)
     .top_menu
         display: flex
         margin: gem(46) gem(0) gem(38)
@@ -34,7 +36,7 @@ header
               transform-origin: left
     .language
         display: flex
-        margin: gem(46) gem(47) gem(38)
+        margin: gem(46) gem(0) gem(38) gem(47)
         a
             margin: gem(0) gem(16)
             position: relative
@@ -60,20 +62,20 @@ header
                 transform: scaleX(1)
                 transform-origin: left
     .logo
-        margin-left: gem(65)
+        // margin-left: gem(65)
         display: flex
         align-items: center
         a 
           display: flex
     &::after
         content: ""
-        height: gem(1)
-        width: gem(1472)
+        height: 1px
+        width: 100%
         display: flex
-        position: absolute
-        top: gem(97)
+        position: relative
         background-color: #fff
-        margin-left: gem(64)
+        // margin-left: gem(64)
+        // margin-right: gem(64)
         opacity: 0.3
 @media only screen and (max-width : 1024px)
     header

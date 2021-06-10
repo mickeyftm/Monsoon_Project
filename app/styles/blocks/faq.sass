@@ -33,12 +33,55 @@
                     padding: gem(32) gem(0) gem(36) gem(0)
                 .stars_open
                     display: flex
+                    justify-content: center
+                    align-items: center
                     position: relative
                     right: gem(-260)
+                    &.active
+                        svg
+                            path:nth-child(2)
+                                opacity: 1
+                        span
+                            transform: rotate(45deg)
+                            background: #131533
+                            &:last-child
+                                transform: rotate(135deg)
+                            
+                    &:hover
+                        svg
+                            path:nth-child(2)
+                                opacity: 1
+                        span
+                            background: #131533
+                    svg
+                        width: gem(58)
+                        height: gem(58)
+                        transition: all 0.3s ease
+                        path
+                            width: 100%
+                            height: 100%
+                            transition: all 0.3s ease
+                            &:nth-child(2)
+                                fill: #fff
+                                opacity: 0
+                    span
+                        width: gem(12)
+                        height: gem(1)
+                        background: #fff
+                        position: absolute
+                        z-index: 2
+                        transition: all 0.3s ease
+                        &:last-child
+                            transform: rotate(90deg)
+
+
+            
+            
             &-body
-                max-height: 0
+                // max-height: 0
+                height: 0
                 overflow: hidden
-                transition: max-height 0.3s ease-out
+                // transition: max-height 0.3s ease-out
                 p 
                     margin: gem(0) gem(0) gem(30) gem(29)
                     width: gem(1037)
