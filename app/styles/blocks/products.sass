@@ -9,7 +9,12 @@
         margin-left: gem(114)
         flex-direction: column
         width: 50%
+        overflow: scroll
+        height: gem(600)
         &-content
+            display: flex
+            position: relative
+            flex-direction: column
             img
                 width: gem(316)
             h3
@@ -54,3 +59,41 @@
         height: gem(803)
         width: 1px
         opacity: 0.5
+
+@media only screen and (max-width : 1024px)
+    .products
+        flex-direction: column-reverse
+        margin-top: gem(0)
+        margin-bottom: gem(700)
+        &-right
+            h2 
+                margin-left: gem(75)
+                font-size: gem(72)
+                line-height: gem(78)
+                margin-bottom: gem(27)
+                span
+                    margin-left: gem(80)
+            .smile
+                top: gem(1354)
+                right: gem(-200)
+            .smile_rotate
+                top: gem(1284)
+                right: gem(-270)
+            
+        &-left
+            margin-left: gem(23)
+            overflow: inherit
+            &-content
+                h3
+                    margin-bottom: gem(20)
+                p
+                    width: gem(290)
+                    font-size: gem(16)
+                    line-height: gem(30)
+                &:nth-child(2)
+                    display: flex
+                    position: absolute
+                    left: gem(370)
+                    top: gem(188)
+                    
+            

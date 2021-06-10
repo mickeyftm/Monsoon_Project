@@ -3,6 +3,9 @@
     position: relative
     flex-direction: row
     &-left
+        display: flex
+        position: relative
+        flex-direction: column
         h2
             margin: gem(136) gem(0) gem(49) gem(160)
         p
@@ -47,3 +50,33 @@
         img
             display: flex
             width: gem(620)
+@media only screen and (max-width : 1024px)
+    .ensuring
+        flex-direction: column-reverse
+        &-right
+            img
+                width: gem(339)
+                transform: rotate(270deg)
+                position: relative
+                top: gem(-140)
+                left: gem(45)
+        &-left
+            top: gem(-130)
+            h2
+                margin: gem(0) gem(0) gem(64) gem(50)
+            p
+                margin: gem(0) gem(0) gem(63) gem(120)
+                width: gem(420)
+                &:nth-child(3)
+                    margin-left: gem(260)
+            &-star
+                top: gem(120)
+                left: gem(30)
+                &::after
+                    height: gem(197)
+                &:nth-last-child(1)
+                    top: gem(345)
+                    left: gem(155)
+                    &::after
+                        left: gem(-94)
+                        width: gem(120)

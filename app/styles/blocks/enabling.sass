@@ -19,6 +19,7 @@
         flex-direction: column
         margin-top: gem(133)
         margin-left: gem(168)
+        position: relative
         h2
             margin-bottom: gem(2)
             &:nth-child(2)
@@ -32,8 +33,8 @@
             width: gem(112)
             display: flex
             position: absolute
-            top: gem(275)
-            left: gem(172)
+            top: gem(120)
+            left: gem(30)
             font-size: gem(20)
             line-height: gem(32)
             animation: circle_rotate 10s linear infinite
@@ -87,11 +88,11 @@
     .enabling
         flex-direction: column-reverse
         &-right
-            margin-top: gem(105)
-            display: none
+            // margin-top: gem(105)
+            height: gem(400)
             .cloud
-                left: 0
-                top: 0
+                left: gem(128)
+                top: gem(105)
         &-left
             margin-left: gem(97)
             h2
@@ -103,12 +104,17 @@
                 width: gem(358)
                 margin-left: gem(208)
             img
-                top: gem(223)
-                left: gem(100)
+                top: gem(106)
+                left: gem(8)
         .line
             left: gem(32)
+            top: gem(-13)
             &:nth-last-child(3)
                 right: gem(32)
+    .triangle
+        left: gem(22)
+        &:nth-last-child(1)
+            right: gem(22)
 
 
 
