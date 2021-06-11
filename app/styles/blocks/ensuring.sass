@@ -35,7 +35,8 @@
                 height: gem(160)
                 width: 1px
                 opacity: 0.5
-            &:nth-last-child(1)
+                overflow: hidden
+            &:nth-last-child(3)
                 top: gem(450)
                 left: gem(370)
                 img
@@ -46,10 +47,41 @@
                     background: linear-gradient(270deg,transparent,#FFF)
                     height: 1px
                     width: gem(188)
+        &-line
+            display: flex
+            position: absolute
+            top: gem(330)
+            width: 1px
+            left: gem(191)
+            height: gem(32)
+            background: linear-gradient(180deg,transparent,#FFF) 
+            animation: ens_line 1.5s linear infinite 
+            &:nth-last-child(1)
+                display: flex
+                position: absolute
+                top: gem(481)
+                width: gem(32)
+                left: gem(191)
+                height: 1px
+                background: linear-gradient(90deg,transparent,#FFF) 
+                animation: ens_line_next 1.5s linear infinite 
+                animation-delay: 3s
     &-right
         img
             display: flex
             width: gem(620)
+@keyframes ens_line
+    0%
+        top: gem(330)
+    100%
+        top: gem(450) 
+        opacity: 0
+@keyframes ens_line_next
+    0%
+        left: gem(191)
+    100%
+        left: gem(340) 
+        opacity: 0
 @media only screen and (max-width : 1024px)
     .ensuring
         flex-direction: column-reverse

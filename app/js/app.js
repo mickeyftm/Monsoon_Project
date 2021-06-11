@@ -14,16 +14,52 @@ document.addEventListener('DOMContentLoaded', () => {
 	//buttons
 	const cursor = new Cursor(document.querySelector('.cursor'));
 	const button = new ButtonCtrl(document.querySelector('.binance'));
+	const arrow = document.querySelector('.footer-menu-center');
 
 	button.on('enter', () => cursor.enter());
 	button.on('leave', () => cursor.leave());
 
 
-	//custom cursor
-	let body = document.querySelector('body');
-	body.style.position = 'relative';
-	let valueX;
-	let valueY;
+        let mouseX = 0
+        let mouseY = 0
+        //let intv = 0
+
+        window.addEventListener('mousemove', (event) => {
+            mouseY = (event.clientY)
+            mouseX = (event.clientX)
+
+            arrow.style.top = mouseY - 45;
+            arrow.style.left = mouseX - 45;
+
+            mouseY = (event.clientY / 16) - (45 / 16) + 'px'
+            mouseX = (event.clientX / 16) - (45 / 16) + 'px'
+            // console.log(arrow)
+        })
+		console.log(arrow)
+        
+        const mouseMove = () => {
+            //intv += 1
+            
+            circle.style.top = mouseY + 'px'
+            circle.style.left = mouseX + 'px'
+
+            //circleSvg.style.opacity = 1 + Math.sin(intv * .04)
+            //console.log(Math.sin(intv * .04))
+
+            window.requestAnimationFrame(mouseMove)
+        }
+
+        mouseMove()
+
+
+document.getElementById('try_circle').addEventListener("mouseover", function(){circle.style.opacity = "1";this.addEventListener("mouseout", function(){circle.style.opacity = "0";});
+});
+
+	// //custom cursor
+	// let body = document.querySelector('body');
+	// body.style.position = 'relative';
+	// let valueX;
+	// let valueY;
 	// document.onmousemove = function (event) {
 	// 	valueX = event.clientX;
 	// 	valueY = event.clientY;
