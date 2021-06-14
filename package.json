@@ -36,5 +36,7 @@
 		"jquery": "^3.6.0",
 		"webpack-stream": "^6.1.2"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"jquery.marquee": "^1.6.0"
+	}
 }

@@ -4,44 +4,48 @@
     margin-bottom: gem(351)
     a
         display: flex
-        position: absolute
+        position: relative
         width: gem(345)
         height: gem(87)
-        border: 1px solid white
+        border-top: 1px solid white
+        border-right: 1px solid white
         border-radius: gem(100)
         justify-content: center
         align-items: center
+        overflow: hidden
         // transition: all 1s ease
-        &::after, &::before
+        &::after, .background
             content: ""
             display: flex
             position: absolute
-            width: gem(345)
+            width: gem(347)
             height: gem(87)
             border-radius: gem(100)
-            left: gem(-1)
-            top: gem(-0.1)
+            // left: gem(-1)
+            top: gem(0.1)
             opacity: 1
-            transition: all .3s ease
+            // transition: all .3s ease
             background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #2B7AEF 0%, #2BBEEF 57.34%, #2B7AEF 100%)
-        &::before
-            opacity: 0
-            transition: all 0.3s ease
-            background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #2B7AEF 0%, #34F1BB 57.34%, #2B7AEF 100%)
-        &:hover
-            &::after
-                opacity: 0
-            &::before
-                opacity: 1
-        span 
+            z-index: 1
+        .background
+            opacity: 1
+            width: gem(350)
+            height: gem(350)
+            border-radius: 100%
             z-index: 2
+            // transition: all 0.3s ease
+            background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #FF587D 0%, #FFAEAE 57.34%, #FF90BA 100%)
+            top: 100%
+        
+        span 
+            z-index: 3
         &:nth-child(2)
-            left: gem(360)
+            margin-left: gem(14)
             &::after
                 background: linear-gradient(180deg, #ffffff00 0%, #ffffff1a 100%)
                 backdrop-filter: blur(25px)
-            &::before
-                background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #FF587D 0%, #FFAEAE 57.34%, #FF90BA 100%)
+            .background
+                background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #2B7AEF 0%, #2BBEEF 57.34%, #2B7AEF 100%)
 
 @media only screen and (max-width : 1024px)
     .buttons

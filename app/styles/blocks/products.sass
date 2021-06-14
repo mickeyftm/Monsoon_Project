@@ -1,8 +1,10 @@
 .products
     display: flex
+    align-items: flex-start
     position: relative
     flex-direction: row
-    margin-top: gem(90)
+    padding-top: gem(90)
+    height: auto
     &-left
         display: flex
         position: relative
@@ -10,7 +12,7 @@
         flex-direction: column
         width: 50%
         overflow: scroll
-        height: gem(600)
+        height: auto
         &::-webkit-scrollbar 
             width: 0
         &-content
@@ -29,8 +31,20 @@
                 margin: gem(0) gem(0) gem(86) gem(46)
     &-right
         display: flex
-        position: relative
+        flex-direction: column
+        align-items: flex-start
+        position: absolute
         width: 50%
+        right: 0
+
+        &.sticky
+            position: fixed
+            top: gem(188)
+        &.bottom
+            position: absolute
+            top: unset
+            bottom: 0
+           
         h2
             font-size: gem(120)
             line-height: gem(132)
@@ -39,14 +53,23 @@
             display: flex
             position: absolute
             width: gem(61)
-            top: gem(454)
-            right: gem(150)
+            // top: gem(454)
+            // right: gem(150)
+            &-wrapper
+                position: relative
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                margin-top: gem(90)
+                align-self: flex-end
+                margin-right: gem(63)
         .smile_rotate
             display: flex
-            position: absolute
+            position: relative
             width: gem(200)
-            top: gem(384)
-            right: gem(80)
+            // top: gem(384)
+            // right: gem(80)
             animation: circle_rotate 10s linear infinite
     &::after
         content: ''
@@ -54,7 +77,7 @@
         position: absolute
         right: 0
         left: gem(800)
-        top: gem(-100)
+        top: 0
         bottom: 0
         background: rgb(246,249,250)
         background: linear-gradient(360deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
