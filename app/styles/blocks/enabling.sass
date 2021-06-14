@@ -3,17 +3,19 @@
     flex-direction: row
     margin-top: gem(97)
     position: relative
+    background-color: #131533
     &-right
         display: flex
         position: relative
         width: gem(800)
-        .cloud
-            display: flex
+        video
+            width: gem(1000)
+            height: gem(1000)
             position: absolute
-            left: gem(70)
-            top: gem(200)
-            width: gem(529)
-            height: gem(264)
+            top: gem(-150)
+            right: gem(-76)
+            mix-blend-mode: lighten
+            display: block
     &-left
         display: flex
         flex-direction: column
@@ -97,9 +99,8 @@
         &-right
             // margin-top: gem(105)
             height: gem(400)
-            .cloud
-                left: gem(128)
-                top: gem(105)
+            video
+                top: gem(-210)
         &-left
             margin-left: gem(97)
             h2
@@ -115,7 +116,7 @@
                 left: gem(8)
         .line
             left: gem(32)
-            top: gem(-13)
+            top: gem(-21)
             &:nth-last-child(3)
                 right: gem(32)
     .triangle

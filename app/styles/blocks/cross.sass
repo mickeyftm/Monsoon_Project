@@ -49,3 +49,19 @@
             display: block
             height: 1px
             opacity: 0.5
+        
+@media only screen and (max-width : 1024px)
+    .cross
+        margin-top: gem(300)
+        &-content
+            flex-direction: column
+            &-left
+                img
+                    width: gem(614)
+            &-right
+                p
+                    margin: gem(120) gem(0) gem(151) gem(75)
+        .planet
+            &::after
+                width: gem(704)
+                margin-left: gem(32)

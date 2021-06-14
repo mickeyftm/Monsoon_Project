@@ -23,7 +23,7 @@ body
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
     text-rendering: optimizeLegibility
-    cursor: none !important
+    // cursor: none !important
 
 a
     text-decoration: none
@@ -79,6 +79,100 @@ button[type='submit']
 	.credits
 		padding-left: 25vw
 	
+
+.mobile_menu
+    background: #F5FDFF
+    position: fixed
+    top: 0
+    left: -100%
+    height: 100vh
+    width: 100%
+    transition: .3s ease
+    z-index: 3
+    &.active
+        left: 0
+
+    .nav-menu_mobile
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-content: center
+        align-items: center
+        margin-top: gem(107)
+        a
+            font-size: gem(36)
+            line-height: gem(26)
+            margin-bottom: gem(48)
+            &:nth-child(1)
+                &::after
+                    content: ""
+                    position: absolute
+                    width: gem(343)
+                    height: gem(1)
+                    background-color: #A4E5F9
+                    display: block
+                    top: gem(177)
+                    left: gem(210)
+            &:nth-child(2)
+                margin-top: gem(64)
+                    
+            &:active
+                color: #12BBF0
+@media only screen and (max-width : 375px)
+    .mobile_menu
+        .nav-menu_mobile
+            a
+                &:nth-child(1)
+                    &::after
+                        left: gem(11)
+
+.bt-menu 
+  position: relative
+  display: none
+  width: gem(40)
+  height: gem(40)
+  background: #ffffff
+  border-radius: gem(40)
+  box-shadow: gem(0) gem(5) gem(20)rgba(182, 198, 214, 0.2)
+  right: gem(60)
+  &:after,
+  &:before 
+    content: ""
+  span,
+  &::after,
+  &::before 
+    backface-visibility: hidden
+    position: absolute
+    left: gem(10)
+    right: gem(10)
+    transition: .2s ease
+    border-radius: gem(7)
+  &::before 
+    top: gem(12)
+    border-top: gem(2) solid #FFC148
+  span 
+    top: gem(20)
+    border-top: gem(2) solid #B144E4
+  &::after 
+    top: gem(28)
+    border-top: gem(2) solid #12BBF0
+  &.active 
+    &::before,
+    &::after 
+      top: gem(20)
+      backface-visibility: hidden
+      transition: .3s ease
+    &::before 
+      transform: rotate(45deg)
+    span 
+      opacity: 0
+    &::after 
+      transform: rotate(-45deg)
+
+@media only screen and (max-width : 1024px)
+    .bt-menu
+        display: block
+        right: gem(16)
 
 
 // .beta_circle

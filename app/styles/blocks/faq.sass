@@ -46,7 +46,6 @@
                             background: #131533
                             &:last-child
                                 transform: rotate(135deg)
-                            
                     &:hover
                         svg
                             path:nth-child(2)
@@ -73,9 +72,6 @@
                         transition: all 0.3s ease
                         &:last-child
                             transform: rotate(90deg)
-
-
-            
             
             &-body
                 // max-height: 0
@@ -99,3 +95,24 @@
             display: inline-block
             height: 1px
             opacity: 0.5
+
+@media only screen and (max-width : 1024px)
+    .faq
+        &-stars
+            display: none
+        .accordion
+            width: gem(710)
+            margin-left: gem(32)
+            &-item
+                &-header
+                    h4
+                        font-size: gem(20)
+                        line-height: gem(27)
+                    .stars_open
+                        right: gem(40)
+                        svg 
+                            width: gem(48)
+                            height: gem(48)
+                &-body
+                    p
+                        width: gem(560)

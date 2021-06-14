@@ -69,3 +69,21 @@
                 &::after
                     transform: scaleX(1)
                     transform-origin: left  
+@media only screen and (max-width : 1024px)
+    .footer-menu
+        flex-direction: column-reverse
+        &::after
+            width: gem(704)
+            margin-left: gem(32)
+            top: gem(65)
+        &-center
+            justify-content: flex-end
+            top: gem(7)
+            right: gem(90)
+        &-right
+            top: gem(-69)
+            margin-left: gem(54)
+        &-left
+            position: relative
+            top: gem(-18)
+            

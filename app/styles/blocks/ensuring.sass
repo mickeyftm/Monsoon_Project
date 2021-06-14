@@ -106,9 +106,31 @@
                 left: gem(30)
                 &::after
                     height: gem(197)
-                &:nth-last-child(1)
+                &:nth-last-child(3)
                     top: gem(345)
                     left: gem(155)
                     &::after
                         left: gem(-94)
                         width: gem(120)
+            &-line 
+                top: gem(200)
+                left: gem(61)
+                animation: ens_line_mobile 1.5s linear infinite 
+                &:nth-last-child(1)
+                    top: gem(376)
+                    left: gem(56)
+                    animation: ens_line_next_mobile 1.5s linear infinite 
+@keyframes ens_line_mobile
+    0%
+        top: gem(200)
+    100%
+        top: gem(300)
+        opacity: 0
+    
+@keyframes ens_line_next_mobile
+    0%
+        left: gem(56)
+    100%
+        left: gem(135)
+        opacity: 0
+        
