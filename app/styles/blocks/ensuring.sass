@@ -22,66 +22,53 @@
             left: gem(160)
             img
                 width: gem(64)
-            &::after
-                content: ''
-                display: block
-                position: absolute
-                right: 0
-                left: gem(31)
-                top: gem(59)
-                bottom: 0
-                background: rgb(246,249,250)
-                background: linear-gradient(180deg,transparent,#FFF)
-                height: gem(160)
-                width: 1px
-                opacity: 0.5
-                overflow: hidden
             &:nth-last-child(3)
                 top: gem(450)
                 left: gem(370)
-                img
-                    width: gem(74)
-                &::after
-                    left: gem(-178)
-                    top: gem(31)
-                    background: linear-gradient(270deg,transparent,#FFF)
-                    height: 1px
-                    width: gem(188)
-        &-line
-            display: flex
+        .star-line
+            display: block
             position: absolute
+            right: 0
+            left: gem(192)
             top: gem(330)
+            bottom: 0
+            background: rgb(246,249,250)
+            background: linear-gradient(180deg,transparent,#FFF)
+            height: gem(147)
             width: 1px
-            left: gem(191)
-            height: gem(32)
-            background: linear-gradient(180deg,transparent,#FFF) 
-            animation: ens_line 1.5s linear infinite 
-            &:nth-last-child(1)
+            opacity: 0.7
+            overflow: hidden
+            span
                 display: flex
                 position: absolute
-                top: gem(481)
+                width: 3px
+                height: gem(32)
+                background: linear-gradient(180deg,transparent,#FFF) 
+                animation: ens_line 3s linear infinite 
+        .star-line_goriz
+            display: block
+            position: absolute
+            width: gem(188)
+            height: 1px
+            background: linear-gradient(270deg,transparent,#FFF)
+            top: gem(477)
+            left: gem(192)
+            opacity: 0.7
+            overflow: hidden
+            span
+                display: flex
+                position: absolute
                 width: gem(32)
-                left: gem(191)
                 height: 1px
                 background: linear-gradient(90deg,transparent,#FFF) 
-                animation: ens_line_next 1.5s linear infinite 
-                animation-delay: 3s
+                animation: ens_line_next 3s linear infinite 
+                animation-delay: 1.2s
+                left: -100%
+                bottom: 0
     &-right
         img
             display: flex
             width: gem(620)
-@keyframes ens_line
-    0%
-        top: gem(330)
-    100%
-        top: gem(450) 
-        opacity: 0
-@keyframes ens_line_next
-    0%
-        left: gem(191)
-    100%
-        left: gem(340) 
-        opacity: 0
 @media only screen and (max-width : 1024px)
     .ensuring
         flex-direction: column-reverse
@@ -112,14 +99,22 @@
                     &::after
                         left: gem(-94)
                         width: gem(120)
-            &-line 
-                top: gem(200)
+            .star-line
+                top: gem(178)
                 left: gem(61)
-                animation: ens_line_mobile 1.5s linear infinite 
-                &:nth-last-child(1)
-                    top: gem(376)
-                    left: gem(56)
-                    animation: ens_line_next_mobile 1.5s linear infinite 
+                height: gem(194)
+            .star-line_goriz
+                top: gem(372)
+                left: gem(61)
+                width: gem(100)
+            // &-line 
+            //     top: gem(200)
+            //     left: gem(61)
+            //     animation: ens_line_mobile 1.5s linear infinite 
+            //     &:nth-last-child(1)
+            //         top: gem(376)
+            //         left: gem(56)
+            //         animation: ens_line_next_mobile 1.5s linear infinite 
 @keyframes ens_line_mobile
     0%
         top: gem(200)

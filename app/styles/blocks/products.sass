@@ -36,7 +36,6 @@
         position: absolute
         width: 50%
         right: 0
-
         &.sticky
             position: fixed
             top: gem(188)
@@ -71,25 +70,48 @@
             // top: gem(384)
             // right: gem(80)
             animation: circle_rotate 10s linear infinite
-    &::after
-        content: ''
-        display: block
-        position: absolute
-        right: 0
-        left: gem(800)
-        top: 0
-        bottom: 0
-        background: rgb(246,249,250)
-        background: linear-gradient(360deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
-        height: gem(803)
-        width: 1px
-        opacity: 0.5
+        .center_line
+            display: block
+            position: relative
+            right: gem(800)
+            left: 0
+            top: gem(-640)
+            bottom: 0
+            background: rgb(246,249,250)
+            background: linear-gradient(360deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
+            height: gem(803)
+            width: 1px
+            opacity: 0.5
+            span
+                display: flex
+                position: absolute
+                width: 1px
+                height: gem(32)
+                background: linear-gradient(180deg,transparent,#FFF) 
+                animation: center_line 3s linear infinite 
+                &:nth-child(2)
+                    display: flex
+                    position: absolute
+                    width: 1px
+                    height: gem(32)
+                    background: linear-gradient(360deg,transparent,#FFF) 
+                    animation: center_line_second 3s linear infinite 
+@keyframes center_line
+    0%
+        top: 50%
+    100%
+        top: 100%
+
+@keyframes center_line_second
+    0%
+        top: 50%
+    100%
+        top: 0%
 
 @media only screen and (max-width : 1024px)
     .products
         flex-direction: column-reverse
         margin-top: gem(0)
-        margin-bottom: gem(700)
         &-right
             h2 
                 margin-left: gem(75)
@@ -104,7 +126,8 @@
             .smile_rotate
                 top: gem(1284)
                 right: gem(-270)
-            
+            .center_line
+                display: none
         &-left
             margin-left: gem(23)
             overflow: inherit

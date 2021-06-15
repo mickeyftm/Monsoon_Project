@@ -24,10 +24,8 @@
         margin-left: gem(168)
         position: relative
         h2
-            margin-bottom: gem(2)
-            &:nth-child(2)
-                margin-left: gem(183)
-                margin-bottom: gem(37)
+            margin-left: gem(183)
+            margin-bottom: gem(37)
         p
             width: gem(400)
             margin-left: gem(340)
@@ -106,9 +104,8 @@
             margin-left: gem(97)
             h2
                 width: gem(580)
-                &:nth-child(2)
-                    margin-left: gem(150)
-                    margin-bottom: gem(32)
+                margin-left: gem(150)
+                margin-bottom: gem(32)
             p
                 width: gem(358)
                 margin-left: gem(208)
@@ -124,6 +121,32 @@
         left: gem(22)
         &:nth-last-child(1)
             right: gem(22)
+@media only screen and (max-width : 480px)
+    .enabling
+        .line
+            display: none
+        &-right
+            height: gem(400)
+            width: gem(600)
+            video
+                width: gem(800)
+                top: gem(-270)
+                right: 0
+        &-left
+            margin-left: gem(32)
+            margin-top: gem(50)
+            h2
+                width: gem(354)
+                margin-bottom: gem(18)
+                margin-left: gem(0)
+            p
+                margin-left: gem(0)
+                margin-bottom: gem(30)
+            img
+                left: gem(290)
+                top: gem(-50)
+    .triangle
+        display: none
 
 
 

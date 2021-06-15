@@ -32,6 +32,7 @@
         position: relative
         top: gem(41)
         justify-content: center
+        overflow: hidden
         img
             width: gem(106)
         &::after
@@ -47,10 +48,41 @@
             display: block
             height: 1px
             opacity: 0.5
+        span
+            display: flex
+            position: absolute
+            width: gem(32)
+            height: 1px
+            background: linear-gradient(90deg,transparent,#FFF) 
+            top: gem(33)
+            animation: line_planet 3s linear infinite 
+            &:nth-child(2)
+                display: flex
+                position: absolute
+                width: gem(32)
+                height: 1px
+                background: linear-gradient(270deg,transparent,#FFF) 
+                top: gem(33)
+                animation: line_planet_second 3s linear infinite 
+                
+@keyframes line_planet
+    0%
+        left: 50%
+    100%
+        left: 100%
+        opacity: 0
+
+@keyframes line_planet_second
+    0%
+        left: 50%
+    100%
+        left: 0
+        opacity: 0
+        
         
 @media only screen and (max-width : 1024px)
     .cross
-        margin-top: gem(300)
+        margin-top: 0
         &-content
             flex-direction: column
             &-left
