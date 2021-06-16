@@ -82,53 +82,103 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	//product screen scrool function
-	let product = document.querySelector('.products')
-	let productRight = document.querySelector('.products-right')
-	let header = document.querySelector('header')
-	let requireOffset = header.getBoundingClientRect().height
-	let productTop
-	let productBottom
-	function productSroll() {
-		productTop = product.getBoundingClientRect().y
-		productBottom = product.getBoundingClientRect().y + product.getBoundingClientRect().height - window.innerHeight
-		// console.log(productBottom)
-		if(productTop < requireOffset && !productRight.classList.contains('sticky') && !productRight.classList.contains('bottom')) {
-			productRight.classList.add('sticky')
-			console.log('1')
-		} else if(productTop > requireOffset && productRight.classList.contains('sticky')) {
-			productRight.classList.remove('sticky')
-			console.log('2')
-		}
-
-		if(productBottom < -requireOffset && productRight.classList.contains('sticky')) {
-			productRight.classList.add('bottom')
-			productRight.classList.remove('sticky')
-			console.log(productRight.getBoundingClientRect().y + productRight.getBoundingClientRect().height - window.innerHeight)
-			console.log('3')
-		} else if (productBottom > -requireOffset && productRight.classList.contains('bottom') && !productRight.classList.contains('sticky')) {
-			productRight.classList.add('sticky')
-			productRight.classList.remove('bottom')
-			console.log('4')
-		}
-
-	}
-
-	window.addEventListener('scroll', () => {
-		productSroll()
-	})
-
-	// ScrollTrigger.create({
-	// 	trigger: '.products',
-	// 	markers: true,
-	// 	start: 'center center+=10',
-	// 	end: 'center center-=10',
-	// 	onUpdate: self => {
-	// 		// disableScroll()
+	// let product = document.querySelector('.products')
+	// let productRight = document.querySelector('.products-right')
+	// let header = document.querySelector('header')
+	// let requireOffset = header.getBoundingClientRect().height
+	// let productTop
+	// let productBottom
+	// function productSroll() {
+	// 	productTop = product.getBoundingClientRect().y
+	// 	productBottom = product.getBoundingClientRect().y + product.getBoundingClientRect().height - window.innerHeight
+	// 	// console.log(productBottom)
+	// 	if(productTop < requireOffset && !productRight.classList.contains('sticky') && !productRight.classList.contains('bottom')) {
+	// 		productRight.classList.add('sticky')
+	// 		console.log('1')
+	// 	} else if(productTop > requireOffset && productRight.classList.contains('sticky')) {
+	// 		productRight.classList.remove('sticky')
+	// 		console.log('2')
 	// 	}
+
+	// 	if(productBottom < -requireOffset && productRight.classList.contains('sticky')) {
+	// 		productRight.classList.add('bottom')
+	// 		productRight.classList.remove('sticky')
+	// 		console.log(productRight.getBoundingClientRect().y + productRight.getBoundingClientRect().height - window.innerHeight)
+	// 		console.log('3')
+	// 	} else if (productBottom > -requireOffset && productRight.classList.contains('bottom') && !productRight.classList.contains('sticky')) {
+	// 		productRight.classList.add('sticky')
+	// 		productRight.classList.remove('bottom')
+	// 		console.log('4')
+	// 	}
+
+	// }
+
+	// window.addEventListener('scroll', () => {
+	// 	productSroll()
 	// })
 
+	ScrollTrigger.create({
+		trigger: '.products',
+		start: "top top",
+  		end: "bottom bottom",
+		pin: '.products-right'
+	})
 
+	//header hide
+	function headerAnimation() {
+		
+		var doc = document.documentElement;
+		var w = window;
+	  
+		var prevScroll = w.scrollY || doc.scrollTop;
+		var curScroll;
+		var direction = 0;
+		var prevDirection = 0;
+	  
+		var header = document.querySelector('header');
+	  
+		var checkScroll = function() {
+	  
+		  /*
+		  ** Find the direction of scroll
+		  ** 0 - initial, 1 - up, 2 - down
+		  */
+	  
+		  curScroll = w.scrollY || doc.scrollTop;
+		  if (curScroll > prevScroll) { 
+			//scrolled up
+			direction = 2;
+		  }
+		  else if (curScroll < prevScroll) { 
+			//scrolled down
+			direction = 1;
+		  }
+	  
+		  if (direction !== prevDirection) {
+			toggleHeader(direction, curScroll);
+		  }
+		  
+		  prevScroll = curScroll;
+		};
+	  
+		var toggleHeader = function(direction, curScroll) {
+		  if (direction === 2 && curScroll > 52) { 
+			
+			//replace 52 with the height of your header in px
+	  
+			header.classList.add('hide');
+			prevDirection = direction;
+		  }
+		  else if (direction === 1) {
+			header.classList.remove('hide');
+			prevDirection = direction;
+		  }
+		};
+		
+		window.addEventListener('scroll', checkScroll);
+	}
 
+	headerAnimation()
 	// scrollDisable
 	// left: 37, up: 38, right: 39, down: 40,
 	// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
