@@ -20,11 +20,13 @@
             position: absolute
             top: gem(263)
             left: gem(160)
+            width: gem(64)
             img
                 width: gem(64)
             &:nth-last-child(3)
                 top: gem(450)
                 left: gem(370)
+                width: gem(74)
         .star-line
             display: block
             position: absolute
@@ -115,6 +117,32 @@
             //         top: gem(376)
             //         left: gem(56)
             //         animation: ens_line_next_mobile 1.5s linear infinite 
+@media only screen and (max-width : 480px)
+    .ensuring
+        &-right
+            img
+                top: gem(-80)
+        &-left
+            h2
+                margin: gem(0) gem(0) gem(64) gem(24)
+                width: gem(330)
+            p 
+                width: gem(250)
+                margin: gem(23) gem(0) gem(0) gem(87)
+                &:nth-child(3)
+                    margin-left: gem(87)
+                    margin-top: gem(40)
+            &-star
+                left: gem(11)
+                &:nth-last-child(3)
+                    top: gem(380)
+                    left: gem(10)
+            .star-line
+                left: gem(42)
+            .star-line_goriz
+                display: none
+                    
+
 @keyframes ens_line_mobile
     0%
         top: gem(200)

@@ -6,6 +6,7 @@
         position: absolute
         top: gem(143)
         right: gem(55)
+        width: gem(239)
     .accordion 
         margin-bottom: gem(200)
         margin-left: gem(64)
@@ -72,7 +73,6 @@
                         transition: all 0.3s ease
                         &:last-child
                             transform: rotate(90deg)
-            
             &-body
                 // max-height: 0
                 height: 0
@@ -95,7 +95,6 @@
             display: inline-block
             height: 1px
             opacity: 0.5
-
 @media only screen and (max-width : 1024px)
     .faq
         &-stars
@@ -116,3 +115,14 @@
                 &-body
                     p
                         width: gem(560)
+
+@media only screen and (max-width : 480px)
+    .faq
+        h2 
+            margin: gem(162) gem(0) gem(54) gem(30)
+            width: gem(312)
+        &-srars
+            display: flex
+        .accordion
+            width: gem(374)
+            margin-left: gem(0)

@@ -1,5 +1,5 @@
 .footer-menu
-    background: #03001B
+    background: #000000
     padding: gem(96) 0 gem(45) 0
     display: flex
     position: relative
@@ -28,6 +28,9 @@
                 display: flex
                 margin-right: gem(14)
                 transition: all .3s ease
+                svg
+                    width: gem(24)
+                    height: gem(24)
                 &:hover
                     opacity: 0.5
     &-center
@@ -35,11 +38,32 @@
         position: relative
         align-items: center
         transition: all 0.3s ease
-        .arrow_top
+        svg
             transition: all 0.3s ease
-            &:hover
+            width: gem(24)
+            height: gem(32)
+            position: relative
+            left: gem(80)
+            z-index: 2
+            &:nth-last-child(1)
+                width: gem(87)
+                height: gem(87)
+                left: gem(24)
+                opacity: 0
+                z-index: 1
+                animation: circle_rotate 10s linear infinite
+                transition: opacity .3s linear
+                text
+                    font-family: var(--sub-font)
+                    fill: #FFAEAE
+                    font-size: gem(43)
+                    line-height: 9px
+        &:hover
+            svg
                 fill: #fff
-                transition: all 0.3s ease
+                &:nth-last-child(1)
+                    opacity: 1
+                
     &-right
         display: flex
         position: relative
@@ -80,6 +104,9 @@
             justify-content: flex-end
             top: gem(7)
             right: gem(90)
+            svg
+                &:nth-last-child(1)
+                    opacity: 1
         &-right
             top: gem(-69)
             margin-left: gem(54)

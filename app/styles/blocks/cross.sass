@@ -35,6 +35,9 @@
         overflow: hidden
         img
             width: gem(106)
+            display: flex
+            position: relative
+            left: gem(16)
         &::after
             position: absolute
             right: 0
@@ -64,14 +67,13 @@
                 background: linear-gradient(270deg,transparent,#FFF) 
                 top: gem(33)
                 animation: line_planet_second 3s linear infinite 
-                
+
 @keyframes line_planet
     0%
         left: 50%
     100%
         left: 100%
         opacity: 0
-
 @keyframes line_planet_second
     0%
         left: 50%
@@ -95,3 +97,19 @@
             &::after
                 width: gem(704)
                 margin-left: gem(32)
+
+@media only screen and (max-width : 480px)
+    .cross
+        &-content
+            &-left
+                margin-left: gem(0)
+            &-right
+                p 
+                    margin: gem(67) gem(0) gem(99) gem(30)
+                    width: gem(354)
+        .planet
+            &::after
+                width: gem(366)
+                margin-left: gem(0)
+
+
