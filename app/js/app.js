@@ -1,13 +1,14 @@
 // Import jQuery module (npm i jquery)
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Cursor from './cursor';
 import ButtonCtrl from './buttonCtrl';
 import $ from 'jquery';
 import * as marquee from 'jquery.marquee'
 
 gsap.registerPlugin(ScrollTrigger)
-
+gsap.registerPlugin(ScrollToPlugin)
 window.jQuery = $
 window.$ = $
 // require('jquery.marquee');
@@ -179,6 +180,52 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	headerAnimation()
+	let animItems = document.querySelectorAll('.anim-items')
+	function inviewAnimation() {
+		for (let i = 0; i < animItems.length; i++) {
+            ScrollTrigger.create({
+                    trigger: animItems[i],
+                    start: 'top 100%',
+                    end: 'bottom 0%',
+                    // markers: true,
+                    toggleActions: 'restart reverse restart reverse',
+                    // invalidateOnRefresh: true,
+                    onEnter: () => {
+                        gsap.fromTo(animItems[i], 0.7,
+                            { autoAlpha: 0, y: '0.4rem' },
+                            { autoAlpha: 1, y: 0, ease: 'power2', delay: 0.3});
+                    },
+                    onEnterBack: () => {
+                        gsap.fromTo(animItems[i], 0.7,
+                            { autoAlpha: 0, y: '-0.4rem' },
+                            { autoAlpha: 1, y: 0, ease: 'power2', delay: 0.3});
+                    },
+                    onLeave: () => {
+                        gsap.fromTo(animItems[i], 0.7,
+                            { autoAlpha: 1, y: 0 },
+                            { autoAlpha: 0, y: '0.4rem', ease: 'power2'});
+                    },
+                    onLeaveBack: () => {
+                        gsap.fromTo(animItems[i], 0.7,
+                            { autoAlpha: 1, y: 0 },
+                            { autoAlpha: 0, y: '-0.4rem', ease: 'power2'});
+                    }
+                })
+            
+        }
+	}
+
+	inviewAnimation()
+
+
+	//to top
+	let footerHandle = document.querySelector('.footer-menu-center')
+	let body = document.querySelector('body')
+	
+		footerHandle.addEventListener('click', () => {
+			gsap.to(window, {duration: 1, scrollTo: 0, ease: 'power2'});
+		})
+	
 	// scrollDisable
 	// left: 37, up: 38, right: 39, down: 40,
 	// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
