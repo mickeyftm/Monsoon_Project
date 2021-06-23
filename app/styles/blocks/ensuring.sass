@@ -78,14 +78,10 @@
 	.ensuring
 		flex-direction: column-reverse
 		&-right
-			img
-				width: gem(339)
-				transform: rotate(270deg)
-				position: relative
-				top: gem(-140)
-				left: gem(45)
+			video
+				margin-top: gem(-350)
 		&-left
-			top: gem(-130)
+			top: gem(-230)
 			h2
 				margin: gem(0) gem(0) gem(64) gem(50)
 			p
@@ -115,12 +111,18 @@
 @media only screen and (max-width : 480px)
 	.ensuring
 		&-right
-			img
-				top: gem(-80)
+			video
+				margin-top: gem(-150)
+				width: gem(1000)
+				margin-left: gem(-280)
 		&-left
+			top: gem(-130)
 			h2
-				margin: gem(0) gem(0) gem(64) gem(24)
-				width: gem(330)
+				top: gem(-130)
+				margin: gem(0) gem(0) gem(0) gem(24)
+				width: gem(300)
+				font-size: gem(70)
+				line-height: gem(75)
 			p 
 				width: gem(250)
 				margin: gem(23) gem(0) gem(0) gem(87)
@@ -128,12 +130,14 @@
 					margin-left: gem(87)
 					margin-top: gem(40)
 			&-star
+				top: gem(160)
 				left: gem(11)
 				&:nth-last-child(3)
-					top: gem(380)
+					top: gem(410)
 					left: gem(10)
 			.star-line
-				left: gem(42)
+				top: gem(215)
+				left: gem(43)
 			.star-line_goriz
 				display: none
 					

@@ -321,40 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//window on top, after page is loaded
 	gsap.to(window, { duration: 0.1, scrollTo: 0, ease: 'power2', delay: 1 });
 
-	// let lang
-
-	// // language.js
-	// lang = {
-	// 	'en': {
-	// 		':heading': 'Javascript Language Selector',
-	// 		':h2': 'This is the sub heading',
-	// 		':first:p': "Hey! this is the javascript language selector",
-	// 		':english': 'English',
-	// 		':russian': 'RU',
-	// 		':portuguese': 'Portuguese',
-	// 		':choose': 'Choose the language',
-	// 	},
-
-	// 	// 'pt': {
-	// 	// ':heading': 'Seletor de Idiomas Javascript',
-	// 	// ':h2': 'Este é o subtítulo',
-	// 	// ':first:p': "Ei! este é o seletor de idioma javascript",
-	// 	// ':english': 'English',
-	// 	// ':urdu': 'Urdu',
-	// 	// ':portuguese': 'Portuguese',
-	// 	// ':choose': 'Escolha o idioma'
-	// 	// },
-
-	// 	'ru': {
-	// 		':heading': 'Селектор языка Javascript',
-	// 		':h2': 'Включение',
-	// 		':first:p': "Привет! это селектор языка javascript",
-	// 		':english': 'EN',
-	// 		':russian': 'RU',
-	// 		':portuguese': 'Portuguese',
-	// 		':choose': 'Выберите язык'
-	// 	}
-	// };
+	
 	// var l = new LanguageSelector();
 	// $(document).on("change", "#langSelector", function () {
 	// 	var s = $(this).children("option:selected").val();

@@ -3,7 +3,7 @@
 	padding: gem(96) 0 gem(45) 0
 	display: flex
 	position: fixed
-	bottom: gem(-200)
+	bottom: gem(-400)
 	left: 0
 	width: 100%
 	height: gem(154)
@@ -105,21 +105,43 @@
 @media only screen and (max-width : 1024px)
 	.footer-menu
 		flex-direction: column-reverse
+		height: gem(200)
 		&::after
 			width: gem(704)
 			margin-left: gem(32)
 			top: gem(65)
 		&-center
 			justify-content: flex-end
-			top: gem(7)
-			right: gem(90)
+			top: gem(45)
+			right: gem(40)
 			svg
 				&:nth-last-child(1)
 					opacity: 1
 		&-right
-			top: gem(0)
+			top: gem(8)
 			margin-left: gem(54)
 		&-left
 			position: relative
 			top: gem(-18)
+@media only screen and (max-width : 480px)
+	.footer-menu
+		&::after
+			width: gem(310)
+		&-right
+			top: gem(65)
+			margin-left: gem(23)
+			a
+				font-size: gem(12)
+				line-height: gem(12)
+				margin: auto gem(12)
+				// &:nth-child(3)
+				// 	margin: auto 0 
+				&:nth-child(4)
+					white-space: nowrap
+		&-left
+			display: none
+		&-center
+			top: gem(-175)
+			right: gem(110)
+
 			
