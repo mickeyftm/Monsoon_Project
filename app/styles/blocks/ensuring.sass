@@ -1,159 +1,154 @@
 .ensuring
-    display: flex
-    position: relative
-    flex-direction: row
-    &-left
-        display: flex
-        position: relative
-        flex-direction: column
-        h2
-            margin: gem(136) gem(0) gem(49) gem(160)
-        p
-            margin: gem(0) gem(0) gem(63) gem(256)
-            width: gem(530)
-            .glitch
-                font-weight: 800
-            &:nth-child(3)
-                margin-left: gem(480)
-        &-star
-            display: flex
-            position: absolute
-            top: gem(263)
-            left: gem(160)
-            width: gem(64)
-            img
-                width: gem(64)
-            &:nth-last-child(3)
-                top: gem(450)
-                left: gem(370)
-                width: gem(74)
-        .star-line
-            display: block
-            position: absolute
-            right: 0
-            left: gem(192)
-            top: gem(330)
-            bottom: 0
-            background: rgb(246,249,250)
-            background: linear-gradient(180deg,transparent,#FFF)
-            height: gem(147)
-            width: 1px
-            opacity: 0.7
-            overflow: hidden
-            span
-                display: flex
-                position: absolute
-                width: 3px
-                height: gem(32)
-                background: linear-gradient(180deg,transparent,#FFF) 
-                animation: ens_line 3s linear infinite 
-        .star-line_goriz
-            display: block
-            position: absolute
-            width: gem(188)
-            height: 1px
-            background: linear-gradient(270deg,transparent,#FFF)
-            top: gem(477)
-            left: gem(192)
-            opacity: 0.7
-            overflow: hidden
-            span
-                display: flex
-                position: absolute
-                width: gem(32)
-                height: 1px
-                background: linear-gradient(90deg,transparent,#FFF) 
-                animation: ens_line_next 3s linear infinite 
-                animation-delay: 1.2s
-                left: -100%
-                bottom: 0
-    &-right
-        img
-            display: flex
-            width: gem(620)
+	display: flex
+	position: relative
+	flex-direction: row
+	&-left
+		display: flex
+		position: relative
+		flex-direction: column
+		h2
+			margin: gem(136) gem(0) gem(49) gem(160)
+		p
+			margin: gem(0) gem(0) gem(63) gem(256)
+			width: gem(530)
+			.glitch
+				font-weight: 800
+			&:nth-child(3)
+				margin-left: gem(480)
+		&-star
+			display: flex
+			position: absolute
+			top: gem(263)
+			left: gem(160)
+			width: gem(64)
+			img
+				width: gem(64)
+			&:nth-last-child(3)
+				top: gem(450)
+				left: gem(370)
+				width: gem(74)
+		.star-line
+			display: block
+			position: absolute
+			right: 0
+			left: gem(192)
+			top: gem(330)
+			bottom: 0
+			background: rgb(246,249,250)
+			background: linear-gradient(180deg,transparent,#FFF)
+			height: gem(147)
+			width: 1px
+			opacity: 0.7
+			overflow: hidden
+			span
+				display: flex
+				position: absolute
+				width: 3px
+				height: gem(32)
+				background: linear-gradient(180deg,transparent,#FFF) 
+				animation: ens_line 3s linear infinite 
+		.star-line_goriz
+			display: block
+			position: absolute
+			width: gem(188)
+			height: 1px
+			background: linear-gradient(270deg,transparent,#FFF)
+			top: gem(477)
+			left: gem(192)
+			opacity: 0.7
+			overflow: hidden
+			span
+				display: flex
+				position: absolute
+				width: gem(32)
+				height: 1px
+				background: linear-gradient(90deg,transparent,#FFF) 
+				animation: ens_line_next 3s linear infinite 
+				animation-delay: 1.2s
+				left: -100%
+				bottom: 0
+	&-right
+		video
+			display: flex
+			width: gem(1600)
+			margin-top: gem(-100)
+			margin-left: gem(-500)
+			mix-blend-mode: lighten
 @media only screen and (max-width : 1024px)
-    .ensuring
-        flex-direction: column-reverse
-        &-right
-            img
-                width: gem(339)
-                transform: rotate(270deg)
-                position: relative
-                top: gem(-140)
-                left: gem(45)
-        &-left
-            top: gem(-130)
-            h2
-                margin: gem(0) gem(0) gem(64) gem(50)
-            p
-                margin: gem(0) gem(0) gem(63) gem(120)
-                width: gem(420)
-                &:nth-child(3)
-                    margin-left: gem(260)
-            &-star
-                top: gem(120)
-                left: gem(30)
-                &::after
-                    height: gem(197)
-                &:nth-last-child(3)
-                    top: gem(345)
-                    left: gem(155)
-                    &::after
-                        left: gem(-94)
-                        width: gem(120)
-            .star-line
-                top: gem(178)
-                left: gem(61)
-                height: gem(194)
-            .star-line_goriz
-                top: gem(372)
-                left: gem(61)
-                width: gem(100)
-            // &-line 
-            //     top: gem(200)
-            //     left: gem(61)
-            //     animation: ens_line_mobile 1.5s linear infinite 
-            //     &:nth-last-child(1)
-            //         top: gem(376)
-            //         left: gem(56)
-            //         animation: ens_line_next_mobile 1.5s linear infinite 
+	.ensuring
+		flex-direction: column-reverse
+		&-right
+			img
+				width: gem(339)
+				transform: rotate(270deg)
+				position: relative
+				top: gem(-140)
+				left: gem(45)
+		&-left
+			top: gem(-130)
+			h2
+				margin: gem(0) gem(0) gem(64) gem(50)
+			p
+				margin: gem(0) gem(0) gem(63) gem(120)
+				width: gem(420)
+				&:nth-child(3)
+					margin-left: gem(260)
+			&-star
+				top: gem(120)
+				left: gem(30)
+				&::after
+					height: gem(197)
+				&:nth-last-child(3)
+					top: gem(345)
+					left: gem(155)
+					&::after
+						left: gem(-94)
+						width: gem(120)
+			.star-line
+				top: gem(178)
+				left: gem(61)
+				height: gem(194)
+			.star-line_goriz
+				top: gem(372)
+				left: gem(61)
+				width: gem(100)
 @media only screen and (max-width : 480px)
-    .ensuring
-        &-right
-            img
-                top: gem(-80)
-        &-left
-            h2
-                margin: gem(0) gem(0) gem(64) gem(24)
-                width: gem(330)
-            p 
-                width: gem(250)
-                margin: gem(23) gem(0) gem(0) gem(87)
-                &:nth-child(3)
-                    margin-left: gem(87)
-                    margin-top: gem(40)
-            &-star
-                left: gem(11)
-                &:nth-last-child(3)
-                    top: gem(380)
-                    left: gem(10)
-            .star-line
-                left: gem(42)
-            .star-line_goriz
-                display: none
-                    
+	.ensuring
+		&-right
+			img
+				top: gem(-80)
+		&-left
+			h2
+				margin: gem(0) gem(0) gem(64) gem(24)
+				width: gem(330)
+			p 
+				width: gem(250)
+				margin: gem(23) gem(0) gem(0) gem(87)
+				&:nth-child(3)
+					margin-left: gem(87)
+					margin-top: gem(40)
+			&-star
+				left: gem(11)
+				&:nth-last-child(3)
+					top: gem(380)
+					left: gem(10)
+			.star-line
+				left: gem(42)
+			.star-line_goriz
+				display: none
+					
 
 @keyframes ens_line_mobile
-    0%
-        top: gem(200)
-    100%
-        top: gem(300)
-        opacity: 0
-    
+	0%
+		top: gem(200)
+	100%
+		top: gem(300)
+		opacity: 0
+	
 @keyframes ens_line_next_mobile
-    0%
-        left: gem(56)
-    100%
-        left: gem(135)
-        opacity: 0
-        
+	0%
+		left: gem(56)
+	100%
+		left: gem(135)
+		opacity: 0
+		

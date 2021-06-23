@@ -1,152 +1,156 @@
 .enabling
-    display: flex
-    flex-direction: row
-    margin-top: gem(97)
-    position: relative
-    // background-color: #000000
-    &-right
-        display: flex
-        position: relative
-        width: gem(800)
-        video
-            width: gem(1000)
-            height: gem(1000)
-            position: absolute
-            top: gem(-150)
-            right: gem(-76)
-            mix-blend-mode: lighten
-            display: block
-            pointer-events: none
-    &-left
-        display: flex
-        flex-direction: column
-        margin-top: gem(133)
-        margin-left: gem(168)
-        position: relative
-        h2
-            margin-left: gem(183)
-            margin-bottom: gem(37)
-        p
-            width: gem(400)
-            margin-left: gem(340)
-            margin-bottom: gem(65)
-        img
-            width: gem(112)
-            display: flex
-            position: absolute
-            top: gem(120)
-            left: gem(30)
-            font-size: gem(20)
-            line-height: gem(32)
-            animation: circle_rotate 10s linear infinite
-    .line
-        width: 1px
-        height: gem(742)
-        display: flex
-        position: absolute
-        left: gem(64)
-        background: linear-gradient(360deg,transparent,#FFF)
-        opacity: 0.6
-        overflow: hidden
-        &:nth-last-child(3)
-            right: gem(64)
-            left: inherit
-        // &::after
-            // content: ''
-            // display: block
-            // width: 100%
-            // height: gem(100)
-            // background: linear-gradient(360deg,transparent,#FFF)
-        &-go
-            position: absolute
-            display: block
-            top: gem(97)
-            width: 1px
-            height: gem(32)
-            background: linear-gradient(180deg,transparent,#FFF) 
-            animation: line_begin 5s linear infinite 
-            transition: 1s
-            &:nth-last-child(1)
-                animation-delay: 2s
+	display: flex
+	flex-direction: row
+	margin-top: gem(97)
+	position: relative
+	// background-color: #000000
+	&-right
+		display: flex
+		position: relative
+		width: gem(800)
+		video
+			width: gem(1000)
+			height: gem(1000)
+			position: absolute
+			top: gem(-150)
+			right: gem(-76)
+			mix-blend-mode: lighten
+			display: block
+			pointer-events: none
+	&-left
+		display: flex
+		flex-direction: column
+		margin-top: gem(133)
+		margin-left: gem(168)
+		position: relative
+		h2
+			margin-left: gem(183)
+			margin-bottom: gem(37)
+		p
+			width: gem(400)
+			margin-left: gem(340)
+			margin-bottom: gem(65)
+		img
+			width: gem(112)
+			display: flex
+			position: absolute
+			top: gem(120)
+			left: gem(30)
+			font-size: gem(20)
+			line-height: gem(32)
+			animation: circle_rotate 10s linear infinite
+	.line
+		width: 1px
+		height: 0
+		display: flex
+		position: absolute
+		left: gem(64)
+		background: linear-gradient(360deg,transparent,#FFF)
+		opacity: 0.6
+		overflow: hidden
+		transition: height 0.5s ease
+		&.visible
+			height: gem(742)
+
+		&:nth-last-child(3)
+			right: gem(64)
+			left: inherit
+		// &::after
+			// content: ''
+			// display: block
+			// width: 100%
+			// height: gem(100)
+			// background: linear-gradient(360deg,transparent,#FFF)
+		&-go
+			position: absolute
+			display: block
+			top: gem(97)
+			width: 1px
+			height: gem(32)
+			background: linear-gradient(180deg,transparent,#FFF) 
+			animation: line_begin 5s linear infinite 
+			transition: 1s
+			&:nth-last-child(1)
+				animation-delay: 2s
 
 .triangle
-    display: flex
-    position: absolute
-    flex-direction: column
-    align-items: center
-    left: gem(53)
-    top: gem(748)
-    img
-        width: gem(24)
-        opacity: 0.3
-        animation: triange_down 1.5s linear infinite 
-        &:nth-child(2)
-            width: gem(20)
-            opacity: .3
-            animation-delay: 0.495s
-        &:nth-child(3)   
-            width: gem(14)
-            opacity: .3
-            animation-delay: 0.990s
-    &:nth-last-child(1)
-        right: gem(53)
-        left: inherit
+	display: flex
+	position: absolute
+	flex-direction: column
+	align-items: center
+	left: gem(53)
+	top: gem(748)
+	img
+		width: gem(24)
+		opacity: 0.3
+		animation: triange_down 1.5s linear infinite 
+		&:nth-child(2)
+			width: gem(20)
+			opacity: .3
+			animation-delay: 0.495s
+		&:nth-child(3)   
+			width: gem(14)
+			opacity: .3
+			animation-delay: 0.990s
+	&:nth-last-child(1)
+		right: gem(53)
+		left: inherit
 
 @media only screen and (max-width : 1024px)
-    .enabling
-        flex-direction: column-reverse
-        &-right
-            // margin-top: gem(105)
-            height: gem(400)
-            video
-                top: gem(-210)
-        &-left
-            margin-left: gem(97)
-            h2
-                width: gem(580)
-                margin-left: gem(150)
-                margin-bottom: gem(32)
-            p
-                width: gem(358)
-                margin-left: gem(208)
-            img
-                top: gem(106)
-                left: gem(8)
-        .line
-            left: gem(32)
-            top: gem(-21)
-            &:nth-last-child(3)
-                right: gem(32)
-    .triangle
-        left: gem(22)
-        &:nth-last-child(1)
-            right: gem(22)
+	.enabling
+		flex-direction: column-reverse
+		&-right
+			// margin-top: gem(105)
+			height: gem(400)
+			video
+				top: gem(-210)
+		&-left
+			margin-left: gem(97)
+			h2
+				width: gem(580)
+				margin-left: gem(150)
+				margin-bottom: gem(32)
+			p
+				width: gem(358)
+				margin-left: gem(208)
+			img
+				top: gem(106)
+				left: gem(8)
+		.line
+			left: gem(32)
+			top: gem(-21)
+			&:nth-last-child(3)
+				right: gem(32)
+	.triangle
+		left: gem(22)
+		&:nth-last-child(1)
+			right: gem(22)
 @media only screen and (max-width : 480px)
-    .enabling
-        .line
-            display: none
-        &-right
-            height: gem(400)
-            width: gem(600)
-            video
-                width: gem(800)
-                top: gem(-270)
-                right: 0
-        &-left
-            margin-left: gem(32)
-            margin-top: gem(50)
-            h2
-                width: gem(354)
-                margin-bottom: gem(18)
-                margin-left: gem(0)
-            p
-                margin-left: gem(0)
-                margin-bottom: gem(30)
-            img
-                left: gem(290)
-                top: gem(-50)
-    .triangle
-        display: none
+	.enabling
+		.line
+			display: none
+		&-right
+			height: gem(400)
+			width: gem(600)
+			video
+				width: gem(800)
+				top: gem(-270)
+				right: 0
+		&-left
+			margin-left: gem(32)
+			margin-top: gem(50)
+			h2
+				width: gem(354)
+				margin-bottom: gem(18)
+				margin-left: gem(0)
+			p
+				margin-left: gem(0)
+				margin-bottom: gem(30)
+			img
+				left: gem(290)
+				top: gem(-50)
+	.triangle
+		display: none
 
 
 

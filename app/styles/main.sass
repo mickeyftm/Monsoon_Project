@@ -3,65 +3,74 @@
 @import 'blocks/**/*'
 
 *
-    box-sizing: border-box
-    // cursor: none
+	box-sizing: border-box
+	// cursor: none
 
 
 html, body
-    width: 100%
-    height: 100vh
+	width: 100%
+	height: 100vh
 
 body,
 main
-    overflow-x: hidden
-    background-color: none
+	overflow-x: hidden
+	background-color: none
 
 body
-    display: flex
-    flex-direction: column
-    font-family: var(--main-font)
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale
-    text-rendering: optimizeLegibility
-    // cursor: none !important
+	display: flex
+	flex-direction: column
+	font-family: var(--main-font)
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	text-rendering: optimizeLegibility
+	cursor: none !important
+	&.loading
+		overflow: hidden
+		.page-background
+			svg
+				opacity: 0
+
 
 a
-    text-decoration: none
-    outline: none
+	text-decoration: none
+	outline: none
 
 img
-    max-width: 100%
-    height: auto
+	max-width: 100%
+	height: auto
 
 section
-    position: relative
-    background-repeat: no-repeat
-    background-position: center
-    background-size: cover
-    // visibility: hidden
+	position: relative
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	// visibility: hidden
 .container
-    position: relative
-    width: var(--container-width)
-    min-width: var(--container-width)
-    margin: 0 auto
+	position: relative
+	width: var(--container-width)
+	min-width: var(--container-width)
+	margin: 0 auto
 
 input , textarea
-    &::-webkit-input-placeholder,
-    &::placeholder
-        transition: all .3s
-    &:focus
-        &::-webkit-input-placeholder,
-        &::placeholder
-            color: transparent
+	&::-webkit-input-placeholder,
+	&::placeholder
+		transition: all .3s
+	&:focus
+		&::-webkit-input-placeholder,
+		&::placeholder
+			color: transparent
 
 button[type='submit']
-    cursor: pointer
-
+	// cursor: pointer
+a
+	cursor: none
 //start here
-
+.anim-items
+	opacity: 0
+	transform: translateY(gem(-40))
 .stroke-text
-    -webkit-text-fill-color: transparent
-    -webkit-text-stroke: 1px white
+	-webkit-text-fill-color: transparent
+	-webkit-text-stroke: 1px white
 
 @media (any-pointer: fine)
 	.cursor
@@ -70,122 +79,107 @@ button[type='submit']
 		left: 0
 		display: block
 		pointer-events: none
-	
+		z-index: 11
 	.cursor__inner
-		fill: var(--cursor-fill)
+		position: relative  
+		fill: #fff
 		stroke: var(--cursor-stroke)
 		stroke-width: var(--cursor-stroke-width)
-	
+		// z-index: 99999999999
+
 	.credits
 		padding-left: 25vw
 
 .mobile_menu
-    background: #F5FDFF
-    position: fixed
-    top: 0
-    left: -100%
-    height: 100vh
-    width: 100%
-    transition: .3s ease
-    z-index: 3
-    &.active
-        left: 0
+	background: #F5FDFF
+	position: fixed
+	top: 0
+	left: -100%
+	height: 100vh
+	width: 100%
+	transition: .3s ease
+	z-index: 3
+	&.active
+		left: 0
 
-    .nav-menu_mobile
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-content: center
-        align-items: center
-        margin-top: gem(107)
-        a
-            font-size: gem(36)
-            line-height: gem(26)
-            margin-bottom: gem(48)
-            &:nth-child(1)
-                // &::after
-                //     content: ""
-                //     position: absolute
-                //     width: gem(343)
-                //     height: gem(1)
-                //     background-color: #A4E5F9
-                //     display: block
-                //     top: gem(177)
-                //     left: gem(210)
-            &:nth-child(2)
-                margin-top: gem(64)
-                    
-            &:active
-                color: #12BBF0
+	.nav-menu_mobile
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-content: center
+		align-items: center
+		margin-top: gem(107)
+		a
+			font-size: gem(36)
+			line-height: gem(26)
+			margin-bottom: gem(48)
+			&:nth-child(1)
+				// &::after
+				//     content: ""
+				//     position: absolute
+				//     width: gem(343)
+				//     height: gem(1)
+				//     background-color: #A4E5F9
+				//     display: block
+				//     top: gem(177)
+				//     left: gem(210)
+			&:nth-child(2)
+				margin-top: gem(64)
+					
+			&:active
+				color: #12BBF0
 @media only screen and (max-width : 375px)
-    .mobile_menu
-        .nav-menu_mobile
-            a
-                &:nth-child(1)
-                    &::after
-                        left: gem(11)
+	.mobile_menu
+		.nav-menu_mobile
+			a
+				&:nth-child(1)
+					&::after
+						left: gem(11)
 
-.bt-menu 
-  position: relative
-  display: none
-  width: gem(40)
-  height: gem(40)
-  background: #ffffff
-  border-radius: gem(40)
-  box-shadow: gem(0) gem(5) gem(20)rgba(182, 198, 214, 0.2)
-  right: gem(60)
-  &:after,
-  &:before 
-    content: ""
-  span,
-  &::after,
-  &::before 
-    backface-visibility: hidden
-    position: absolute
-    left: gem(10)
-    right: gem(10)
-    transition: .2s ease
-    border-radius: gem(7)
-  &::before 
-    top: gem(12)
-    border-top: gem(2) solid #FFC148
-  span 
-    top: gem(20)
-    border-top: gem(2) solid #B144E4
-  &::after 
-    top: gem(28)
-    border-top: gem(2) solid #12BBF0
-  &.active 
-    &::before,
-    &::after 
-      top: gem(20)
-      backface-visibility: hidden
-      transition: .3s ease
-    &::before 
-      transform: rotate(45deg)
-    span 
-      opacity: 0
-    &::after 
-      transform: rotate(-45deg)
+// .bt-menu 
+// 	position: relative
+// 	display: none
+// 	width: gem(40)
+// 	height: gem(40)
+// 	background: #ffffff
+// 	border-radius: gem(40)
+// 	box-shadow: gem(0) gem(5) gem(20)rgba(182, 198, 214, 0.2)
+// 	right: gem(60)
+//   	&:after,
+//   	&:before 
+// 		content: ""
+//   	span,
+//   	&::after,
+//   	&::before 
+// 		backface-visibility: hidden
+// 		position: absolute
+// 		left: gem(10)
+// 		right: gem(10)
+// 		transition: .2s ease
+// 		border-radius: gem(7)
+//   &::before 
+// 	top: gem(12)
+// 	border-top: gem(2) solid #FFC148
+//   span 
+// 	top: gem(20)
+// 	border-top: gem(2) solid #B144E4
+//   &::after 
+// 	top: gem(28)
+// 	border-top: gem(2) solid #12BBF0
+//   &.active 
+// 	&::before,
+// 	&::after 
+// 	  top: gem(20)
+// 	  backface-visibility: hidden
+// 	  transition: .3s ease
+// 	&::before 
+// 	  transform: rotate(45deg)
+// 	span 
+// 	  opacity: 0
+// 	&::after 
+// 	  transform: rotate(-45deg)
 
 @media only screen and (max-width : 1024px)
-    .bt-menu
-        display: block
-        right: gem(16)
-
-
-// .beta_circle
-//     width: 100px
-//     position: relative
-//     animation: rotation 4.5s infinite linear
-//     pointer-events: none
-//     transition: top 1s, left 1s, opacity 0.3s
-//     transition-timing-function: ease-out
-//     z-index: 4
-//     opacity: 1
-//     overflow: hidden
-// text 
-//     font-size: gem(50)
-//     font-family: 'Poppins'
-//     font-weight: bold
-//     fill: rgb(138, 175, 255)
+	.bt-menu
+		display: block
+		right: gem(16)

@@ -1,117 +1,125 @@
 .footer-menu
-    background: #000000
-    padding: gem(96) 0 gem(45) 0
-    display: flex
-    position: relative
-    flex-direction: row
-    justify-content: space-between
-    &::after
-        content: ""
-        height: 1px
-        width: gem(1472)
-        display: flex
-        position: absolute
-        background-color: #fff
-        margin-left: gem(64)
-        opacity: 0.3
-        top: gem(48)
-    &-left
-        display: flex
-        flex-direction: row
-        align-items: center
-        margin: gem(0) gem(0) gem(0) gem(64)
-        p
-            margin-right: gem(54)
-        &-icon
-            display: flex
-            a
-                display: flex
-                margin-right: gem(14)
-                transition: all .3s ease
-                svg
-                    width: gem(24)
-                    height: gem(24)
-                &:hover
-                    opacity: 0.5
-    &-center
-        display: flex
-        position: relative
-        align-items: center
-        transition: all 0.3s ease
-        margin-right: gem(50)
-        svg
-            transition: all 0.3s ease
-            width: gem(24)
-            height: gem(32)
-            position: relative
-            left: gem(80)
-            z-index: 2
-            cursor: pointer
-            &:nth-last-child(1)
-                width: gem(87)
-                height: gem(87)
-                left: gem(25)
-                opacity: 0
-                z-index: 1
-                animation: circle_rotate 10s linear infinite
-                transition: opacity .3s linear
-                text
-                    font-family: var(--sub-font)
-                    fill: #FFAEAE
-                    font-size: gem(43)
-                    line-height: 9px
-        &:hover
-            svg
-                fill: #fff
-                &:nth-last-child(1)
-                    opacity: 1  
-    &-right
-        display: flex
-        position: relative
-        align-items: center
-        margin-right: gem(40)
-        a
-            position: relative
-            margin: auto gem(24)
-            transform: translate(0px, 0px)
-            opacity: 1
-            visibility: inherit
-            &::after
-                content: ""
-                display: flex
-                background: #fff
-                bottom: -2px
-                height: 1px
-                left: 0
-                mix-blend-mode: difference
-                opacity: 1
-                position: absolute
-                transform-origin: right
-                transform: scaleX(0)
-                transition: transform 0.3s ease-out
-                width: 100%
-            &:hover
-                &::after
-                    transform: scaleX(1)
-                    transform-origin: left  
+	background: #03001B
+	padding: gem(96) 0 gem(45) 0
+	display: flex
+	position: fixed
+	bottom: gem(-200)
+	left: 0
+	width: 100%
+	height: gem(154)
+	z-index: 4
+	flex-direction: row
+	justify-content: space-between
+	transition: all 0.4s ease
+	&.active
+		bottom: 0
+	&::after
+		content: ""
+		height: 1px
+		width: gem(1472)
+		display: flex
+		position: absolute
+		background-color: #fff
+		margin-left: gem(64)
+		opacity: 0.3
+		top: gem(48)
+	&-left
+		display: flex
+		flex-direction: row
+		align-items: center
+		margin: gem(0) gem(0) gem(0) gem(64)
+		p
+			margin-right: gem(54)
+		&-icon
+			display: flex
+			a
+				display: flex
+				margin-right: gem(14)
+				transition: all .3s ease
+				svg
+					width: gem(24)
+					height: gem(24)
+				&:hover
+					opacity: 0.5
+	&-center
+		display: flex
+		position: relative
+		align-items: center
+		transition: all 0.3s ease
+		margin-right: gem(50)
+		svg
+			transition: all 0.3s ease
+			width: gem(24)
+			height: gem(32)
+			position: relative
+			left: gem(80)
+			z-index: 2
+			// cursor: pointer
+			&:nth-last-child(1)
+				width: gem(87)
+				height: gem(87)
+				left: gem(25)
+				opacity: 0
+				z-index: 1
+				animation: circle_rotate 10s linear infinite
+				transition: opacity .3s linear
+				text
+					font-family: var(--sub-font)
+					fill: #FFAEAE
+					font-size: gem(43)
+					line-height: 9px
+		&:hover
+			svg
+				fill: #fff
+				&:nth-last-child(1)
+					opacity: 1  
+	&-right
+		display: flex
+		position: relative
+		align-items: center
+		margin-right: gem(40)
+		a
+			position: relative
+			margin: auto gem(24)
+			transform: translate(0px, 0px)
+			opacity: 1
+			visibility: inherit
+			&::after
+				content: ""
+				display: flex
+				background: #fff
+				bottom: -2px
+				height: 1px
+				left: 0
+				mix-blend-mode: difference
+				opacity: 1
+				position: absolute
+				transform-origin: right
+				transform: scaleX(0)
+				transition: transform 0.3s ease-out
+				width: 100%
+			&:hover
+				&::after
+					transform: scaleX(1)
+					transform-origin: left  
 @media only screen and (max-width : 1024px)
-    .footer-menu
-        flex-direction: column-reverse
-        &::after
-            width: gem(704)
-            margin-left: gem(32)
-            top: gem(65)
-        &-center
-            justify-content: flex-end
-            top: gem(7)
-            right: gem(90)
-            svg
-                &:nth-last-child(1)
-                    opacity: 1
-        &-right
-            top: gem(-69)
-            margin-left: gem(54)
-        &-left
-            position: relative
-            top: gem(-18)
-            
+	.footer-menu
+		flex-direction: column-reverse
+		&::after
+			width: gem(704)
+			margin-left: gem(32)
+			top: gem(65)
+		&-center
+			justify-content: flex-end
+			top: gem(7)
+			right: gem(90)
+			svg
+				&:nth-last-child(1)
+					opacity: 1
+		&-right
+			top: gem(-69)
+			margin-left: gem(54)
+		&-left
+			position: relative
+			top: gem(-18)
+			

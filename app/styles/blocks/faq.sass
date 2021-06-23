@@ -1,128 +1,132 @@
 .faq
-    h2
-        margin: gem(162) gem(0) gem(98) gem(96)
-    &-stars
-        display: flex
-        position: absolute
-        top: gem(143)
-        right: gem(55)
-        width: gem(239)
-    .accordion 
-        margin-bottom: gem(200)
-        margin-left: gem(64)
-        width: gem(1472)
-        &-item
-            &-header
-                display: flex
-                align-items: center
-                position: relative
-                cursor: pointer
-                &::after
-                    position: absolute
-                    right: 0
-                    left: 0
-                    content: ''
-                    top: 0
-                    background: rgb(246,249,250)
-                    background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
-                    display: inline-block
-                    height: 1px
-                    opacity: 0.5
-                h4
-                    width: gem(1037)
-                    margin-left: gem(29)
-                    padding: gem(32) gem(0) gem(36) gem(0)
-                .stars_open
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    position: relative
-                    right: gem(-260)
-                    &.active
-                        svg
-                            path:nth-child(2)
-                                opacity: 1
-                        span
-                            transform: rotate(45deg)
-                            background: #131533
-                            &:last-child
-                                transform: rotate(135deg)
-                    &:hover
-                        svg
-                            path:nth-child(2)
-                                opacity: 1
-                        span
-                            background: #131533
-                    svg
-                        width: gem(58)
-                        height: gem(58)
-                        transition: all 0.3s ease
-                        path
-                            width: 100%
-                            height: 100%
-                            transition: all 0.3s ease
-                            &:nth-child(2)
-                                fill: #fff
-                                opacity: 0
-                    span
-                        width: gem(12)
-                        height: gem(1)
-                        background: #fff
-                        position: absolute
-                        z-index: 2
-                        transition: all 0.3s ease
-                        &:last-child
-                            transform: rotate(90deg)
-            &-body
-                // max-height: 0
-                height: 0
-                overflow: hidden
-                // transition: max-height 0.3s ease-out
-                p 
-                    margin: gem(0) gem(0) gem(30) gem(29)
-                    width: gem(1037)
-                    a 
-                        color: #34F1BB
-                        text-decoration: underline
-        &::after
-            position: absolute
-            right: 0
-            left: 0
-            content: ''
-            bottom: gem(200)
-            background: rgb(246,249,250)
-            background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
-            display: inline-block
-            height: 1px
-            opacity: 0.5
+	padding-bottom: gem(154)
+	h2
+		margin: gem(162) gem(0) gem(98) gem(96)
+	&-stars
+		display: flex
+		position: absolute
+		top: gem(143)
+		right: gem(55)
+		width: gem(239)
+	.accordion 
+		margin-bottom: gem(200)
+		margin-left: gem(64)
+		width: gem(1472)
+		&-item
+			position: relative
+			&:last-child
+				&::after
+					position: absolute
+					right: 0
+					left: 0
+					content: ''
+					background: rgb(246,249,250)
+					background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
+					display: inline-block
+					height: 1px
+					opacity: 0.5
+			&-header
+				display: flex
+				align-items: center
+				justify-content: space-between
+				position: relative
+				&::after
+					position: absolute
+					right: 0
+					left: 0
+					content: ''
+					top: 0
+					background: rgb(246,249,250)
+					background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
+					display: inline-block
+					height: 1px
+					opacity: 0.5
+				h4
+					max-width: gem(1037)
+					margin-left: gem(29)
+					padding: gem(32) gem(0) gem(36) gem(0)
+				.stars_open
+					display: flex
+					justify-content: center
+					align-items: center
+					position: relative
+					// right: gem(-260)
+					margin-right: gem(50)
+					&.active
+						svg
+							path:nth-child(2)
+								opacity: 1
+						span
+							transform: rotate(225deg)
+							background: #131533
+							&:last-child
+								transform: rotate(315deg)
+					&:hover
+						svg
+							path:nth-child(2)
+								opacity: 1
+						span
+							background: #131533
+					svg
+						width: gem(58)
+						height: gem(58)
+						transition: all 0.3s ease
+						path
+							width: 100%
+							height: 100%
+							transition: all 0.3s ease
+							&:nth-child(2)
+								fill: #fff
+								opacity: 0
+					span
+						width: gem(12)
+						height: gem(1)
+						background: #fff
+						position: absolute
+						z-index: 2
+						transition: all 0.3s ease
+						&:last-child
+							transform: rotate(90deg)
+			&-body
+				// max-height: 0
+				height: 0
+				overflow: hidden
+				// transition: max-height 0.3s ease-out
+				p 
+					margin: gem(0) gem(0) gem(30) gem(29)
+					width: gem(1037)
+					a 
+						color: #34F1BB
+						text-decoration: underline
+		
 @media only screen and (max-width : 1024px)
-    .faq
-        &-stars
-            display: none
-        .accordion
-            width: gem(710)
-            margin-left: gem(32)
-            &-item
-                &-header
-                    h4
-                        font-size: gem(20)
-                        line-height: gem(27)
-                    .stars_open
-                        right: gem(40)
-                        svg 
-                            width: gem(48)
-                            height: gem(48)
-                &-body
-                    p
-                        width: gem(560)
+	.faq
+		&-stars
+			display: none
+		.accordion
+			width: gem(710)
+			margin-left: gem(32)
+			&-item
+				&-header
+					h4
+						font-size: gem(20)
+						line-height: gem(27)
+					.stars_open
+						right: gem(40)
+						svg 
+							width: gem(48)
+							height: gem(48)
+				&-body
+					p
+						width: gem(560)
 
 @media only screen and (max-width : 480px)
-    .faq
-        h2 
-            margin: gem(162) gem(0) gem(54) gem(30)
-            width: gem(312)
-        &-srars
-            display: flex
-        .accordion
-            width: gem(374)
-            margin-left: gem(0)
+	.faq
+		h2 
+			margin: gem(162) gem(0) gem(54) gem(30)
+			width: gem(312)
+		&-srars
+			display: flex
+		.accordion
+			width: gem(374)
+			margin-left: gem(0)
