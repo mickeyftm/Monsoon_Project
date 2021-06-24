@@ -22,7 +22,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	let preloader = document.querySelector('.preloader')
 	let preloaderIcon = document.querySelector('.preloader_icon')
 	let logo = document.querySelector('.logo')
+	let btMenu = document.querySelector('.bt-menu')
 
+	///timer
+	var count = 300;
+
+	var counter = setInterval(timer, 0.5); //10 will  run it every 100th of a second
+
+	function timer()
+	{
+	    if (count <= 0)
+	    {
+	        clearInterval(counter);
+	        return;
+	     }
+	     count--;
+	     document.getElementById("timer").innerHTML='00.0' + count /100; 
+		 console.log(counter)
+	 }
+	 	/////////////////////////
 	setTimeout(() => {
 		preloader.classList.add('loaded')
 		body.classList.remove('loading')
@@ -42,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	gsap.to(logo, {
+		autoAlpha: 1,
+		duration: 1,
+		delay: 4,
+	})
+	gsap.to(btMenu, {
 		autoAlpha: 1,
 		duration: 1,
 		delay: 4,
@@ -88,8 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 			accordionsText[i].classList.toggle('active')
 		})
-
-
 	}
 
 	//products animation
@@ -269,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				backgroundSvg.classList.add('ensuring')
 			},
 			onLeave: () => {
-				
+
 				backgroundSvg.classList.remove('ensuring')
 			},
 			onEnterBack: () => {
@@ -301,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				backgroundSvg.classList.add('products-back')
 			},
 			onLeave: () => {
-				
+
 				backgroundSvg.classList.remove('products-back')
 			},
 			onEnterBack: () => {
@@ -324,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//window on top, after page is loaded
 	gsap.to(window, { duration: 0.1, scrollTo: 0, ease: 'power2', delay: 1 });
 
-	
+
 	// var l = new LanguageSelector();
 	// $(document).on("change", "#langSelector", function () {
 	// 	var s = $(this).children("option:selected").val();

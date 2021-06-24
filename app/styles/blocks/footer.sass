@@ -30,6 +30,17 @@
 		margin: gem(0) gem(0) gem(0) gem(64)
 		p
 			margin-right: gem(54)
+			position: relative
+			&::before
+				content: ''
+				display: flex
+				position: absolute
+				background: #FAF3E0
+				width: 3px
+				height: 3px
+				border-radius: 50%
+				top: gem(12)
+				left: gem(370)
 		&-icon
 			display: flex
 			a
@@ -98,10 +109,31 @@
 				transform: scaleX(0)
 				transition: transform 0.3s ease-out
 				width: 100%
+			&::before
+				content: ''
+				display: flex
+				position: absolute
+				background: #FAF3E0
+				width: 3px
+				height: 3px
+				border-radius: 50%
+				top: gem(1)
+				left: gem(93)
 			&:hover
 				&::after
 					transform: scaleX(1)
 					transform-origin: left  
+			&:nth-child(2)
+				&::before
+					left: gem(47)
+			&:nth-child(3)
+				&::before
+					left: gem(60)
+			&:nth-child(4)
+				&::before
+					opacity: 0
+
+				
 @media only screen and (max-width : 1024px)
 	.footer-menu
 		flex-direction: column-reverse

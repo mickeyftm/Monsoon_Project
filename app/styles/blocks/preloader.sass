@@ -31,6 +31,14 @@
 		display: flex
 		animation: rotate-logo 3s linear
 		transition: left 1s ease, top 1s ease, width 1s ease
+	#timer
+		font-size: gem(75)
+		line-height: gem(80)
+		color: #fff
+		display: flex
+		position: relative
+		top: gem(130)
+		left: gem(40)
 	&.loaded
 		background: none
 		pointer-events: none
@@ -40,8 +48,21 @@
 			top: gem(25)
 			left: gem(65)
 			width: gem(40)
-
-
+		#timer
+			opacity: 0
+			display: none
+@media only screen and (max-width : 1024px)
+	.preloader
+		&.loaded
+			.preloader_icon
+				left: gem(35)
+@media only screen and (max-width : 480px)
+	.preloader
+		left: gem(-35)
+		&.loaded
+			.preloader_icon
+				left: gem(63)
+				top: gem(20)
 @keyframes rotate-logo
 	0%
 		transform: rotateY(0deg)

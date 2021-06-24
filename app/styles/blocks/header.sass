@@ -41,7 +41,22 @@ header
 				transform: scaleX(0)
 				transition: transform 0.3s ease-out
 				width: 100%
-			
+			&::before
+				content: ''
+				display: flex
+				position: absolute
+				background: #FAF3E0
+				width: 3px
+				height: 3px
+				border-radius: 50%
+				top: gem(4)
+				left: gem(103)
+			&:nth-child(2)
+				&::before
+					left: gem(62)
+			&:nth-child(3)
+				&::before
+					content: none
 			&:hover
 				&::after
 					transform: scaleX(1)
@@ -108,6 +123,49 @@ header
 	&.visible
 		&::after
 			width: 100%
+	.bt-menu 
+		position: relative
+		display: none
+		width: gem(40)
+		height: gem(40)
+		background: none
+		border-radius: gem(40)
+		opacity: 0
+		// box-shadow: gem(0) gem(5) gem(20)rgba(182, 198, 214, 0.2)
+		right: gem(3)
+		&:after,
+		&:before 
+			content: ""
+		span,
+		&::after,
+		&::before 
+			backface-visibility: hidden
+			position: absolute
+			left: 0
+			right: 0
+			transition: .2s ease
+		&::before 
+			top: gem(17)
+			border-top: gem(2) solid #fff
+		span 
+			top: gem(20)
+			border-top: gem(2) solid #fff
+			opacity: 0
+		&::after 
+			top: gem(28)
+			border-top: gem(2) solid #fff
+		&.active 
+			&::before,
+			&::after 
+				top: gem(20)
+				backface-visibility: hidden
+				transition: .3s ease
+			&::before 
+				transform: rotate(45deg)
+			span 
+				opacity: 0
+			&::after 
+				transform: rotate(-45deg)
 @media only screen and (max-width : 1024px)
 	header
 		padding: 0 gem(32)
@@ -119,4 +177,17 @@ header
 			margin-top: gem(27)
 		&::after
 			top: gem(48)
-			
+		.bt-menu
+			display: block
+			top: gem(17)
+			z-index: 11
+@media only screen and (max-width : 480px)
+	header
+		.logo
+			a
+				.logo-default
+					width: gem(128)
+				.logo-hover
+					width: gem(128)
+
+

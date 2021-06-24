@@ -15,6 +15,8 @@ body,
 main
 	overflow-x: hidden
 	background-color: none
+@media only screen and (max-width : 1024px)
+	overflow-x: hidden
 
 body
 	display: flex
@@ -86,58 +88,8 @@ a
 		stroke: var(--cursor-stroke)
 		stroke-width: var(--cursor-stroke-width)
 		// z-index: 99999999999
-
 	.credits
 		padding-left: 25vw
-
-.bt-menu 
-    position: fixed
-    display: none
-    width: gem(40)
-    height: gem(40)
-    background: none
-    border-radius: gem(40)
-    // box-shadow: gem(0) gem(5) gem(20)rgba(182, 198, 214, 0.2)
-    right: gem(60)
-    &:after,
-    &:before 
-        content: ""
-    span,
-    &::after,
-    &::before 
-        backface-visibility: hidden
-        position: absolute
-        left: 0
-        right: 0
-        transition: .2s ease
-    &::before 
-        top: gem(12)
-        border-top: gem(2) solid #fff
-    span 
-        top: gem(20)
-        border-top: gem(2) solid #fff
-    &::after 
-        top: gem(28)
-        border-top: gem(2) solid #fff
-    &.active 
-        &::before,
-        &::after 
-            top: gem(20)
-            backface-visibility: hidden
-            transition: .3s ease
-        &::before 
-            transform: rotate(45deg)
-        span 
-            opacity: 0
-        &::after 
-            transform: rotate(-45deg)
-
-@media only screen and (max-width : 1024px)
-    .bt-menu
-        display: block
-        right: gem(21)
-        top: gem(15)
-        z-index: 11
 .mobile_menu
 	display: flex
 	background: #000
@@ -150,7 +102,7 @@ a
 	z-index: 10
 	flex-direction: column
 	&-nav
-		margin: gem(200) 0 0 gem(30)
+		margin: gem(130) 0 0 gem(30)
 		a
 			display: flex
 			margin-bottom: gem(32)
@@ -200,45 +152,5 @@ a
 		left: gem(20)
 	&.active
 		left: 0
-// .mobile_menu
-//     background: #000
-//     position: fixed
-//     top: 0
-//     left: 0
-//     height: 100vh
-//     width: 100%
-//     transition: .3s ease
-//     z-index: 10
-//     display: flex
-//     flex-direction: column
-// 	.nav-menu_mobile
-// 		margin-top: gem(200)
-//     .second_post
-//         display: flex
-//         position: absolute
-//         // top: gem(15)
-//         left: gem(95)
-//         width: gem(214)
-//         cursor: pointer
-//         z-index: 10
-//         color: #000
-//         transition: all .25s ease
-//         &::after
-//             display: flex
-//             position: absolute
-//             content: ''
-//             width: gem(212)
-//             height: gem(54)
-//             border-radius: 0 gem(8) gem(8) gem(8)
-//             background: linear-gradient(93.92deg, #22F4FF 0%, #F0598D 48.96%, #FFC93C 100%)
-//     &.active
-//         left: 0
-// @media only screen and (max-width : 1024px)
-//     .mobile_menu
-//         .second_post
-//             left: gem(280)
-// @media only screen and (max-width : 480px)
-//     .mobile_menu
-//         .second_post
-//             left: gem(100)
+
              
