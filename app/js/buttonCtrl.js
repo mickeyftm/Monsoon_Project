@@ -11,6 +11,7 @@ let mousepos = {x: 0, y: 0};
 window.addEventListener('mousemove', ev => mousepos = getMousePos(ev));
 
 export default class ButtonCtrl extends EventEmitter {
+	
     constructor(el) {
         super();
         // DOM elements

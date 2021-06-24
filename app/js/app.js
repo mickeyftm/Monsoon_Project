@@ -204,8 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//buttons & cursor
 	let cursor = new Cursor(document.querySelector('.cursor'));
-	let button = new ButtonCtrl(document.querySelector('.binance'));
-	let buttonTwo = new ButtonCtrl(document.querySelector('.testnet'));
+	new ButtonCtrl(document.querySelector('.binance'));
+	new ButtonCtrl(document.querySelector('.testnet'));
 
 	let cursorHoverItems = document.querySelectorAll('.cursor-hover')
 	for (let i = 0; i < cursorHoverItems.length; i++) {
@@ -251,11 +251,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			// end: 'bottom ',
 			// markers: true,
 			onEnter: () => {
-				gsap.to('#one-hero', { duration: 1, x: 0, y: 0, fill: "#8349FF", morphSVG: '#one-process', ease: 'power1' })
-				gsap.to('#two-hero', { duration: 1, x: '5rem', y: '1rem', fill: "#FF0095", morphSVG: '#two-process', ease: 'power1' })
-				gsap.to('#three-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#0013FF", morphSVG: '#three-process', ease: 'power1' })
-				gsap.to('#four-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#00FFFF", morphSVG: '#four-process', ease: 'power1' })
-				gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
+				gsap.to('#one-hero', { duration: .2, x: 0, y: 0, fill: "#8349FF", morphSVG: '#one-process', ease: 'power1' })
+				gsap.to('#two-hero', { duration: .2, x: '5rem', y: '1rem', fill: "#FF0095", morphSVG: '#two-process', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, x: 0, y: '2.5rem', fill: "#0013FF", morphSVG: '#three-process', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, x: 0, y: '2.5rem', fill: "#00FFFF", morphSVG: '#four-process', ease: 'power1' })
+				// gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
 				backgroundSvg.classList.add('process')
 			},
 			onLeave: () => {
@@ -265,10 +265,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				backgroundSvg.classList.add('process')
 			},
 			onLeaveBack: () => {
-				gsap.to('#one-hero', { duration: 1, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
-				gsap.to('#two-hero', { duration: 1, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
-				gsap.to('#three-hero', { duration: 1, x: 0, y: '1.5rem', fill: "#FF8993", morphSVG: '#three-hero', ease: 'power1' })
-				gsap.to('#four-hero', { duration: 1, x: 0, y: 0, fill: "#FF0095", morphSVG: '#four-hero', ease: 'power1' })
+				gsap.to('#one-hero', { duration: .2, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
+				gsap.to('#two-hero', { duration: .2, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, x: 0, y: '1.5rem', fill: "#FF8993", morphSVG: '#three-hero', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, x: 0, y: 0, fill: "#FF0095", morphSVG: '#four-hero', ease: 'power1' })
 				backgroundSvg.classList.remove('process')
 			}
 		})
@@ -282,11 +282,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			// end: 'bottom ',
 			// markers: true,
 			onEnter: () => {
-				gsap.to('#one-hero', { duration: 1, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
-				gsap.to('#two-hero', { duration: 1, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
-				gsap.to('#three-hero', { duration: 1, x: 0, y: '1.5rem', fill: "#FFF181", morphSVG: '#three-hero', ease: 'power1' })
-				gsap.to('#four-hero', { duration: 1, x: 0, y: 0, fill: "#00DD81", morphSVG: '#four-hero', ease: 'power1' })
-				gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
+				gsap.to('#one-hero', { duration: .2, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
+				gsap.to('#two-hero', { duration: .2, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, x: 0, y: '1.5rem', fill: "#FFF181", morphSVG: '#three-hero', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, x: 0, y: 0, fill: "#00DD81", morphSVG: '#four-hero', ease: 'power1' })
+				// gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
 				backgroundSvg.classList.add('ensuring')
 			},
 			onLeave: () => {
@@ -297,10 +297,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				backgroundSvg.classList.add('ensuring')
 			},
 			onLeaveBack: () => {
-				gsap.to('#one-hero', { duration: 1, x: 0, y: 0, fill: "#8349FF", morphSVG: '#one-process', ease: 'power1' })
-				gsap.to('#two-hero', { duration: 1, x: '5rem', y: '1rem', fill: "#FF0095", morphSVG: '#two-process', ease: 'power1' })
-				gsap.to('#three-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#0013FF", morphSVG: '#three-process', ease: 'power1' })
-				gsap.to('#four-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#00FFFF", morphSVG: '#four-process', ease: 'power1' })
+				gsap.to('#one-hero', { duration: .2, x: 0, y: 0, fill: "#8349FF", morphSVG: '#one-process', ease: 'power1' })
+				gsap.to('#two-hero', { duration: .2, x: '5rem', y: '1rem', fill: "#FF0095", morphSVG: '#two-process', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, x: 0, y: '2.5rem', fill: "#0013FF", morphSVG: '#three-process', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, x: 0, y: '2.5rem', fill: "#00FFFF", morphSVG: '#four-process', ease: 'power1' })
 				backgroundSvg.classList.remove('ensuring')
 			}
 		})
@@ -314,11 +314,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			// end: 'bottom ',
 			// markers: true,
 			onEnter: () => {
-				gsap.to('#one-hero', { duration: 1, x: '8rem', y: '4rem', fill: "#FFF181", morphSVG: '#one-product', ease: 'power1' }) //yellow
-				gsap.to('#two-hero', { duration: 1, x: '-2rem', y: '2rem', fill: "#34F1BB", morphSVG: '#two-product', ease: 'power1' })
-				gsap.to('#three-hero', { duration: 1, x: 0, y: 0, fill: "#0038FF", morphSVG: '#three-product', ease: 'power1' })
-				gsap.to('#four-hero', { duration: 1, x: 0, y: '.5rem', fill: "#FF00F5", morphSVG: '#four-product', ease: 'power1' })
-				gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
+				gsap.to('#one-hero', { duration: .2, x: '8rem', y: '4rem', fill: "#FFF181", morphSVG: '#one-product', ease: 'power1' }) //yellow
+				gsap.to('#two-hero', { duration: .2, x: '-2rem', y: '2rem', fill: "#34F1BB", morphSVG: '#two-product', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, x: 0, y: 0, fill: "#0038FF", morphSVG: '#three-product', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, x: 0, y: '.5rem', fill: "#FF00F5", morphSVG: '#four-product', ease: 'power1' })
+				// gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
 				backgroundSvg.classList.add('products-back')
 			},
 			onLeave: () => {
@@ -329,10 +329,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				backgroundSvg.classList.add('products-back')
 			},
 			onLeaveBack: () => {
-				gsap.to('#one-hero', { duration: 1, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
-				gsap.to('#two-hero', { duration: 1, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
-				gsap.to('#three-hero', { duration: 1, x: 0, y: '1.5rem', fill: "#FFF181", morphSVG: '#three-hero', ease: 'power1' })
-				gsap.to('#four-hero', { duration: 1, x: 0, y: 0, fill: "#00DD81", morphSVG: '#four-hero', ease: 'power1' })
+				gsap.to('#one-hero', { duration: .2, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
+				gsap.to('#two-hero', { duration: .2, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, x: 0, y: '1.5rem', fill: "#FFF181", morphSVG: '#three-hero', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, x: 0, y: 0, fill: "#00DD81", morphSVG: '#four-hero', ease: 'power1' })
 				backgroundSvg.classList.remove('products-back')
 			}
 		})
