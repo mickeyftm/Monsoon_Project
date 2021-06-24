@@ -14,41 +14,15 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MorphSVGPlugin)
 
 document.addEventListener('DOMContentLoaded', () => {
 	gsap.to(window, { duration: 0.1, scrollTo: 0, ease: 'power2', delay: 0 });
+	let background = document.querySelector('.back')
+	// background.setAttribute('viewBox', `0 0 ${window.innerWidth} ${window.innerHeight}`)
 
 	//preolader
 	let body = document.querySelector('body')
 	let preloader = document.querySelector('.preloader')
 	let preloaderIcon = document.querySelector('.preloader_icon')
 	let logo = document.querySelector('.logo')
-	let counter = document.querySelector('.counter')
-	let seconds = document.querySelector('.seconds')
-	function count() {
-		let number = 100
-		let secondNumber = 100
-		setInterval(() => {
 
-			if (number > 0) {
-				number = number - 1
-				counter.innerHTML = `${number}`
-				secondNumber = 100
-
-				// secondNumber = secondNumber-1
-				// seconds.innerHTML = `${secondNumber}`
-				setInterval(() => {
-					if (secondNumber > 0) {
-						secondNumber = secondNumber - 1
-						seconds.innerHTML = `${secondNumber}`
-					} else {
-						return
-					}
-
-				}, 3);
-			} else {
-				return
-			}
-		}, 25);
-	}
-	count()
 	setTimeout(() => {
 		preloader.classList.add('loaded')
 		body.classList.remove('loading')
@@ -227,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		heroInwiev()
 		processInwiev()
 		ensuringInwiev()
+		productInwiev()
 	}
 
 	let backgroundSvg = document.querySelector('.back')
@@ -266,10 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				backgroundSvg.classList.remove('process')
 			},
 			onEnterBack: () => {
-				gsap.to('#one-hero', { duration: 1, x: 0, y: 0, fill: "#8349FF", morphSVG: '#one-process', ease: 'power1' })
-				gsap.to('#two-hero', { duration: 1, x: '5rem', y: '1rem', fill: "#FF0095", morphSVG: '#two-process', ease: 'power1' })
-				gsap.to('#three-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#0013FF", morphSVG: '#three-process', ease: 'power1' })
-				gsap.to('#four-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#00FFFF", morphSVG: '#four-process', ease: 'power1' })
 				backgroundSvg.classList.add('process')
 			},
 			onLeaveBack: () => {
@@ -290,29 +261,61 @@ document.addEventListener('DOMContentLoaded', () => {
 			// end: 'bottom ',
 			// markers: true,
 			onEnter: () => {
-				// gsap.to('#one-hero', { duration: 1, x: 0, y: 0, fill: "#8349FF", morphSVG: '#one-process', ease: 'power1' })
-				// gsap.to('#two-hero', { duration: 1, x: '5rem', y: '1rem', fill: "#FF0095", morphSVG: '#two-process', ease: 'power1' })
-				// gsap.to('#three-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#0013FF", morphSVG: '#three-process', ease: 'power1' })
-				// gsap.to('#four-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#00FFFF", morphSVG: '#four-process', ease: 'power1' })
+				gsap.to('#one-hero', { duration: 1, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
+				gsap.to('#two-hero', { duration: 1, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
+				gsap.to('#three-hero', { duration: 1, x: 0, y: '1.5rem', fill: "#FFF181", morphSVG: '#three-hero', ease: 'power1' })
+				gsap.to('#four-hero', { duration: 1, x: 0, y: 0, fill: "#00DD81", morphSVG: '#four-hero', ease: 'power1' })
 				gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
 				backgroundSvg.classList.add('ensuring')
 			},
 			onLeave: () => {
+				
 				backgroundSvg.classList.remove('ensuring')
 			},
 			onEnterBack: () => {
-				// gsap.to('#one-hero', { duration: 1, x: 0, y: 0, fill: "#8349FF", morphSVG: '#one-process', ease: 'power1' })
-				// gsap.to('#two-hero', { duration: 1, x: '5rem', y: '1rem', fill: "#FF0095", morphSVG: '#two-process', ease: 'power1' })
-				// gsap.to('#three-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#0013FF", morphSVG: '#three-process', ease: 'power1' })
-				// gsap.to('#four-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#00FFFF", morphSVG: '#four-process', ease: 'power1' })
 				backgroundSvg.classList.add('ensuring')
 			},
 			onLeaveBack: () => {
+				gsap.to('#one-hero', { duration: 1, x: 0, y: 0, fill: "#8349FF", morphSVG: '#one-process', ease: 'power1' })
+				gsap.to('#two-hero', { duration: 1, x: '5rem', y: '1rem', fill: "#FF0095", morphSVG: '#two-process', ease: 'power1' })
+				gsap.to('#three-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#0013FF", morphSVG: '#three-process', ease: 'power1' })
+				gsap.to('#four-hero', { duration: 1, x: 0, y: '2.5rem', fill: "#00FFFF", morphSVG: '#four-process', ease: 'power1' })
 				backgroundSvg.classList.remove('ensuring')
 			}
 		})
 	}
 
+	function productInwiev() {
+		let animItems = document.querySelectorAll('.products .anim-items')
+		ScrollTrigger.create({
+			trigger: '.products',
+			start: 'top center',
+			// end: 'bottom ',
+			// markers: true,
+			onEnter: () => {
+				gsap.to('#one-hero', { duration: 1, x: '8rem', y: '4rem', fill: "#FFF181", morphSVG: '#one-product', ease: 'power1' }) //yellow
+				gsap.to('#two-hero', { duration: 1, x: '-2rem', y: '2rem', fill: "#34F1BB", morphSVG: '#two-product', ease: 'power1' })
+				gsap.to('#three-hero', { duration: 1, x: 0, y: 0, fill: "#0038FF", morphSVG: '#three-product', ease: 'power1' })
+				gsap.to('#four-hero', { duration: 1, x: 0, y: '.5rem', fill: "#FF00F5", morphSVG: '#four-product', ease: 'power1' })
+				gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
+				backgroundSvg.classList.add('products-back')
+			},
+			onLeave: () => {
+				
+				backgroundSvg.classList.remove('products-back')
+			},
+			onEnterBack: () => {
+				backgroundSvg.classList.add('products-back')
+			},
+			onLeaveBack: () => {
+				gsap.to('#one-hero', { duration: 1, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
+				gsap.to('#two-hero', { duration: 1, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
+				gsap.to('#three-hero', { duration: 1, x: 0, y: '1.5rem', fill: "#FFF181", morphSVG: '#three-hero', ease: 'power1' })
+				gsap.to('#four-hero', { duration: 1, x: 0, y: 0, fill: "#00DD81", morphSVG: '#four-hero', ease: 'power1' })
+				backgroundSvg.classList.remove('products-back')
+			}
+		})
+	}
 
 	setTimeout(() => {
 		inviewCore()
