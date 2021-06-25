@@ -194,14 +194,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	let faqOffsetBottom = faq.getBoundingClientRect().y + faq.getBoundingClientRect().height - window.innerHeight
 
 	function footerAnimation() {
-		window.addEventListener('scroll', () => {
-			faqOffsetBottom = faq.getBoundingClientRect().y + faq.getBoundingClientRect().height - window.innerHeight
-			if (faqOffsetBottom < 20) {
-				footer.classList.add('active')
-			} else if (faqOffsetBottom > 20 && footer.classList.contains('active')) {
-				footer.classList.remove('active')
-			}
-		})
+		if(window.innerWidth > 1024) {
+			window.addEventListener('scroll', () => {
+				faqOffsetBottom = faq.getBoundingClientRect().y + faq.getBoundingClientRect().height - window.innerHeight
+				if (faqOffsetBottom < 20) {
+					footer.classList.add('active')
+				} else if (faqOffsetBottom > 20 && footer.classList.contains('active')) {
+					footer.classList.remove('active')
+				}
+			})
+		}
 	}
 
 	footerAnimation()

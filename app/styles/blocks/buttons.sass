@@ -77,7 +77,49 @@
 				margin-top: gem(10)
 				&::after
 					width: gem(399)
+					background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #FF587D 0%, #FFAEAE 57.34%, #FF90BA 100%)
 				&::before
 					width: gem(399)
 			.background
 				transform: none
+
+.buttons_mobile
+	display: none
+	a
+		display: flex
+
+@media only screen and (max-width : 480px)
+	.buttons_mobile
+		display: flex 
+		position: relative
+		flex-direction: column
+		top: gem(100)
+		left: gem(23)
+		a
+			display: flex
+			position: relative
+			width: gem(328)
+			height: gem(64)
+			border-top: 1px solid white
+			border-right: 1px solid white
+			border-radius: gem(100)
+			justify-content: center
+			align-items: center
+			overflow: hidden
+			margin-bottom: gem(15)
+			&::after
+				content: ""
+				display: flex
+				position: absolute
+				width: gem(328)
+				height: gem(64)
+				border-radius: gem(100)
+				top: gem(0.1)
+				opacity: 1
+				background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #2B7AEF 0%, #2BBEEF 57.34%, #2B7AEF 100%)
+				z-index: 1
+			span 
+				z-index: 3
+			&:nth-child(2)
+				&::after
+					background: radial-gradient(63.33% 995.94% at 31.88% 41.38%, #FF587D 0%, #FFAEAE 57.34%, #FF90BA 100%)
