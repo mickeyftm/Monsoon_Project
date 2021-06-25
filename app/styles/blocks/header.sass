@@ -51,6 +51,8 @@ header
 				border-radius: 50%
 				top: gem(4)
 				left: gem(103)
+				pointer-events: none
+				opacity: .5
 			&:nth-child(2)
 				&::before
 					left: gem(62)
@@ -58,6 +60,7 @@ header
 				&::before
 					content: none
 			&:hover
+				opacity: 1
 				&::after
 					transform: scaleX(1)
 					transform-origin: left

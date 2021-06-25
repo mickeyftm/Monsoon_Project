@@ -1,5 +1,17 @@
 .cross
+	display: flex
+	flex-direction: column
 	margin-top: gem(200)
+	&-background
+		display: flex
+		width: gem(1473)
+		height: 0
+		margin: auto
+		align-self: center
+		position: absolute
+		margin-top: gem(-45)
+		img
+			width: 100%
 	.marquee 
 		display: block
 		width: 100%
@@ -28,7 +40,10 @@
 			p
 				margin: gem(20) gem(0) gem(151) gem(200)
 				max-width: gem(513)
+				// opacity: .85
+				color: rgba(255,255,255,.85)
 				.glitch
+					color: #fff
 					font-weight: 800
 	.planet
 		display: flex

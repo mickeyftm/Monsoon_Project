@@ -11,9 +11,9 @@ window.jQuery = $
 window.$ = $
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MorphSVGPlugin)
-
+gsap.to(window, { duration: 0, scrollTo: 0, ease: 'power2', delay: 0 });
 document.addEventListener('DOMContentLoaded', () => {
-	gsap.to(window, { duration: 0.1, scrollTo: 0, ease: 'power2', delay: 0 });
+	
 	let background = document.querySelector('.back')
 	// background.setAttribute('viewBox', `0 0 ${window.innerWidth} ${window.innerHeight}`)
 
@@ -27,17 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	///timer
 	var count = 300;
 
-	var counter = setInterval(timer, 0.5); //10 will  run it every 100th of a second
+	var counter = setInterval(timer, 1); //10 will  run it every 100th of a second
 
 	function timer()
 	{
 	    if (count <= 0)
 	    {
+			document.getElementById("timer").innerHTML='00.00'
 	        clearInterval(counter);
 	        return;
 	     }
 	     count--;
-	     document.getElementById("timer").innerHTML='00.0' + count /100; 
+	     document.getElementById("timer").innerHTML='0' + count /100; 
 		 console.log(counter)
 	 }
 	 	/////////////////////////
@@ -114,12 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	//products animation
-	ScrollTrigger.create({
-		trigger: '.products',
-		start: "top top",
-		end: "bottom bottom",
-		pin: '.products-right'
-	})
+	
+	if(window.innerWidth > 1024) {
+		ScrollTrigger.create({
+			trigger: '.products',
+			start: "top top",
+			end: "bottom bottom",
+			pin: '.products-right'
+		})
+	}
 
 	//header hide
 	var header = document.querySelector('header');
@@ -220,9 +224,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	//inwiev + svg animations
 	function inviewCore() {
 		heroInwiev()
-		processInwiev()
-		ensuringInwiev()
-		productInwiev()
+		if(window.innerWidth > 1024) {
+			processInwiev()
+			ensuringInwiev()
+			productInwiev()
+			protocolInwiev()
+			faqInwiev()
+		}
 	}
 
 	let backgroundSvg = document.querySelector('.back')
@@ -243,8 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function processInwiev() {
-		let animItems = document.querySelectorAll('.process .anim-items')
-
 		ScrollTrigger.create({
 			trigger: '.process',
 			start: 'top center',
@@ -275,16 +281,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function ensuringInwiev() {
-		let animItems = document.querySelectorAll('.ensuring .anim-items')
 		ScrollTrigger.create({
 			trigger: '.ensuring',
 			start: 'top center',
 			// end: 'bottom ',
 			// markers: true,
 			onEnter: () => {
-				gsap.to('#one-hero', { duration: .2, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
-				gsap.to('#two-hero', { duration: .2, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
-				gsap.to('#three-hero', { duration: .2, x: 0, y: '1.5rem', fill: "#FFF181", morphSVG: '#three-hero', ease: 'power1' })
+				gsap.to('#one-hero', { duration: .2, x: '-4rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
+				gsap.to('#two-hero', { duration: .2, x: '-1rem', y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, x: 0, y: '1.5rem', fill: "#FF00F5", morphSVG: '#three-hero', ease: 'power1' })
 				gsap.to('#four-hero', { duration: .2, x: 0, y: 0, fill: "#00DD81", morphSVG: '#four-hero', ease: 'power1' })
 				// gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
 				backgroundSvg.classList.add('ensuring')
@@ -307,15 +312,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function productInwiev() {
-		let animItems = document.querySelectorAll('.products .anim-items')
 		ScrollTrigger.create({
 			trigger: '.products',
 			start: 'top center',
 			// end: 'bottom ',
 			// markers: true,
 			onEnter: () => {
-				gsap.to('#one-hero', { duration: .2, x: '8rem', y: '4rem', fill: "#FFF181", morphSVG: '#one-product', ease: 'power1' }) //yellow
-				gsap.to('#two-hero', { duration: .2, x: '-2rem', y: '2rem', fill: "#34F1BB", morphSVG: '#two-product', ease: 'power1' })
+				gsap.to('#one-hero', { duration: .2, x: '7rem', y: '2rem', fill: "#FFF181", morphSVG: '#one-product', ease: 'power1' }) //yellow
+				gsap.to('#two-hero', { duration: .2, x: 0, y: '1rem', fill: "#34F1BB", morphSVG: '#two-product', ease: 'power1' })
 				gsap.to('#three-hero', { duration: .2, x: 0, y: 0, fill: "#0038FF", morphSVG: '#three-product', ease: 'power1' })
 				gsap.to('#four-hero', { duration: .2, x: 0, y: '.5rem', fill: "#FF00F5", morphSVG: '#four-product', ease: 'power1' })
 				// gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
@@ -329,11 +333,80 @@ document.addEventListener('DOMContentLoaded', () => {
 				backgroundSvg.classList.add('products-back')
 			},
 			onLeaveBack: () => {
-				gsap.to('#one-hero', { duration: .2, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
-				gsap.to('#two-hero', { duration: .2, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
-				gsap.to('#three-hero', { duration: .2, x: 0, y: '1.5rem', fill: "#FFF181", morphSVG: '#three-hero', ease: 'power1' })
+				gsap.to('#one-hero', { duration: .2, x: '-4rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
+				gsap.to('#two-hero', { duration: .2, x: '-1rem', y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, x: 0, y: '1.5rem', fill: "#FF00F5", morphSVG: '#three-hero', ease: 'power1' })
 				gsap.to('#four-hero', { duration: .2, x: 0, y: 0, fill: "#00DD81", morphSVG: '#four-hero', ease: 'power1' })
 				backgroundSvg.classList.remove('products-back')
+			}
+		})
+	}
+
+	function protocolInwiev() {
+		ScrollTrigger.create({
+			trigger: '.cross',
+			start: 'top bottom',
+			// end: 'bottom ',
+			// markers: true,
+			onEnter: () => {
+				gsap.to('#one-hero', { duration: .2,  autoAlpha: 0, x: '7rem', y: '2rem', fill: "#FFF181", morphSVG: '#one-product', ease: 'power1' }) //yellow
+				gsap.to('#two-hero', { duration: .2,  autoAlpha: 0, x: 0, y: '1rem', fill: "#34F1BB", morphSVG: '#two-product', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2,  autoAlpha: 0, x: 0, y: 0, fill: "#0038FF", morphSVG: '#three-product', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2,  autoAlpha: 0, x: 0, y: '.5rem', fill: "#FF00F5", morphSVG: '#four-product', ease: 'power1' })
+				
+				backgroundSvg.classList.add('cross-back')
+			},
+			onLeave: () => {
+
+				backgroundSvg.classList.remove('cross-back')
+			},
+			onEnterBack: () => {
+				backgroundSvg.classList.add('cross-back')
+			},
+			onLeaveBack: () => {
+				gsap.to('#one-hero', { duration: .2, autoAlpha: 1, x: '7rem', y: '2rem', fill: "#FFF181", morphSVG: '#one-product', ease: 'power1' }) //yellow
+				gsap.to('#two-hero', { duration: .2, autoAlpha: 1, x: 0, y: '1rem', fill: "#34F1BB", morphSVG: '#two-product', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, autoAlpha: 1, x: 0, y: 0, fill: "#0038FF", morphSVG: '#three-product', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, autoAlpha: 1, x: 0, y: '.5rem', fill: "#FF00F5", morphSVG: '#four-product', ease: 'power1' })
+				backgroundSvg.classList.remove('cross-back')
+			}
+		})
+		ScrollTrigger.create({
+			trigger: '.cross-background',
+			start: 'top center',
+			markers: true,
+			onEnter: () => {
+				gsap.to('.cross-background', {duration: .5, height: '3.11rem', ease: 'power1'})
+			}
+		})
+	}
+
+	function faqInwiev() {
+		ScrollTrigger.create({
+			trigger: '.faq',
+			start: 'top center',
+			// end: 'bottom ',
+			// markers: true,
+			onEnter: () => {
+				gsap.to('#one-hero', { duration: .2, autoAlpha: 1, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
+				gsap.to('#two-hero', { duration: .2, autoAlpha: 1, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, autoAlpha: 1, x: 0, y: '1.5rem', fill: "#FF8993", morphSVG: '#three-hero', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, autoAlpha: 1, x: 0, y: 0, fill: "#FF0095", morphSVG: '#four-hero', ease: 'power1' })
+				backgroundSvg.classList.add('faq-back')
+			},
+			onLeave: () => {
+
+				backgroundSvg.classList.remove('faq-back')
+			},
+			onEnterBack: () => {
+				backgroundSvg.classList.add('faq-back')
+			},
+			onLeaveBack: () => {
+				gsap.to('#one-hero', { duration: .2, autoAlpha: 0, ease: 'power1' }) //yellow
+				gsap.to('#two-hero', { duration: .2, autoAlpha: 0, ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, autoAlpha: 0, ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, autoAlpha: 0, ease: 'power1' })
+				backgroundSvg.classList.remove('faq-back')
 			}
 		})
 	}
@@ -345,13 +418,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	//window on top, after page is loaded
 	gsap.to(window, { duration: 0.1, scrollTo: 0, ease: 'power2', delay: 1 });
 
-
-	// var l = new LanguageSelector();
-	// $(document).on("change", "#langSelector", function () {
-	// 	var s = $(this).children("option:selected").val();
-	// 	l.setLang(s);
-	// 	window.location = "index.html";
-	// });
-	// l.parse();
 
 })

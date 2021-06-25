@@ -31,6 +31,7 @@
 		p
 			margin-right: gem(54)
 			position: relative
+			opacity: .9
 			&::before
 				content: ''
 				display: flex
@@ -93,8 +94,9 @@
 			position: relative
 			margin: auto gem(24)
 			transform: translate(0px, 0px)
-			opacity: 1
+			transition: opacity 0.3s ease
 			visibility: inherit
+			opacity: 0.9
 			&::after
 				content: ""
 				display: flex
@@ -114,12 +116,15 @@
 				display: flex
 				position: absolute
 				background: #FAF3E0
+				opacity: 0.5
 				width: 3px
 				height: 3px
 				border-radius: 50%
-				top: gem(1)
+				top: gem(5)
+				pointer-events: none
 				left: gem(93)
 			&:hover
+				opacity: 1
 				&::after
 					transform: scaleX(1)
 					transform-origin: left  
