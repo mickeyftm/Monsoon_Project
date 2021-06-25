@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		ScrollTrigger.create({
 			trigger: '.cross-background',
 			start: 'top center',
-			markers: true,
+			// markers: true,
 			onEnter: () => {
 				gsap.to('.cross-background', {duration: .5, height: '3.11rem', ease: 'power1'})
 			}

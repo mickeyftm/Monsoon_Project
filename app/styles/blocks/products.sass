@@ -44,7 +44,6 @@
 			position: absolute
 			top: unset
 			bottom: 0
-		   
 		h2
 			font-size: gem(120)
 			line-height: gem(132)
@@ -61,7 +60,7 @@
 				flex-direction: row
 				justify-content: center
 				align-items: center
-				margin-top: gem(90)
+				margin-top: gem(290)
 				align-self: flex-end
 				margin-right: gem(63)
 		.smile_rotate
@@ -114,6 +113,8 @@
 		flex-direction: column-reverse
 		margin-top: gem(0)
 		&-right
+			right: inherit
+			top: gem(-150)
 			h2 
 				margin-left: gem(75)
 				font-size: gem(72)
@@ -125,7 +126,7 @@
 				top: gem(1354)
 				right: gem(-200)
 				&-wrapper
-					top: gem(-800)
+					top: gem(-400)
 					left: gem(100)
 			.smile_rotate
 				top: gem(1284)
@@ -147,10 +148,6 @@
 					position: absolute
 					left: gem(370)
 					top: gem(188)
-// .pin-spacer
-// 	top: gem(-150) !important
-// 	left: 0 !important
-
 @media only screen and (max-width : 480px)
 	.products
 		&-left
@@ -168,16 +165,14 @@
 					top: gem(0)
 					position: inherit
 		&-right
+			top: gem(-100)
 			h2
+				margin-left: gem(30)
 				span
 					margin-left: gem(0)
 			.smile
 				&-wrapper
 					display: none
-	// .pin-spacer
-	// 	top: gem(-100) !important
-	// 	left: gem(-50) !important
-				   
 
 					
 			

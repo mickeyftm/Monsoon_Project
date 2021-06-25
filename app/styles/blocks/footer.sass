@@ -48,11 +48,12 @@
 				display: flex
 				margin-right: gem(14)
 				transition: all .3s ease
+				opacity: 0.5
 				svg
 					width: gem(24)
 					height: gem(24)
 				&:hover
-					opacity: 0.5
+					opacity: 1
 	&-center
 		display: flex
 		position: relative
@@ -137,8 +138,6 @@
 			&:nth-child(4)
 				&::before
 					opacity: 0
-
-				
 @media only screen and (max-width : 1024px)
 	.footer-menu
 		flex-direction: column-reverse
@@ -157,9 +156,21 @@
 		&-right
 			top: gem(8)
 			margin-left: gem(54)
+			a
+				&::before
+					left: gem(105)
+				&:nth-child(2)
+					&::before
+						left: gem(52)
+				&:nth-child(3)
+					&::before
+						left: gem(65)
 		&-left
 			position: relative
 			top: gem(-18)
+			p
+				&::before
+					left: gem(330)
 @media only screen and (max-width : 480px)
 	.footer-menu
 		&::after

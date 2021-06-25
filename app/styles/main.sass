@@ -153,4 +153,67 @@ a
 	&.active
 		left: 0
 
-             
+.first_page_bg
+	display: none
+.second_page_bg
+	display: none
+.third_page_bg
+	display: none
+.fourth_page_bg
+	display: none
+.sixth_page_bg
+	display: none
+
+@media only screen and (max-width : 1024px)
+	.first_page_bg
+		display: flex
+		position: absolute
+		img
+			width: gem(1024)
+	.second_page_bg
+		display: flex
+		position: absolute
+		top: gem(1100)
+		img
+			width: gem(1024)
+	.third_page_bg
+		display: flex
+		position: absolute
+		top: gem(2200)
+		img
+			width: gem(1024)
+	.fourth_page_bg
+		display: flex
+		position: absolute
+		top: gem(3000)
+		height: gem(2080)
+		img
+			width: gem(1024)
+	.sixth_page_bg
+		display: flex
+		position: absolute
+		top: gem(5200)
+		height: gem(2000)
+		img
+			width: gem(1024)
+
+@media only screen and (max-width : 480px)
+	.first_page_bg
+		img
+			width: gem(480)
+	.second_page_bg
+		img
+			width: gem(480)
+	.third_page_bg
+		img
+			width: gem(480)
+	.fourth_page_bg
+		top: gem(3800)
+		img
+			width: gem(480)
+	.sixth_page_bg
+		top: gem(5900)
+		img
+			width: gem(480)
+
+
