@@ -1,9 +1,7 @@
 .enabling
 	display: flex
-	flex-direction: row
 	margin-top: gem(97)
 	position: relative
-	// background-color: #000000
 	&-right
 		display: flex
 		position: relative
@@ -20,16 +18,13 @@
 	&-left
 		display: flex
 		flex-direction: column
-		margin-top: gem(133)
-		margin-left: gem(168)
+		margin: gem(133) 0 0 gem(168)
 		position: relative
 		h2
-			margin-left: gem(183)
-			margin-bottom: gem(37)
+			margin: 0 0 gem(37) gem(183)
 		p
 			width: gem(400)
-			margin-left: gem(340)
-			margin-bottom: gem(65)
+			margin: 0 0 gem(65) gem(340)
 		img
 			width: gem(112)
 			display: flex
@@ -55,12 +50,6 @@
 		&:nth-last-child(3)
 			right: gem(64)
 			left: inherit
-		// &::after
-			// content: ''
-			// display: block
-			// width: 100%
-			// height: gem(100)
-			// background: linear-gradient(360deg,transparent,#FFF)
 		&-go
 			position: absolute
 			display: block
@@ -72,7 +61,6 @@
 			transition: 1s
 			&:nth-last-child(1)
 				animation-delay: 2s
-
 .triangle
 	display: flex
 	position: absolute
@@ -99,19 +87,16 @@
 	.enabling
 		flex-direction: column-reverse
 		&-right
-			// margin-top: gem(105)
 			height: gem(400)
 			video
 				top: gem(-125)
 				width: gem(930)
 				right: gem(-56)
 		&-left
-			margin-left: gem(97)
-			margin-top: gem(33)
+			margin: gem(33) 0 0 gem(97)
 			h2
 				width: gem(580)
-				margin-left: gem(150)
-				margin-bottom: gem(32)
+				margin: 0 0 gem(32) gem(150)
 			p
 				width: gem(358)
 				margin-left: gem(208)
@@ -129,7 +114,6 @@
 			right: gem(22)
 @media only screen and (max-width : 480px)
 	.enabling
-		// background-image: url(../../images/dist/bg_first.svg)
 		.line
 			display: none
 		&-right
@@ -140,21 +124,15 @@
 				top: gem(-197)
 				right: 0
 		&-left
-			margin-left: gem(32)
-			margin-top: gem(-50)
+			margin: gem(-50) 0 0 gem(32)
 			h2
 				width: gem(354)
-				margin-bottom: gem(18)
-				margin-left: gem(0)
+				margin: 0 0 gem(18) 0
 			p
-				margin-left: gem(0)
-				margin-bottom: gem(30)
+				margin: 0 gem(30) 0 0
 				width: gem(350)
 			img
 				left: gem(290)
 				top: gem(-50)
 	.triangle
 		display: none
-
-
-

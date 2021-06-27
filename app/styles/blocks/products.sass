@@ -2,7 +2,6 @@
 	display: flex
 	align-items: flex-start
 	position: relative
-	flex-direction: row
 	padding-top: gem(90)
 	height: auto
 	&-left
@@ -52,26 +51,19 @@
 			display: flex
 			position: absolute
 			width: gem(61)
-			// top: gem(454)
-			// right: gem(150)
 			&-wrapper
 				position: relative
 				display: flex
-				flex-direction: row
 				justify-content: center
 				align-items: center
-				margin-top: gem(240)
 				align-self: flex-end
-				margin-right: gem(63)
+				margin: gem(240) gem(63) 0 0
 		.smile_rotate
 			display: flex
 			position: relative
 			width: gem(200)
-			// top: gem(384)
-			// right: gem(80)
 			animation: circle_rotate 10s linear infinite
 		.center_line
-			display: block
 			position: relative
 			right: gem(800)
 			left: 0
@@ -116,10 +108,9 @@
 			right: inherit
 			top: gem(-150)
 			h2 
-				margin-left: gem(75)
 				font-size: gem(72)
 				line-height: gem(78)
-				margin-bottom: gem(27)
+				margin: 0 0 gem(27) gem(75)
 				span
 					margin-left: gem(80)
 			.smile
@@ -154,8 +145,7 @@
 			margin-left: gem(30)
 			&-content
 				h3
-					margin-left: gem(0)
-					margin-top: gem(30)
+					margin: gem(30) 0 0 0
 				h4
 					margin-left: gem(0)
 				p

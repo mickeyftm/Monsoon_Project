@@ -4,7 +4,6 @@
 
 *
 	box-sizing: border-box
-	// cursor: none
 
 
 html, body
@@ -25,7 +24,6 @@ body
 	-webkit-font-smoothing: antialiased
 	-moz-osx-font-smoothing: grayscale
 	text-rendering: optimizeLegibility
-	// cursor: none !important
 	&.loading
 		overflow: hidden
 		.page-background
@@ -46,7 +44,6 @@ section
 	background-repeat: no-repeat
 	background-position: center
 	background-size: cover
-	// visibility: hidden
 .container
 	position: relative
 	width: var(--container-width)
@@ -64,9 +61,6 @@ input , textarea
 
 button[type='submit']
 	cursor: pointer
-a
-	// cursor: none
-//start here
 .anim-items
 	opacity: 0
 	transform: translateY(gem(-40))
@@ -87,7 +81,6 @@ a
 		fill: #fff
 		stroke: var(--cursor-stroke)
 		stroke-width: var(--cursor-stroke-width)
-		// z-index: 99999999999
 	.credits
 		padding-left: 25vw
 .mobile_menu
@@ -107,8 +100,7 @@ a
 			display: flex
 			margin-bottom: gem(10)
 	&-language
-		margin-left: gem(40)
-		margin-top: gem(-40)
+		margin: gem(-40) 0 0 gem(40)
 	&-social
 		display: flex
 		width: gem(366)

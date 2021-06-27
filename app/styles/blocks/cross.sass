@@ -6,10 +6,9 @@
 		display: flex
 		width: gem(1473)
 		height: 0
-		margin: auto
+		margin: gem(-45) auto 0 auto
 		align-self: center
 		position: absolute
-		margin-top: gem(-45)
 		img
 			width: 100%
 	.marquee 
@@ -21,10 +20,8 @@
 		p
 			display: inline-block
 			padding-right: gem(10)
-			// padding-left: 100%
 	&-content
 		display: flex
-		flex-direction: row
 		align-items: flex-start
 		&-left
 			display: flex
@@ -34,13 +31,11 @@
 				mix-blend-mode: lighten
 				width: gem(714)
 				margin-top: gem(-150)
-				// height: gem(227)
 		&-right
 			display: flex
 			p
 				margin: gem(20) gem(0) gem(151) gem(200)
 				max-width: gem(513)
-				// opacity: .85
 				color: rgba(255,255,255,.85)
 				.glitch
 					color: #fff
@@ -119,8 +114,7 @@
 	.cross
 		&-content
 			&-left
-				margin-left: gem(0)
-				margin-top: gem(68)
+				margin: gem(68) 0 0 0
 				video
 					width: gem(380)
 					margin-top: gem(-150)

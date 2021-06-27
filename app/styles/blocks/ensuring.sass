@@ -1,7 +1,6 @@
 .ensuring
 	display: flex
 	position: relative
-	flex-direction: row
 	&-left
 		display: flex
 		position: relative
@@ -73,8 +72,7 @@
 		video
 			display: flex
 			width: gem(1600)
-			margin-top: gem(-100)
-			margin-left: gem(-500)
+			margin: gem(-100) 0 0 gem(-500)
 			mix-blend-mode: lighten
 @media only screen and (max-width : 1024px)
 	.ensuring
@@ -114,9 +112,8 @@
 	.ensuring
 		&-right
 			video
-				margin-top: gem(-150)
 				width: gem(1000)
-				margin-left: gem(-280)
+				margin: gem(-150) 0 0 gem(-280)
 		&-left
 			top: gem(-130)
 			h2
@@ -129,8 +126,7 @@
 				width: gem(250)
 				margin: gem(23) gem(0) gem(0) gem(87)
 				&:nth-child(3)
-					margin-left: gem(87)
-					margin-top: gem(40)
+					margin: gem(40) 0 0 gem(87)
 			&-star
 				top: gem(160)
 				left: gem(11)
