@@ -1,6 +1,6 @@
 @import './gem.scss';
 
-// The main idea here is to make 1rem = 1px in design,
+// The main idea here is to make 1rem = 2px in design,
 // so when resizing browser window, content should be just scaled via rems
 
 // What rems are supposed to be used for:
@@ -41,5 +41,5 @@
 }
 
 @media all and (max-width: 480px) {
-    @include remBase(375, 0);
+    @include remBase(414, 0);
 }

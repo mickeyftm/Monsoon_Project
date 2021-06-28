@@ -9,6 +9,7 @@
 	align-items: center
 	z-index: 99
 	transition: all 2s ease
+	background: #000
 	.counter-wrapper
 		display: flex
 		align-items: center
@@ -30,7 +31,7 @@
 		margin-top: gem(-120)
 		display: flex
 		animation: rotate-logo 3s linear
-		transition: left 1s ease, top 1s ease, width 1s ease, margin-top 1s ease
+		transition: left 1s ease, top 1s ease, width 1s ease, margin-top 1s ease, margin-left 1s ease
 	#timer
 		font-size: gem(75)
 		line-height: gem(80)
@@ -39,6 +40,7 @@
 		position: relative
 		top: gem(20)
 		left: gem(40)
+		text-align: center
 	&.loaded
 		background: none
 		pointer-events: none
@@ -57,11 +59,16 @@
 				left: gem(31)
 @media only screen and (max-width : 480px)
 	.preloader
-		left: gem(-35)
+		// left: gem(-35)
+		.preloader_icon
+			margin-left: gem(-40)
+		#timer
+			left: 0
 		&.loaded
 			.preloader_icon
-				left: gem(66)
-				top: gem(25)
+				margin-left: 0
+				left: gem(24)
+				top: gem(46)
 				width: gem(34)
 @keyframes rotate-logo
 	0%

@@ -14,7 +14,7 @@
 		bottom: 0
 	&::after
 		content: ""
-		height: 1px
+		height: 2px
 		width: gem(1472)
 		display: flex
 		position: absolute
@@ -101,7 +101,7 @@
 				display: flex
 				background: #fff
 				bottom: -2px
-				height: 1px
+				height: 2px
 				left: 0
 				mix-blend-mode: difference
 				opacity: 1
@@ -173,27 +173,40 @@
 					left: gem(330)
 @media only screen and (max-width : 480px)
 	.footer-menu
+		height: unset
+		padding: unset
+		padding-bottom: gem(35)
 		&::after
-			width: gem(310)
+			width: gem(366)
+			margin-left: gem(24)
 		&-right
 			top: gem(65)
 			margin-left: gem(23)
+			margin: 0 gem(20)
+			margin-top: gem(39)
+			justify-content: space-between
 			a
 				font-size: gem(12)
 				line-height: gem(12)
 				margin: auto gem(12)
+				letter-spacing: 1px
+				&::before
+					display: none
 				&:nth-child(4)
 					white-space: nowrap
 		&-left
 			display: flex
 			top: 0
-			margin: gem(0) gem(0) gem(0) gem(32)
+			margin: gem(10) gem(0) gem(0) gem(32)
 			p
-				font-size: gem(10)
+				font-size: gem(11)
+				letter-spacing: 1px
+				margin-right: gem(30)
 				&::before
+					display: none
 					left: gem(217)
 		&-center
 			top: gem(-160)
-			right: gem(110)
+			right: gem(140)
 
 			

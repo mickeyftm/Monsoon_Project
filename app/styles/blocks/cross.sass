@@ -6,23 +6,28 @@
 		display: flex
 		width: gem(1473)
 		height: 0
-		margin: gem(-45) auto 0 auto
+		margin: 0 auto 0 auto
 		align-self: center
 		position: absolute
+		overflow: hidden
 		img
+			position: absolute
+			z-index: -1
 			width: 100%
 	.marquee 
 		display: block
 		width: 100%
 		white-space: nowrap
 		overflow: hidden
-		margin-bottom: gem(95)
+		margin-top: gem(40)
+		// margin-bottom: gem(95)
 		p
 			display: inline-block
 			padding-right: gem(10)
 	&-content
 		display: flex
 		align-items: flex-start
+		margin-top: gem(400)
 		&-left
 			display: flex
 			position: relative
@@ -45,40 +50,44 @@
 		position: relative
 		top: gem(41)
 		justify-content: center
-		overflow: hidden
+		align-items: center
+		// overflow: hidden
+		height: gem(75)
 		img
 			width: gem(106)
+			margin: auto
 			display: flex
-			position: relative
-			left: gem(16)
-		&::after
 			position: absolute
+			margin-top: gem(6)
+			opacity: 0
+			// left: gem(16)
+		.planet-line
+			position: relative
 			right: 0
 			left: 0
 			content: ''
-			bottom: gem(40)
-			width: gem(1472)
-			margin-left: gem(64)
+			width: 0%
 			background: rgb(246,249,250)
 			background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
-			display: block
-			height: 1px
+			display: flex
+			align-items: center
+			height: 2px
 			opacity: 0.5
 		span
 			display: flex
 			position: absolute
 			width: gem(32)
-			height: 1px
+			height: 2px
 			background: linear-gradient(90deg,transparent,#FFF) 
-			top: gem(33)
+		
 			animation: line_planet 3s linear infinite 
 			&:nth-child(2)
 				display: flex
 				position: absolute
 				width: gem(32)
-				height: 1px
+				height: 2px
 				background: linear-gradient(270deg,transparent,#FFF) 
-				top: gem(33)
+			
 				animation: line_planet_second 3s linear infinite 
 
 @keyframes line_planet
@@ -112,19 +121,38 @@
 
 @media only screen and (max-width : 480px)
 	.cross
+		.marquee
+			font-size: gem(100)
+			line-height: gem(127)
+		&-background
+			height: gem(212)
+			img
+				bottom: gem(-25)
+				right: gem(250)
 		&-content
+			margin-top: gem(270)
 			&-left
 				margin: gem(68) 0 0 0
+				width: 100%
+				display: flex
+				justify-content: center
 				video
 					width: gem(380)
 					margin-top: gem(-150)
 			&-right
 				p 
-					margin: gem(67) gem(0) gem(99) gem(30)
+					margin: gem(84) gem(0) gem(42) gem(30)
 					width: gem(340)
 		.planet
-			top: gem(-42)
-			left: gem(-15)
+			top: unset
+			left: unset
+			img
+				margin-top: unset
+				width: gem(57)
+				opacity: 1
+			.planet-line
+				width: 90%
+			
 			&::after
 				width: gem(366)
 				margin-left: gem(0)

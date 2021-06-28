@@ -38,7 +38,7 @@
 			background: rgb(246,249,250)
 			background: linear-gradient(180deg,transparent,#FFF)
 			height: gem(147)
-			width: 1px
+			width: 2px
 			opacity: 0.7
 			overflow: hidden
 			span
@@ -52,7 +52,7 @@
 			display: block
 			position: absolute
 			width: gem(188)
-			height: 1px
+			height: 2px
 			background: linear-gradient(270deg,transparent,#FFF)
 			top: gem(477)
 			left: gem(192)
@@ -62,7 +62,7 @@
 				display: flex
 				position: absolute
 				width: gem(32)
-				height: 1px
+				height: 2px
 				background: linear-gradient(90deg,transparent,#FFF) 
 				animation: ens_line_next 3s linear infinite 
 				animation-delay: 1.2s
@@ -115,27 +115,30 @@
 				width: gem(1000)
 				margin: gem(-150) 0 0 gem(-280)
 		&-left
-			top: gem(-130)
+			top: gem(-25)
 			h2
-				top: gem(-130)
-				margin: gem(0) gem(0) gem(0) gem(24)
+				top: unset
+				margin: gem(0) gem(0) gem(20) gem(24)
 				width: gem(300)
 				font-size: gem(70)
 				line-height: gem(75)
 			p 
-				width: gem(250)
+				width: gem(297)
 				margin: gem(23) gem(0) gem(0) gem(87)
 				&:nth-child(3)
-					margin: gem(40) 0 0 gem(87)
+					margin: gem(50) 0 0 gem(87)
 			&-star
-				top: gem(160)
+				top: gem(185)
 				left: gem(11)
 				&:nth-last-child(3)
-					top: gem(410)
+					top: gem(475)
 					left: gem(10)
 			.star-line
-				top: gem(215)
-				left: gem(43)
+				top: gem(245)
+				height: gem(224)
+				left: gem(42)
+				background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 13.02%, rgba(255, 255, 255, 0.493848) 86.98%, rgba(255, 255, 255, 0) 100%);
+
 			.star-line_goriz
 				display: none
 					

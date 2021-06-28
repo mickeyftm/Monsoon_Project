@@ -11,7 +11,10 @@ window.jQuery = $
 window.$ = $
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MorphSVGPlugin)
-gsap.to(window, { duration: 0, scrollTo: 0, ease: 'power2', delay: 0 });
+$(document).ready(function(){
+    $(this).scrollTop(0);
+});
+// gsap.to(window, { duration: 0, scrollTo: 0, ease: 'power2', delay: 0 });
 document.addEventListener('DOMContentLoaded', () => {
 	
 	let background = document.querySelector('.back')
@@ -54,12 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 	let counterWrapper = document.querySelector('.counter-wrapper')
 
-	gsap.to(counterWrapper, {
-		autoAlpha: 0,
-		duration: 0.3,
-		delay: 3,
-	})
-
 	gsap.to(logo, {
 		autoAlpha: 1,
 		duration: 1,
@@ -91,6 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	//FAQ
+	let faqHandle = document.querySelectorAll(`a[href='#faq']`)
+	
+	for(let i=0; i< faqHandle.length; i++) {
+		faqHandle[i].addEventListener('click', (e) => {
+			e.preventDefault()
+			console.log('scroll')
+			gsap.to(window, { duration: 1, scrollTo: '#faq', ease: 'power2' });
+		})
+	}
+
 	let accordionItemHeaders = document.querySelectorAll('.accordion-item-header');
 	let accordions = document.querySelectorAll('.stars_open')
 	let accordionsText = document.querySelectorAll('.accordion-item-body')
@@ -183,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//to top on footer
 	let footerHandle = document.querySelector('.footer-menu-center')
-
+	
 	footerHandle.addEventListener('click', () => {
 		gsap.to(window, { duration: 1, scrollTo: 0, ease: 'power2' });
 	})
@@ -209,19 +216,24 @@ document.addEventListener('DOMContentLoaded', () => {
 	footerAnimation()
 
 	//buttons & cursor
-	let cursor = new Cursor(document.querySelector('.cursor'));
-	new ButtonCtrl(document.querySelector('.binance'));
-	new ButtonCtrl(document.querySelector('.testnet'));
 
-	let cursorHoverItems = document.querySelectorAll('.cursor-hover')
-	for (let i = 0; i < cursorHoverItems.length; i++) {
-		cursorHoverItems[i].addEventListener('mouseover', () => {
-			cursor.enter()
-		});
-		cursorHoverItems[i].addEventListener('mouseleave', () => {
-			cursor.leave()
-		});
+
+	if (window.innerWidth > 1024) {
+		let cursor = new Cursor(document.querySelector('.cursor'));
+		new ButtonCtrl(document.querySelector('.binance'));
+		new ButtonCtrl(document.querySelector('.testnet'));
+		let cursorHoverItems = document.querySelectorAll('.cursor-hover')
+		for (let i = 0; i < cursorHoverItems.length; i++) {
+			cursorHoverItems[i].addEventListener('mouseover', () => {
+				cursor.enter()
+			});
+			cursorHoverItems[i].addEventListener('mouseleave', () => {
+				cursor.leave()
+			});
+		}
+	
 	}
+
 
 	//inwiev + svg animations
 	function inviewCore() {
@@ -355,7 +367,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				gsap.to('#two-hero', { duration: .2,  autoAlpha: 0, x: 0, y: '1rem', fill: "#34F1BB", morphSVG: '#two-product', ease: 'power1' })
 				gsap.to('#three-hero', { duration: .2,  autoAlpha: 0, x: 0, y: 0, fill: "#0038FF", morphSVG: '#three-product', ease: 'power1' })
 				gsap.to('#four-hero', { duration: .2,  autoAlpha: 0, x: 0, y: '.5rem', fill: "#FF00F5", morphSVG: '#four-product', ease: 'power1' })
-				
+				gsap.to('.planet-image', {duration: 2, autoAlpha: 1, ease: 'power1', delay: .2})
+				gsap.to('.planet-line', {duration: 1, width: '100%', ease: 'power1', delay: .2})
 				backgroundSvg.classList.add('cross-back')
 			},
 			onLeave: () => {
@@ -378,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			start: 'top center',
 			// markers: true,
 			onEnter: () => {
-				gsap.to('.cross-background', {duration: .5, height: '3.11rem', ease: 'power1'})
+				gsap.to('.cross-background', {duration: .3, height: '3.11rem', ease: 'power1'})
 			}
 		})
 	}
@@ -416,9 +429,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	setTimeout(() => {
 		inviewCore()
 	}, 4000);
-
-	//window on top, after page is loaded
-	gsap.to(window, { duration: 0.1, scrollTo: 0, ease: 'power2', delay: 1 });
-
-
 })

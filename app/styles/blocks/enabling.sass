@@ -35,7 +35,7 @@
 			line-height: gem(32)
 			animation: circle_rotate 10s linear infinite
 	.line
-		width: 1px
+		width: 2px
 		height: 0
 		display: flex
 		position: absolute
@@ -54,7 +54,7 @@
 			position: absolute
 			display: block
 			top: gem(97)
-			width: 1px
+			width: 2px
 			height: gem(32)
 			background: linear-gradient(180deg,transparent,#FFF) 
 			animation: line_begin 5s linear infinite 
@@ -119,20 +119,25 @@
 		&-right
 			height: gem(400)
 			width: gem(600)
+			margin-top: gem(40)
 			video
 				width: gem(800)
 				top: gem(-197)
 				right: 0
 		&-left
-			margin: gem(-50) 0 0 gem(32)
+			margin: 0 gem(30)
+			margin-top: gem(-80)
 			h2
 				width: gem(354)
 				margin: 0 0 gem(18) 0
 			p
+				font-size: gem(16)
+				line-height: gem(28)
 				margin: 0 gem(30) 0 0
 				width: gem(350)
 			img
-				left: gem(290)
-				top: gem(-50)
+				width: gem(165)
+				left: gem(303)
+				top: gem(-80)
 	.triangle
 		display: none

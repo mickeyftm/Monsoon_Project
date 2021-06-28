@@ -64,27 +64,26 @@
 			width: gem(200)
 			animation: circle_rotate 10s linear infinite
 		.center_line
-			position: relative
-			right: gem(800)
+			position: absolute
 			left: 0
-			top: gem(-640)
+			top: 0
 			bottom: 0
 			background: rgb(246,249,250)
 			background: linear-gradient(360deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
-			height: gem(803)
-			width: 1px
+			height: 100%
+			width: 2px
 			opacity: 0.5
 			span
 				display: flex
 				position: absolute
-				width: 1px
+				width: 2px
 				height: gem(32)
 				background: linear-gradient(180deg,transparent,#FFF) 
 				animation: center_line 3s linear infinite 
 				&:nth-child(2)
 					display: flex
 					position: absolute
-					width: 1px
+					width: 2px
 					height: gem(32)
 					background: linear-gradient(360deg,transparent,#FFF) 
 					animation: center_line_second 3s linear infinite 
@@ -143,26 +142,58 @@
 	.products
 		&-left
 			margin-left: gem(30)
+			width: 100%
 			&-content
 				h3
 					margin: gem(30) 0 0 0
+					font-size: gem(20)
+					line-height: gem(20)
 				h4
-					margin-left: gem(0)
+					margin-left: gem(-1)
+					font-size: gem(39)
+					line-height: gem(52)
+					margin-bottom: gem(14)
 				p
 					margin-left: gem(0)
+					margin-bottom: gem(58)
+					font-size: gem(18)
+					line-height: gem(30)
+					width: gem(355)
+				img
+					margin-left: gem(-6)
+				&:nth-child(1)
+					img
+						width: gem(301)
+						margin-top: gem(26)
 				&:nth-child(2)
 					left: gem(0)
 					top: gem(0)
 					position: inherit
-		&-right
-			top: gem(-100)
+				&:nth-child(3)
+					img
+						width: gem(195)
+						margin-left: gem(-22)
+		&-right	
+			top: unset
+			width: 100%
+			position: relative
+			flex-direction: column-reverse
 			h2
-				margin-left: gem(30)
+				margin-left: gem(24)
+				margin-top: gem(-13)
 				span
 					margin-left: gem(0)
 			.smile
 				&-wrapper
-					display: none
+					margin: 0
+					left: unset
+					top: unset
+					margin-right: gem(23)
+				top: unset
+				right: unset
+				&_rotate
+					top: unset
+					right: unset
 
 					
 			

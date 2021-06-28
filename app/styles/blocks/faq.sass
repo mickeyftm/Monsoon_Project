@@ -23,7 +23,7 @@
 					background: rgb(246,249,250)
 					background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
 					display: inline-block
-					height: 1px
+					height: 2px
 					opacity: 0.5
 			&-header
 				display: flex
@@ -39,7 +39,7 @@
 					background: rgb(246,249,250)
 					background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
 					display: inline-block
-					height: 1px
+					height: 2px
 					opacity: 0.5
 				h4
 					max-width: gem(1037)
@@ -121,22 +121,45 @@
 @media only screen and (max-width : 480px)
 	.faq
 		padding-bottom: gem(50)
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		flex-wrap: wrap
 		h2 
-			margin: gem(0) gem(0) gem(54) gem(30)
+			margin: gem(0) gem(0) gem(45) gem(30)
 			width: gem(312)
 			font-size: gem(56)
 			line-height: gem(60)
-		&-srars
+		&-stars
+			position: relative
+			left: unset
+			top: unset
+			right: unset
 			display: flex
+			order: -1
+			align-self: flex-end
+			margin-right: gem(25)
+			margin-top: gem(100)
+			margin-bottom: gem(20)
 		.accordion
-			width: gem(374)
+			width: 100%
 			margin-left: gem(0)
+			margin-bottom: gem(180)
 			&-item
 				&-header
 					h4
-						font-weight: 900
+						font-weight: 400
+						margin-left: gem(32)
+						font-size: gem(18)
+						line-height: gem(26)
+						padding: gem(22) 0
 					.stars_open
 						right: gem(-30)
+						svg
+							width: gem(44)
+							height: gem(44)
 				&-body
 					p
+						font-size: gem(14)
+						line-height: gem(26)
 						width: gem(310)

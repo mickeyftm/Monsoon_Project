@@ -30,7 +30,7 @@ header
 				display: flex
 				background: #fff
 				bottom: -2px
-				height: 1px
+				height: 2px
 				left: 0
 				mix-blend-mode: difference
 				opacity: 1
@@ -74,7 +74,7 @@ header
 				display: flex
 				background: #fff
 				bottom: -2px
-				height: 1px
+				height: 2px
 				left: 0
 				mix-blend-mode: difference
 				opacity: 1
@@ -113,7 +113,7 @@ header
 					opacity: 1
 	&::after
 		content: ""
-		height: 1px
+		height: 2px
 		width: 0
 		display: flex
 		position: relative
@@ -183,6 +183,10 @@ header
 			z-index: 11
 @media only screen and (max-width : 480px)
 	header
+		padding: 0 gem(24)
+		margin-top: gem(20)
+		&::after
+			top: gem(40)
 		.logo
 			a
 				.logo-default
