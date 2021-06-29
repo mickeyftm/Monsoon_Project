@@ -71,21 +71,20 @@
 			background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
 			display: flex
 			align-items: center
-			height: 2px
+			height: 1px
 			opacity: 0.5
 		span
 			display: flex
 			position: absolute
 			width: gem(32)
-			height: 2px
+			height: 1px
 			background: linear-gradient(90deg,transparent,#FFF) 
-		
 			animation: line_planet 3s linear infinite 
 			&:nth-child(2)
 				display: flex
 				position: absolute
 				width: gem(32)
-				height: 2px
+				height: 1px
 				background: linear-gradient(270deg,transparent,#FFF) 
 			
 				animation: line_planet_second 3s linear infinite 
@@ -152,6 +151,7 @@
 				opacity: 1
 			.planet-line
 				width: 90%
+				margin-top: gem(3)
 			
 			&::after
 				width: gem(366)
