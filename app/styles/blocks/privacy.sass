@@ -1,0 +1,39 @@
+.privacy
+    display: flex
+    position: relative
+    flex-direction: row
+    margin-top: gem(130)
+    &-right
+        h2
+            font-size: gem(120)
+            line-height: gem(132)
+            margin-bottom: gem(66)
+        p
+            width: gem(642)
+    &-left
+        margin-right: gem(136)
+        margin-left: gem(124)
+    .right_line
+        display: flex
+        position: relative
+        height: gem(608)
+        width: 1px
+        background: linear-gradient(180deg,transparent,#FFF)
+        right: gem(-75)
+        top: gem(-10)
+    &-stars
+        display: flex
+        position: relative
+        top: gem(185)
+        right: gem(200)
+        img
+            width: gem(150)
+        &::after
+            content: ""
+            display: flex
+            position: absolute
+            width: gem(150)
+            height: 1px
+            background: linear-gradient(90deg,transparent,#FFF)
+            top: gem(412)
+            right: gem(-125)
