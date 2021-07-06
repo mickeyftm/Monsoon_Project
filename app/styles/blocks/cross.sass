@@ -10,6 +10,8 @@
 		align-self: center
 		position: absolute
 		overflow: hidden
+		.bg_cross_mobile
+			display: none
 		img
 			position: absolute
 			z-index: -1
@@ -59,14 +61,14 @@
 			display: flex
 			position: absolute
 			margin-top: gem(6)
-			opacity: 0
+			opacity: 1
 			// left: gem(16)
 		.planet-line
 			position: relative
 			right: 0
 			left: 0
 			content: ''
-			width: 0%
+			width: 100%
 			background: rgb(246,249,250)
 			background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
 			display: flex
@@ -86,7 +88,6 @@
 				width: gem(32)
 				height: 1px
 				background: linear-gradient(270deg,transparent,#FFF) 
-			
 				animation: line_planet_second 3s linear infinite 
 
 @keyframes line_planet
@@ -106,14 +107,24 @@
 @media only screen and (max-width : 1024px)
 	.cross
 		margin-top: 0
+		&-background
+			height: gem(212)
+			width: gem(730)
 		&-content
 			flex-direction: column
+			margin-top: gem(300)
 			&-left
 				margin-left: gem(0)
 			&-right
 				p
 					margin: gem(120) gem(0) gem(151) gem(75)
+		.marquee 
+			margin-top: gem(10)
 		.planet
+			img
+				opacity: 0
+			.planet-line
+				width: 100%
 			&::after
 				width: gem(704)
 				margin-left: gem(32)
@@ -125,9 +136,12 @@
 			line-height: gem(127)
 		&-background
 			height: gem(212)
-			img
-				bottom: gem(-25)
-				right: gem(250)
+			.bg_cross_desc
+				display: none
+				// bottom: gem(-25)
+				// right: gem(250)
+			.bg_cross_mobile
+				display: flex
 		&-content
 			margin-top: gem(270)
 			&-left

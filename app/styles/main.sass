@@ -95,10 +95,10 @@ button[type='submit']
 	z-index: 10
 	flex-direction: column
 	&-nav
-		margin: gem(130) 0 0 gem(30)
+		margin: gem(230) 0 0 gem(30)
 		a
 			display: flex
-			margin-bottom: gem(10)
+			margin-bottom: gem(50)
 	&-language
 		margin: gem(-40) 0 0 gem(40)
 		opacity: 0
@@ -113,6 +113,7 @@ button[type='submit']
 			position: relative
 			margin-left: gem(20)
 			top: gem(-8)
+			left: gem(240)
 			a
 				display: flex
 				margin-right: gem(14)
@@ -126,7 +127,7 @@ button[type='submit']
 			content: ''
 			display: flex
 			position: absolute
-			width: gem(366)
+			width: gem(704)
 			height: 2px
 			background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
 			top: gem(-22)
@@ -134,7 +135,7 @@ button[type='submit']
 			content: ''
 			display: flex
 			position: absolute
-			width: gem(366)
+			width: gem(704)
 			height: 2px
 			background: linear-gradient(90deg, rgba(246,249,250,0) 0%, rgba(246,249,250,1) 40%, rgba(246,249,250,1) 60%, rgba(246,249,250,0) 100%)
 			top: gem(30)
@@ -147,6 +148,23 @@ button[type='submit']
 		left: gem(20)
 	&.active
 		left: 0
+@media only screen and (max-width : 480px)
+	.mobile_menu
+		&-nav
+			margin: gem(130) 0 0 gem(30)
+			a 
+				margin-bottom: gem(15)
+		&-social
+			&-icon
+				left: 0
+			&::before
+				width: gem(366)
+			&::after
+				width: gem(366)
+
+
+
+
 .mobile_bg
 	display: none
 	.first_page_bg
@@ -200,7 +218,7 @@ button[type='submit']
 		.sixth_page_bg
 			display: flex
 			position: absolute
-			top: gem(5200)
+			top: gem(6000)
 			height: gem(2000)
 			img
 				width: gem(1024)
@@ -231,8 +249,14 @@ button[type='submit']
 				width: gem(480)
 				height: gem(200)
 		.sixth_page_bg
-			top: gem(5900)
+			top: gem(6800)
 			img
 				width: gem(480)
 
 
+// .bg_cross_mobile
+// 	display: none
+// @media only screen and (max-width : 480px)
+// 	.bg_cross_mobile
+// 		display: flex
+// 		opacity: 1 !important

@@ -3,11 +3,14 @@
     position: relative
     flex-direction: row
     margin-top: gem(130)
+    margin-bottom: gem(80)
     &-right
         h2
             font-size: gem(120)
             line-height: gem(132)
             margin-bottom: gem(66)
+            span
+                display: flex
         p
             width: gem(642)
     &-left
@@ -15,17 +18,17 @@
         margin-left: gem(124)
     .right_line
         display: flex
-        position: relative
+        position: absolute
         height: gem(608)
         width: 1px
         background: linear-gradient(180deg,transparent,#FFF)
-        right: gem(-75)
+        right: gem(105)
         top: gem(-10)
     &-stars
         display: flex
-        position: relative
-        top: gem(185)
-        right: gem(200)
+        position: absolute
+        top: gem(567)
+        right: gem(229)
         img
             width: gem(150)
         &::after
@@ -35,5 +38,70 @@
             width: gem(150)
             height: 1px
             background: linear-gradient(90deg,transparent,#FFF)
-            top: gem(412)
+            top: gem(31)
             right: gem(-125)
+@media only screen and (max-width : 1024px)
+    .privacy
+        flex-direction: column
+        margin-top: gem(0)
+        &-left
+            margin-right: 0
+            margin-left: 0
+            img
+                width: gem(300)
+        &-right
+            h2
+                font-size: gem(72)
+                line-height: gem(78)
+                display: flex
+                position: absolute
+                top: gem(100)
+                right: gem(66)
+                span
+                    position: absolute
+                    top: gem(75)
+                    right: 0
+            p
+                width: gem(448)
+                margin-left: gem(64)
+                margin-top: gem(70)
+        &-stars
+            top: gem(320)
+            right: 0
+            transform: rotate(90deg)
+            &::after
+                right: gem(-225)
+                width: gem(250)
+        .right_line
+            transform: rotate(270deg)
+            top: gem(560)
+            height: gem(183)
+            right: gem(165)
+@media only screen and (max-width : 480px)
+    .privacy
+        margin-bottom: gem(130)
+        &-left
+            display: flex
+            justify-content: center
+        &-right
+            h2
+                display: unset
+                top: gem(500)
+                margin-left: gem(30)
+                span
+                    position: unset
+            p
+                margin-left: gem(30)
+                margin-top: gem(290)
+                width: gem(343)
+        .right_line
+            transform: unset
+            top: gem(400)
+            height: gem(328)
+            right: gem(30)
+        &-stars
+            transform: rotate(180deg)
+            top: gem(1050)
+            right: gem(230)
+            &::after
+                display: none
