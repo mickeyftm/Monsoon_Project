@@ -162,9 +162,6 @@ button[type='submit']
 			&::after
 				width: gem(366)
 
-
-
-
 .mobile_bg
 	display: none
 	.first_page_bg
@@ -178,6 +175,8 @@ button[type='submit']
 	.fifth_page_bg
 		display: none
 	.sixth_page_bg
+		display: none
+	.privaci_page_bg
 		display: none
 
 @media only screen and (max-width : 1024px)
@@ -250,6 +249,12 @@ button[type='submit']
 				height: gem(200)
 		.sixth_page_bg
 			top: gem(6800)
+			img
+				width: gem(480)
+		.privaci_page_bg
+			display: flex
+			position: absolute
+			top: gem(5800)
 			img
 				width: gem(480)
 

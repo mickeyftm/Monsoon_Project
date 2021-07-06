@@ -356,35 +356,35 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// function processInwiev() {
-	// 	ScrollTrigger.create({
-	// 		trigger: '.privacy',
-	// 		start: 'top center',
-	// 		// end: 'bottom ',
-	// 		// markers: true,
-	// 		onEnter: () => {
-	// 			gsap.to('#one-hero', { duration: .2, x: 0, y: 0, fill: "#8349FF", morphSVG: '#one-process', ease: 'power1' })
-	// 			gsap.to('#two-hero', { duration: .2, x: '5rem', y: '1rem', fill: "#FF0095", morphSVG: '#two-process', ease: 'power1' })
-	// 			gsap.to('#three-hero', { duration: .2, x: 0, y: '2.5rem', fill: "#0013FF", morphSVG: '#three-process', ease: 'power1' })
-	// 			gsap.to('#four-hero', { duration: .2, x: 0, y: '2.5rem', fill: "#00FFFF", morphSVG: '#four-process', ease: 'power1' })
-	// 			// gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
-	// 			backgroundSvg.classList.add('privacy-back')
-	// 		},
-	// 		onLeave: () => {
-	// 			backgroundSvg.classList.remove('privacy-back')
-	// 		},
-	// 		onEnterBack: () => {
-	// 			backgroundSvg.classList.add('privacy-back')
-	// 		},
-	// 		onLeaveBack: () => {
-	// 			gsap.to('#one-hero', { duration: .2, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
-	// 			gsap.to('#two-hero', { duration: .2, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
-	// 			gsap.to('#three-hero', { duration: .2, x: 0, y: '1.5rem', fill: "#FF8993", morphSVG: '#three-hero', ease: 'power1' })
-	// 			gsap.to('#four-hero', { duration: .2, x: 0, y: 0, fill: "#FF0095", morphSVG: '#four-hero', ease: 'power1' })
-	// 			backgroundSvg.classList.remove('privacy-back')
-	// 		}
-	// 	})
-	// }
+	function processInwiev() {
+		ScrollTrigger.create({
+			trigger: '.privacy',
+			start: 'top center',
+			// end: 'bottom ',
+			// markers: true,
+			onEnter: () => {
+				gsap.to('#one-hero', { duration: .2, x: 0, y: 0, fill: "#8349FF", morphSVG: '#one-process', ease: 'power1' })
+				gsap.to('#two-hero', { duration: .2, x: '5rem', y: '1rem', fill: "#FF0095", morphSVG: '#two-process', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, x: 0, y: '2.5rem', fill: "#0013FF", morphSVG: '#three-process', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, x: 0, y: '2.5rem', fill: "#00FFFF", morphSVG: '#four-process', ease: 'power1' })
+				// gsap.to(animItems, { y: 0, autoAlpha: 1, stagger: 0.07 });
+				backgroundSvg.classList.add('privacy-back')
+			},
+			onLeave: () => {
+				backgroundSvg.classList.remove('privacy-back')
+			},
+			onEnterBack: () => {
+				backgroundSvg.classList.add('privacy-back')
+			},
+			onLeaveBack: () => {
+				gsap.to('#one-hero', { duration: .2, x: '-.3rem', y: '-.5rem', fill: "#280075", morphSVG: '#one-hero', ease: 'power1' })
+				gsap.to('#two-hero', { duration: .2, x: 0, y: '.2rem', fill: "#CF00A3", morphSVG: '#two-hero', ease: 'power1' })
+				gsap.to('#three-hero', { duration: .2, x: 0, y: '1.5rem', fill: "#FF8993", morphSVG: '#three-hero', ease: 'power1' })
+				gsap.to('#four-hero', { duration: .2, x: 0, y: 0, fill: "#FF0095", morphSVG: '#four-hero', ease: 'power1' })
+				backgroundSvg.classList.remove('privacy-back')
+			}
+		})
+	}
 
 	function protocolInwiev() {
 		ScrollTrigger.create({
