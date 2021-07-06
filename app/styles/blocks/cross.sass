@@ -2,6 +2,7 @@
 	display: flex
 	flex-direction: column
 	margin-top: gem(200)
+	padding-bottom: gem(100)
 	&-background
 		display: flex
 		width: gem(1473)
@@ -55,6 +56,8 @@
 		align-items: center
 		// overflow: hidden
 		height: gem(75)
+		width: 100%
+		overflow: hidden
 		img
 			width: gem(106)
 			margin: auto
@@ -114,6 +117,7 @@
 			flex-direction: column
 			margin-top: gem(300)
 			&-left
+				overflow: hidden
 				margin-left: gem(0)
 			&-right
 				p
@@ -131,27 +135,33 @@
 
 @media only screen and (max-width : 480px)
 	.cross
+		padding-bottom: gem(0)
 		.marquee
 			font-size: gem(100)
 			line-height: gem(127)
+			margin-top: gem(40)
 		&-background
 			height: gem(212)
+			width: 100%
 			.bg_cross_desc
 				display: none
 				// bottom: gem(-25)
 				// right: gem(250)
 			.bg_cross_mobile
 				display: flex
+				height: 100%
+				
 		&-content
 			margin-top: gem(270)
 			&-left
-				margin: gem(68) 0 0 0
+				margin: 0 0 0 0
+				height: gem(160)
 				width: 100%
 				display: flex
 				justify-content: center
 				video
 					width: gem(380)
-					margin-top: gem(-150)
+					margin-top: gem(-120)
 			&-right
 				p 
 					margin: gem(84) gem(0) gem(42) gem(30)

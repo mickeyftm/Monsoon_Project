@@ -6,6 +6,7 @@
 		display: flex
 		position: relative
 		width: gem(800)
+		overflow: hidden
 		video
 			width: gem(1230)
 			height: gem(700)
@@ -117,13 +118,16 @@
 		.line
 			display: none
 		&-right
-			height: gem(400)
-			width: gem(600)
-			margin-top: gem(40)
+			height: gem(440)
+			width: 100%
+			margin-top: 0
 			video
 				width: gem(800)
-				top: gem(-197)
-				right: 0
+				position: relative
+				// top: gem(-157)
+				margin-left: gem(-250)
+				margin-top: gem(-30)
+				// right: gem(-190)
 		&-left
 			margin: 0 gem(30)
 			margin-top: gem(-80)
