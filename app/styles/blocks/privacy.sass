@@ -16,6 +16,9 @@
     &-left
         margin-right: gem(136)
         margin-left: gem(124)
+        display: flex
+        position: relative
+        top: gem(-25)
     .right_line
         display: flex
         position: absolute
@@ -46,7 +49,8 @@
         margin-top: gem(0)
         &-left
             margin-right: 0
-            margin-left: 0
+            margin-left: gem(35)
+            top: gem(100)
             img
                 width: gem(300)
         &-right
@@ -64,7 +68,8 @@
             p
                 width: gem(448)
                 margin-left: gem(64)
-                margin-top: gem(70)
+                margin-top: gem(170)
+
         &-stars
             top: gem(320)
             right: 0
@@ -79,14 +84,16 @@
             right: gem(165)
 @media only screen and (max-width : 480px)
     .privacy
-        margin-bottom: gem(200)
+        margin-bottom: gem(100)
         &-left
             display: flex
             justify-content: center
+            top: 0
+            margin-left: gem(0)
         &-right
             h2
                 display: unset
-                top: gem(500)
+                top: gem(400)
                 margin-left: gem(30)
                 span
                     position: unset
@@ -101,7 +108,7 @@
             right: gem(30)
         &-stars
             transform: rotate(180deg)
-            top: gem(1050)
+            top: gem(930)
             right: gem(230)
             &::after
                 display: none
